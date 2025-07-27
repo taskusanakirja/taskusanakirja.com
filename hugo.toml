@@ -1,0 +1,29 @@
+baseURL = "https://taskusanakirja.com/"
+languageCode = "en-us"
+title = "Taskusanakirja"
+theme = "PaperMod"
+
+[params]
+  author = "Andrew Quinn"
+  description = "A powerful, terminal-based Finnish dictionary for language learners."
+  defaultTheme = "auto" # dark, light, auto
+  ShowShareButtons = false
+  ShowReadingTime = false
+  ShowPostNavLinks = false
+
+[menu]
+  [[menu.main]]
+    identifier = "downloads"
+    name = "Downloads"
+    url = "/downloads/"
+    weight = 10
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 20
+  [[menu.main]]
+    identifier = "github"
+    name = "GitHub"
+    url = "https://github.com/hiAndrewQuinn/taskusanakirja"
+    weight = 30
