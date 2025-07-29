@@ -35,32 +35,48 @@ hugo --minify
 
 ### Deployment
 The site is automatically deployed via GitHub Actions when changes are pushed to the master branch. The workflow:
-- Builds the site using `hugo --minify`
+- Builds the site using `hugo --minify` (without CSS compilation)
 - Deploys to the `taskusanakirja/taskusanakirja.github.io` repository
 - Workflow configuration: `.github/workflows/hugo.yml`
+- **Note**: The GitHub Action currently references `main` branch but should be `master`
 
 ## Architecture
+
+### Two-Theme Setup
+The site has two themes installed:
+1. `/themes/PaperMod/` - Unused legacy theme (included but not active)
+2. `/themes/taskusanakirja-theme/` - Active custom theme with Tailwind CSS
 
 ### Content Structure
 - `/content/` - Main content pages in Markdown format
   - `_index.md` - Homepage content
+  - `details.md` - Product details page
   - `downloads.md` - Download links and installation instructions
   - `about.md` - About page
-- `/themes/PaperMod/` - Hugo theme (included as part of the repository)
-- `hugo.toml` - Site configuration including menu structure and theme settings
+  - `blog/` - Blog posts directory
+- `hugo.toml` - Site configuration with menu structure and theme settings
 
 ### Important Configuration
 - Base URL: `https://taskusanakirja.com/`
-- Theme: taskusanakirja-theme (custom theme with Tailwind CSS)
+- Theme: `taskusanakirja-theme` (not PaperMod)
 - Main branch: `master` (not `main`)
 - Deployment target: `taskusanakirja/taskusanakirja.github.io` repository
 
 ### Custom Theme Details
-- The site uses a custom theme located in `/themes/taskusanakirja-theme/`
-- Tailwind CSS is used for styling with a custom color palette (Finnish blue, accent gold)
-- The theme includes a professional landing page with animated SVG
-- Downloads page has a custom layout with styled download cards
-- All CSS must be compiled using `npm run build-css` before deployment
+- Tailwind CSS compilation required before deployment
+- Custom color palette defined in `tailwind.config.js`:
+  - Parchment, Ochre, Ink, Burgundy, Forest, Gold-leaf colors
+  - Custom fonts: Crimson Text, Playfair Display, IBM Plex Mono
+- Theme layouts in `/themes/taskusanakirja-theme/layouts/`
+  - Custom downloads page template: `downloads.html`
+  - Blog-specific templates in `blog/` subdirectory
+- Compiled CSS output: `/themes/taskusanakirja-theme/assets/css/compiled.css`
+
+### Development Workflow
+1. CSS changes require running `npm run dev` or `npm run watch-css`
+2. Tailwind processes `/themes/taskusanakirja-theme/assets/css/main.css`
+3. Output goes to `/themes/taskusanakirja-theme/assets/css/compiled.css`
+4. The compiled CSS is tracked in git (required for deployment)
 
 ### Content Guidelines
 - The site focuses on marketing the Taskusanakirja CLI tool
