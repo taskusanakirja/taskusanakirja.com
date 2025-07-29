@@ -1,6 +1,7 @@
 ---
 title: "Downloads"
 layout: "downloads"
+description: "Download Taskusanakirja for macOS, Linux, and Windows. Get the Pro version for advanced inflection search."
 ---
 
 ### 1. Download the Application

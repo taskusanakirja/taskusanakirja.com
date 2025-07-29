@@ -1,5 +1,7 @@
 ---
 title: "About Taskusanakirja"
+layout: "single"
+description: "Learn about the creator of Taskusanakirja and the motivation behind this Finnish-English dictionary tool."
 ---
 
 My name is Andrew Quinn, and I'm a software consultant and Finnish language learner living in Tampere, Finland.
