@@ -17,6 +17,82 @@
   .dark {
     @apply bg-ink-900 text-ochre-100;
   }
+  
+  /* Ensure all text colors work in dark mode */
+  .dark .text-ink-900 {
+    @apply text-ochre-100;
+  }
+  
+  .dark .text-ink-800 {
+    @apply text-ochre-100;
+  }
+  
+  .dark .text-ink-700 {
+    @apply text-ochre-200;
+  }
+  
+  .dark .text-ink-600 {
+    @apply text-ochre-300;
+  }
+  
+  /* Prose dark mode overrides */
+  .dark .prose {
+    @apply text-ochre-100;
+  }
+  
+  .dark .prose p {
+    @apply text-ochre-200;
+  }
+  
+  .dark .prose h1,
+  .dark .prose h2,
+  .dark .prose h3,
+  .dark .prose h4,
+  .dark .prose h5,
+  .dark .prose h6 {
+    @apply text-ochre-100;
+  }
+  
+  .dark .prose strong {
+    @apply text-ochre-100;
+  }
+  
+  .dark .prose a {
+    @apply text-ochre-300 hover:text-ochre-200;
+  }
+  
+  .dark .prose blockquote {
+    @apply text-ochre-200 border-ochre-600;
+  }
+  
+  .dark .prose code {
+    @apply bg-ink-800 text-ochre-200;
+  }
+  
+  .dark .prose pre {
+    @apply bg-ink-800 border-ochre-700;
+  }
+  
+  .dark .prose pre code {
+    @apply bg-transparent text-ochre-200;
+  }
+  
+  .dark .prose ul li::marker,
+  .dark .prose ol li::marker {
+    @apply text-ochre-400;
+  }
+  
+  .dark .prose hr {
+    @apply border-ochre-700;
+  }
+  
+  .dark .prose thead {
+    @apply border-ochre-700;
+  }
+  
+  .dark .prose tbody tr {
+    @apply border-ochre-800;
+  }
 }
 
 @layer components {
