@@ -1,0 +1,211 @@
+{{ define "main" }}
+<section class="min-h-screen flex items-center py-12">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col lg:flex-row items-center gap-12">
+            <!-- Scholarly SVG Animation Column -->
+            <div class="w-full lg:w-1/3">
+                <div class="animate-float relative">
+                    <!-- Old Book Illustration -->
+                    <svg viewBox="0 0 400 400" class="w-full h-auto max-w-md mx-auto">
+                        <!-- Background Circle -->
+                        <circle cx="200" cy="200" r="180" fill="#F7F0E3" stroke="#C49D5C" stroke-width="2" opacity="0.3"/>
+                        
+                        <!-- Ancient Book -->
+                        <g transform="translate(100, 80)">
+                            <!-- Book Cover -->
+                            <rect x="0" y="0" width="200" height="260" rx="4" fill="#7C6138" stroke="#584327" stroke-width="2"/>
+                            <!-- Book Spine Decoration -->
+                            <rect x="0" y="0" width="30" height="260" fill="#584327"/>
+                            <line x1="30" y1="0" x2="30" y2="260" stroke="#B8860B" stroke-width="1"/>
+                            
+                            <!-- Book Title on Spine -->
+                            <text x="15" y="130" font-family="serif" font-size="14" fill="#B8860B" text-anchor="middle" transform="rotate(-90 15 130)">SUOMI-ENGLANTI</text>
+                            
+                            <!-- Book Pages -->
+                            <rect x="35" y="10" width="155" height="240" fill="#F4F1E8"/>
+                            <rect x="40" y="15" width="145" height="230" fill="#FBF8F1"/>
+                            
+                            <!-- Terminal Window on Book Page -->
+                            <g transform="translate(50, 40)">
+                                <rect x="0" y="0" width="120" height="80" rx="2" fill="#1A1612" stroke="#C49D5C" stroke-width="1"/>
+                                
+                                <!-- Terminal Content -->
+                                <text x="10" y="20" font-family="monospace" font-size="9" fill="#D7B473">
+                                    <tspan>$ taskusanakirja</tspan>
+                                </text>
+                                <text x="10" y="35" font-family="monospace" font-size="8" fill="#B8860B">
+                                    <tspan>╭─ Taskusanakirja ─╮</tspan>
+                                </text>
+                                <text x="10" y="48" font-family="monospace" font-size="8" fill="#EFE1C7">
+                                    <tspan>│ Search: koira_  │</tspan>
+                                </text>
+                                <text x="10" y="61" font-family="monospace" font-size="8" fill="#B8860B">
+                                    <tspan>╰─────────────────╯</tspan>
+                                </text>
+                                
+                                <!-- Cursor -->
+                                <rect x="10" y="60" width="5" height="10" fill="#B8860B">
+                                    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+                                </rect>
+                            </g>
+                            
+                            <!-- Decorative Elements -->
+                            <text x="100" y="150" font-family="serif" font-size="11" fill="#7C6138" text-anchor="middle" font-style="italic">taskusanakirja</text>
+                            
+                            <!-- Page Lines -->
+                            <line x1="50" y1="170" x2="170" y2="170" stroke="#E7D2AB" stroke-width="0.5"/>
+                            <line x1="50" y1="180" x2="170" y2="180" stroke="#E7D2AB" stroke-width="0.5"/>
+                            <line x1="50" y1="190" x2="170" y2="190" stroke="#E7D2AB" stroke-width="0.5"/>
+                            <line x1="50" y1="200" x2="170" y2="200" stroke="#E7D2AB" stroke-width="0.5"/>
+                        </g>
+                        
+                        <!-- Floating Etymology Words -->
+                        <g class="animate-pulse-slow">
+                            <text x="50" y="100" font-family="serif" font-size="14" fill="#7C2F3E" opacity="0.4" font-style="italic">lexicon</text>
+                            <text x="320" y="150" font-family="serif" font-size="14" fill="#2F4F4F" opacity="0.4" font-style="italic">sanakirja</text>
+                            <text x="80" y="320" font-family="serif" font-size="14" fill="#7C2F3E" opacity="0.4" font-style="italic">tasku</text>
+                            <text x="300" y="300" font-family="serif" font-size="14" fill="#2F4F4F" opacity="0.4" font-style="italic">lingua</text>
+                        </g>
+                        
+                        <!-- Quill Pen -->
+                        <g transform="translate(280, 250)" opacity="0.6">
+                            <path d="M0,0 Q-10,-20 -5,-40 L0,-35 Q5,-20 0,0" fill="#3A322A" stroke="#1A1612" stroke-width="1"/>
+                            <circle cx="0" cy="0" r="2" fill="#B8860B"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            
+            <!-- Content Column -->
+            <div class="w-full lg:w-2/3">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-ink-900 mb-6 leading-tight">
+                    Taskusanakirja: The Finnish-English dictionary you didn't know you needed
+                </h1>
+                
+                <p class="text-xl text-ink-700 mb-8 font-serif leading-relaxed">
+                    An elegant Terminal User Interface for Finnish lexicography. Navigate thousands of words with intuitive keyboard controls, or use powerful CLI commands for quick lookups.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                    <a href="/downloads/" class="btn-primary">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                        </svg>
+                        Download Taskusanakirja v0.0.6
+                    </a>
+                    
+                    <a href="https://quinnster43.gumroad.com/l/mfaqzr" class="btn-secondary">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                        </svg>
+                        Buy Taskusanakirja Pro (€15)
+                    </a>
+                </div>
+                
+                <!-- Quote -->
+                <blockquote class="border-l-4 border-ochre-600 pl-6 py-2 mb-8">
+                    <p class="text-lg font-serif italic text-ink-700">
+                        "Language is the archives of history... Language is fossil poetry."
+                    </p>
+                    <cite class="text-sm text-ochre-700 font-serif not-italic">— Ralph Waldo Emerson</cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-20 bg-ochre-50 dark:bg-ink-800 border-t-2 border-ochre-200 dark:border-ochre-800">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-display font-bold text-center mb-12 text-ink-900 dark:text-ochre-100 decorative-border">The Scholar's Companion</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-parchment dark:bg-ink-700 p-8 rounded shadow-sm border border-ochre-200 dark:border-ochre-700">
+                <div class="w-12 h-12 bg-ochre-200 dark:bg-ochre-800 rounded flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-forest dark:text-ochre-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-2 text-ink-900 dark:text-ochre-100">Swift as Thought</h3>
+                <p class="text-ink-700 dark:text-ochre-200 font-serif">Instant lexical retrieval for thousands of Finnish lemmata. No latency between curiosity and comprehension.</p>
+            </div>
+            
+            <div class="bg-parchment p-8 rounded shadow-sm border border-ochre-200">
+                <div class="w-12 h-12 bg-ochre-200 rounded flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-2 text-ink-900">Codex Digitalis</h3>
+                <p class="text-ink-700 font-serif">A command-line interface designed for the modern philologist. Where terminal meets terminology.</p>
+            </div>
+            
+            <div class="bg-parchment p-8 rounded shadow-sm border border-ochre-200">
+                <div class="w-12 h-12 bg-ochre-200 rounded flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-2 text-ink-900">Lemmatization Engine</h3>
+                <p class="text-ink-700 font-serif">Professional edition includes morphological analysis to decode even the most complex inflected forms.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo Section -->
+<section class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-display font-bold text-center mb-12 text-ink-900 decorative-border">Observe the Elegance</h2>
+        
+        <div class="max-w-3xl mx-auto">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot bg-burgundy"></div>
+                    <div class="terminal-dot bg-ochre-500"></div>
+                    <div class="terminal-dot bg-forest"></div>
+                </div>
+                <div class="code-block">
+                    <div class="mb-4">
+                        <span class="text-ochre-600 dark:text-ochre-400">$</span> taskusanakirja find talo koti
+                    </div>
+                    <div class="mb-6">
+                        <div class="font-semibold">talo</div>
+                        <div class="ml-4 text-ink-700 dark:text-ochre-200">house, building</div>
+                        <div class="ml-4 text-ink-700 dark:text-ochre-200">dwelling, residence</div>
+                        <div class="ml-4 text-ink-700 dark:text-ochre-200">household, family</div>
+                        
+                        <div class="font-semibold mt-4">koti</div>
+                        <div class="ml-4 text-ink-700 dark:text-ochre-200">home, house</div>
+                        <div class="ml-4 text-ink-700 dark:text-ochre-200">one's home, place of residence</div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <span class="text-ochre-600 dark:text-ochre-400">$</span> taskusanakirja lemma taloissa
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-forest dark:text-gold-leaf">✓ Pro feature active</div>
+                        <div class="mt-2">Analyzing: <span class="font-semibold">taloissa</span></div>
+                        <div class="ml-4 text-ink-700 dark:text-ochre-200">→ Base form: <span class="font-semibold">talo</span></div>
+                        <div class="ml-4 text-ink-600 dark:text-ochre-300 text-sm">Case: Inessive plural ("in the houses")</div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <span class="text-ochre-600 dark:text-ochre-400">$</span> taskusanakirja rfind morning
+                    </div>
+                    <div>
+                        <div class="text-ink-700 dark:text-ochre-200">Found 3 Finnish words:</div>
+                        <div class="ml-4 mt-2"><span class="font-semibold">aamu</span> - morning</div>
+                        <div class="ml-4"><span class="font-semibold">aamupäivä</span> - morning, forenoon</div>
+                        <div class="ml-4"><span class="font-semibold">huomen</span> - tomorrow, morning</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="text-center mt-8 text-ink-700 font-serif italic">
+            Experience the intersection of computational efficiency and lexicographical tradition.
+        </p>
+    </div>
+</section>
+{{ end }}

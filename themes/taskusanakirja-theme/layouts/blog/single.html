@@ -1,0 +1,74 @@
+{{ define "main" }}
+<article class="container mx-auto px-6 py-12">
+    <div class="max-w-3xl mx-auto">
+        <!-- Article Header -->
+        <header class="text-center mb-12 decorative-border pb-8">
+            <time class="text-sm text-ochre-700 font-mono">{{ .Date.Format "January 2, 2006" }}</time>
+            <h1 class="text-4xl md:text-5xl font-display font-bold mt-4 mb-6 text-ink-900">{{ .Title }}</h1>
+            
+            {{ with .Params.author }}
+            <p class="text-lg text-ink-700 font-serif italic">by {{ . }}</p>
+            {{ end }}
+            
+            {{ with .Params.tags }}
+            <div class="flex flex-wrap gap-2 mt-6 justify-center">
+                {{ range . }}
+                <span class="px-3 py-1 bg-ochre-200 text-ochre-800 text-sm rounded-full font-serif">{{ . }}</span>
+                {{ end }}
+            </div>
+            {{ end }}
+        </header>
+        
+        <!-- Article Content -->
+        <div class="prose prose-lg max-w-none">
+            {{ .Content }}
+        </div>
+        
+        <!-- Article Footer -->
+        <footer class="mt-16 pt-8 border-t-2 border-ochre-200">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Back to Blog -->
+                <a href="/blog/" class="inline-flex items-center text-burgundy hover:text-forest transition-colors duration-200 font-medium mb-4 md:mb-0">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                    </svg>
+                    Back to all writings
+                </a>
+                
+                <!-- Reading time -->
+                {{ if .Site.Params.ShowReadingTime }}
+                <span class="text-ochre-700 font-serif italic text-sm">
+                    {{ .ReadingTime }} minute read
+                </span>
+                {{ end }}
+            </div>
+            
+            <!-- Author Bio (if provided) -->
+            {{ with .Params.author_bio }}
+            <div class="mt-8 p-6 bg-ochre-50 rounded border border-ochre-200">
+                <h3 class="font-display font-semibold text-lg mb-2">About the Author</h3>
+                <p class="font-serif text-ink-700">{{ . }}</p>
+            </div>
+            {{ end }}
+        </footer>
+        
+        <!-- Related Posts -->
+        {{ $related := .Site.RegularPages.Related . | first 3 }}
+        {{ with $related }}
+        <section class="mt-16">
+            <h2 class="text-2xl font-display font-semibold mb-6 text-center">Further Reading</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                {{ range . }}
+                <a href="{{ .Permalink }}" class="block bg-ochre-50 p-6 rounded border border-ochre-200 hover:shadow-md transition-shadow duration-200">
+                    <time class="text-xs text-ochre-700 font-mono">{{ .Date.Format "Jan 2, 2006" }}</time>
+                    <h3 class="text-lg font-display font-semibold mt-2 text-ink-900 hover:text-burgundy transition-colors duration-200">
+                        {{ .Title }}
+                    </h3>
+                </a>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+    </div>
+</article>
+{{ end }}

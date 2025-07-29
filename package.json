@@ -1,0 +1,15 @@
+{
+  "name": "taskusanakirja-website",
+  "version": "1.0.0",
+  "description": "Taskusanakirja marketing website",
+  "scripts": {
+    "build-css": "tailwindcss -i ./themes/taskusanakirja-theme/assets/css/main.css -o ./themes/taskusanakirja-theme/assets/css/compiled.css --minify",
+    "watch-css": "tailwindcss -i ./themes/taskusanakirja-theme/assets/css/main.css -o ./themes/taskusanakirja-theme/assets/css/compiled.css --watch",
+    "build": "npm run build-css && hugo --minify",
+    "dev": "npm run watch-css & hugo server -D"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/typography": "^0.5.10"
+  }
+}

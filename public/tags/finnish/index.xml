@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Finnish on Taskusanakirja</title>
+    <link>http://localhost:1313/tags/finnish/</link>
+    <description>Recent content in Finnish on Taskusanakirja</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/finnish/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Etymology of &#39;Taskusanakirja&#39;: A Pocket-Sized Journey</title>
+      <link>http://localhost:1313/blog/welcome-to-taskusanakirja/</link>
+      <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/blog/welcome-to-taskusanakirja/</guid>
+      <description>&lt;p&gt;The word &lt;em&gt;taskusanakirja&lt;/em&gt; exemplifies the elegant compound nature of Finnish vocabulary. Breaking it down: &lt;em&gt;tasku&lt;/em&gt; (pocket) + &lt;em&gt;sanakirja&lt;/em&gt; (dictionary), it literally translates to &amp;ldquo;pocket dictionary&amp;rdquo;—a fitting name for a tool designed to be as accessible as reaching into one&amp;rsquo;s coat.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-components&#34;&gt;The Components&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tasku&lt;/strong&gt; derives from the Proto-Finnic *tasku, likely borrowed from an early Germanic source (compare Swedish &lt;em&gt;taska&lt;/em&gt;, &amp;ldquo;bag&amp;rdquo;). The semantic shift from &amp;ldquo;bag&amp;rdquo; to &amp;ldquo;pocket&amp;rdquo; reflects the evolution of clothing technology itself.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

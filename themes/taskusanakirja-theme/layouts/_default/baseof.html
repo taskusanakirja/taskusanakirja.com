@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ block "title" . }}{{ .Site.Title }} {{ with .Params.Title }} | {{ . }}{{ end }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+    
+    {{ hugo.Generator }}
+    
+    <link rel="stylesheet" href="{{ "css/compiled.css" | absURL }}">
+    
+    {{ block "head" . }}{{ end }}
+</head>
+<body class="bg-parchment dark:bg-ink-900 bg-paper-texture text-ink-900 dark:text-ochre-100 font-serif min-h-screen transition-colors duration-200">
+    {{ block "header" . }}
+    <header class="fixed top-0 left-0 right-0 z-50 bg-parchment/95 dark:bg-ink-900/95 backdrop-blur-sm border-b border-ochre-300 dark:border-ochre-800 shadow-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="{{ .Site.BaseURL }}" class="text-2xl font-display font-bold text-forest dark:text-ochre-300 hover:text-burgundy dark:hover:text-ochre-400 transition-colors duration-200">
+                    Taskusanakirja
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="text-ink-800 dark:text-ochre-200 hover:text-burgundy dark:hover:text-ochre-300 transition-colors duration-200 font-medium text-lg">
+                        {{ .Name }}
+                    </a>
+                    {{ end }}
+                    
+                    <!-- Dark mode toggle -->
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-ochre-100 dark:hover:bg-ink-800 transition-colors duration-200">
+                        <svg class="w-5 h-5 text-ochre-700 dark:text-ochre-300 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="w-5 h-5 text-ochre-700 dark:text-ochre-300 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="hidden md:hidden mt-4 pb-4 border-t border-ochre-200 pt-4" id="mobile-menu">
+                {{ range .Site.Menus.main }}
+                <a href="{{ .URL }}" class="block py-2 text-ink-800 hover:text-burgundy transition-colors duration-200 font-medium">
+                    {{ .Name }}
+                </a>
+                {{ end }}
+            </div>
+        </nav>
+    </header>
+    {{ end }}
+    
+    <main class="pt-20">
+        {{ block "main" . }}{{ end }}
+    </main>
+    
+    {{ block "footer" . }}
+    <footer class="bg-ochre-100 dark:bg-ink-800 border-t-4 border-ochre-300 dark:border-ochre-700 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p class="text-ink-700 dark:text-ochre-200 font-serif italic">&copy; {{ now.Year }} Taskusanakirja. All rights reserved.</p>
+                <p class="text-ink-600 dark:text-ochre-300 text-sm mt-2">A scholarly companion for Finnish language learners</p>
+            </div>
+        </div>
+    </footer>
+    {{ end }}
+    
+    <script>
+        // Dark mode toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Check for saved theme preference or browser preference
+        const storedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        // Use stored theme if available, otherwise use browser preference
+        const theme = storedTheme || (prefersDark ? 'dark' : 'light');
+        
+        if (theme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        // Listen for browser preference changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            // Only update if user hasn't manually set a preference
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+            }
+        });
+        
+        themeToggle.addEventListener('click', function() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+    
+    {{ block "scripts" . }}{{ end }}
+</body>
+</html>

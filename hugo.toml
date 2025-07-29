@@ -1,7 +1,7 @@
 baseURL = "https://taskusanakirja.com/"
 languageCode = "en-us"
 title = "Taskusanakirja"
-theme = "PaperMod"
+theme = "taskusanakirja-theme"
 
 [params]
   author = "Andrew Quinn"
@@ -13,17 +13,22 @@ theme = "PaperMod"
 
 [menu]
   [[menu.main]]
+    identifier = "details"
+    name = "Details"
+    url = "/details/"
+    weight = 10
+  [[menu.main]]
     identifier = "downloads"
     name = "Downloads"
     url = "/downloads/"
-    weight = 10
+    weight = 20
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 30
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 20
-  [[menu.main]]
-    identifier = "github"
-    name = "GitHub"
-    url = "https://github.com/hiAndrewQuinn/taskusanakirja"
-    weight = 30
+    weight = 40

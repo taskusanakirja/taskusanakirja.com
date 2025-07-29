@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taskusanakirja  | Command Reference</title>
+    <meta name="description" content="A powerful, terminal-based Finnish dictionary for language learners.">
+    
+    <meta name="generator" content="Hugo 0.148.2">
+    
+    <link rel="stylesheet" href="http://localhost:1313/css/compiled.css">
+    
+    
+</head>
+<body class="bg-parchment dark:bg-ink-900 bg-paper-texture text-ink-900 dark:text-ochre-100 font-serif min-h-screen transition-colors duration-200">
+    
+    <header class="fixed top-0 left-0 right-0 z-50 bg-parchment/95 dark:bg-ink-900/95 backdrop-blur-sm border-b border-ochre-300 dark:border-ochre-800 shadow-sm">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="http://localhost:1313/" class="text-2xl font-display font-bold text-forest dark:text-ochre-300 hover:text-burgundy dark:hover:text-ochre-400 transition-colors duration-200">
+                    Taskusanakirja
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    
+                    <a href="/details/" class="text-ink-800 dark:text-ochre-200 hover:text-burgundy dark:hover:text-ochre-300 transition-colors duration-200 font-medium text-lg">
+                        Details
+                    </a>
+                    
+                    <a href="/downloads/" class="text-ink-800 dark:text-ochre-200 hover:text-burgundy dark:hover:text-ochre-300 transition-colors duration-200 font-medium text-lg">
+                        Downloads
+                    </a>
+                    
+                    <a href="/blog/" class="text-ink-800 dark:text-ochre-200 hover:text-burgundy dark:hover:text-ochre-300 transition-colors duration-200 font-medium text-lg">
+                        Blog
+                    </a>
+                    
+                    <a href="/about/" class="text-ink-800 dark:text-ochre-200 hover:text-burgundy dark:hover:text-ochre-300 transition-colors duration-200 font-medium text-lg">
+                        About
+                    </a>
+                    
+                    
+                    
+                    <button id="theme-toggle" class="p-2 rounded-lg hover:bg-ochre-100 dark:hover:bg-ink-800 transition-colors duration-200">
+                        <svg class="w-5 h-5 text-ochre-700 dark:text-ochre-300 hidden dark:block" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path>
+                        </svg>
+                        <svg class="w-5 h-5 text-ochre-700 dark:text-ochre-300 block dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                
+                <button class="md:hidden" id="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            
+            
+            <div class="hidden md:hidden mt-4 pb-4 border-t border-ochre-200 pt-4" id="mobile-menu">
+                
+                <a href="/details/" class="block py-2 text-ink-800 hover:text-burgundy transition-colors duration-200 font-medium">
+                    Details
+                </a>
+                
+                <a href="/downloads/" class="block py-2 text-ink-800 hover:text-burgundy transition-colors duration-200 font-medium">
+                    Downloads
+                </a>
+                
+                <a href="/blog/" class="block py-2 text-ink-800 hover:text-burgundy transition-colors duration-200 font-medium">
+                    Blog
+                </a>
+                
+                <a href="/about/" class="block py-2 text-ink-800 hover:text-burgundy transition-colors duration-200 font-medium">
+                    About
+                </a>
+                
+            </div>
+        </nav>
+    </header>
+    
+    
+    <main class="pt-20">
+        
+<article class="container mx-auto px-6 py-12">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-bold mb-8">Command Reference</h1>
+        
+        <div class="prose prose-lg max-w-none">
+            <p>Taskusanakirja offers both an interactive Terminal User Interface (TUI) and powerful command-line tools for Finnish language exploration. Whether you prefer the immersive TUI experience or quick command-line lookups, every feature is designed with the scholarly linguist in mind.</p>
+<h2 id="interactive-tui-mode">Interactive TUI Mode</h2>
+<p>Launch Taskusanakirja without arguments to enter the beautiful, responsive Terminal User Interface:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ taskusanakirja
+</span></span></code></pre></div><p>The TUI provides:</p>
+<ul>
+<li><strong>Real-time search</strong> as you type</li>
+<li><strong>Keyboard navigation</strong> through results</li>
+<li><strong>Detailed word information</strong> with etymology when available</li>
+<li><strong>Cross-references</strong> to related words</li>
+<li><strong>History</strong> of your recent searches</li>
+</ul>
+<h2 id="command-line-interface">Command-Line Interface</h2>
+<p>For quick lookups and scripting, use Taskusanakirja&rsquo;s comprehensive CLI commands:</p>
+<h3 id="find---direct-word-lookup"><code>find</code> - Direct Word Lookup</h3>
+<p>Look up one or more Finnish words directly:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ taskusanakirja find kirja
+</span></span><span style="display:flex;"><span>kirja
+</span></span><span style="display:flex;"><span>  book, volume
+</span></span><span style="display:flex;"><span>  writing, scripture
+</span></span><span style="display:flex;"><span>  letter <span style="color:#f92672">(</span>correspondence<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ taskusanakirja find kieli sana
+</span></span><span style="display:flex;"><span>kieli
+</span></span><span style="display:flex;"><span>  language, tongue
+</span></span><span style="display:flex;"><span>  speech, idiom
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>anatomy<span style="color:#f92672">)</span> tongue
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>sana
+</span></span><span style="display:flex;"><span>  word
+</span></span><span style="display:flex;"><span>  term, expression
+</span></span><span style="display:flex;"><span>  promise, word of honor
+</span></span></code></pre></div><h3 id="rfind---reverse-lookup"><code>rfind</code> - Reverse Lookup</h3>
+<p>Find Finnish words by searching their English definitions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ taskusanakirja rfind book
+</span></span><span style="display:flex;"><span>Found <span style="color:#ae81ff">5</span> Finnish words:
+</span></span><span style="display:flex;"><span>  kirja - book, volume
+</span></span><span style="display:flex;"><span>  opus - book, opus, work
+</span></span><span style="display:flex;"><span>  teos - work, book, opus
+</span></span><span style="display:flex;"><span>  nide - volume, book
+</span></span><span style="display:flex;"><span>  albumi - album, book
+</span></span></code></pre></div><h3 id="lemma---inflection-analysis-pro"><code>lemma</code> - Inflection Analysis (Pro)</h3>
+<p>Discover the base form of inflected Finnish words:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ taskusanakirja lemma kirjoissa
+</span></span><span style="display:flex;"><span>✓ Pro feature active
+</span></span><span style="display:flex;"><span>Analyzing: kirjoissa
+</span></span><span style="display:flex;"><span>→ Base form: kirja
+</span></span><span style="display:flex;"><span>Case: Inessive plural <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;in the books&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ taskusanakirja lemma lukemassa
+</span></span><span style="display:flex;"><span>✓ Pro feature active
+</span></span><span style="display:flex;"><span>Analyzing: lukemassa
+</span></span><span style="display:flex;"><span>→ Base form: lukea
+</span></span><span style="display:flex;"><span>Form: Third infinitive inessive <span style="color:#f92672">(</span><span style="color:#e6db74">&#34;in the act of reading&#34;</span><span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="serve---web-interface"><code>serve</code> - Web Interface</h3>
+<p>Launch a local web server for browser-based access:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ taskusanakirja serve
+</span></span><span style="display:flex;"><span>Starting Taskusanakirja web server...
+</span></span><span style="display:flex;"><span>Listening on http://localhost:8080
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Open your browser to use Taskusanakirja with a web interface.
+</span></span><span style="display:flex;"><span>Press Ctrl+C to stop the server.
+</span></span></code></pre></div><h3 id="license---license-management"><code>license</code> - License Management</h3>
+<p>Manage your Taskusanakirja Pro license:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ taskusanakirja license status
+</span></span><span style="display:flex;"><span>License Status: Free Edition
+</span></span><span style="display:flex;"><span>Pro features: Disabled
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>$ taskusanakirja license set YOUR-LICENSE-KEY
+</span></span><span style="display:flex;"><span>License key validated successfully!
+</span></span><span style="display:flex;"><span>Pro features: Enabled
+</span></span><span style="display:flex;"><span>Lemmatizer database: Ready
+</span></span></code></pre></div><h3 id="completion---shell-integration"><code>completion</code> - Shell Integration</h3>
+<p>Generate shell completion scripts for enhanced command-line experience:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># For bash</span>
+</span></span><span style="display:flex;"><span>$ taskusanakirja completion bash &gt; /etc/bash_completion.d/taskusanakirja
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For zsh</span>
+</span></span><span style="display:flex;"><span>$ taskusanakirja completion zsh &gt; <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>fpath[1]<span style="color:#e6db74">}</span><span style="color:#e6db74">/_taskusanakirja&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># For fish</span>
+</span></span><span style="display:flex;"><span>$ taskusanakirja completion fish &gt; ~/.config/fish/completions/taskusanakirja.fish
+</span></span></code></pre></div><h2 id="pro-features">Pro Features</h2>
+<p>Taskusanakirja Pro unlocks advanced linguistic analysis:</p>
+<ul>
+<li><strong>Complete lemmatization</strong> of all Finnish word forms</li>
+<li><strong>Morphological analysis</strong> showing grammatical cases and forms</li>
+<li><strong>Etymology information</strong> when available</li>
+<li><strong>Advanced search filters</strong> in TUI mode</li>
+<li><strong>Priority support</strong> for linguistic researchers</li>
+</ul>
+<h2 id="command-options">Command Options</h2>
+<h3 id="global-flags">Global Flags</h3>
+<ul>
+<li><code>--debug</code> - Enable debug logging to <code>debug.log</code></li>
+<li><code>-h, --help</code> - Display help for any command</li>
+<li><code>-v, --version</code> - Show version information</li>
+</ul>
+<h3 id="quick-cli-mode">Quick CLI Mode</h3>
+<p>For the fastest lookups, provide words directly as arguments:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ taskusanakirja koira
+</span></span><span style="display:flex;"><span>koira
+</span></span><span style="display:flex;"><span>  dog
+</span></span><span style="display:flex;"><span>  hound
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">(</span>informal<span style="color:#f92672">)</span> poor fellow, wretch
+</span></span></code></pre></div><p>This is equivalent to <code>taskusanakirja find koira</code> but saves keystrokes for common use cases.</p>
+<h2 id="integration-tips">Integration Tips</h2>
+<h3 id="vim-integration">Vim Integration</h3>
+<p>Add to your <code>.vimrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-vim" data-lang="vim"><span style="display:flex;"><span><span style="color:#75715e">&#34; Look up Finnish word under cursor</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">nnoremap</span> &lt;<span style="color:#a6e22e">leader</span>&gt;<span style="color:#a6e22e">f</span> :!<span style="color:#a6e22e">taskusanakirja</span> &lt;<span style="color:#a6e22e">cword</span>&gt;&lt;<span style="color:#a6e22e">CR</span>&gt;
+</span></span></code></pre></div><h3 id="emacs-integration">Emacs Integration</h3>
+<p>Add to your Emacs configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span>(defun taskusanakirja-lookup ()
+</span></span><span style="display:flex;"><span>  <span style="color:#e6db74">&#34;Look up Finnish word at point&#34;</span>
+</span></span><span style="display:flex;"><span>  (interactive)
+</span></span><span style="display:flex;"><span>  (shell-command 
+</span></span><span style="display:flex;"><span>    (<span style="color:#a6e22e">format</span> <span style="color:#e6db74">&#34;taskusanakirja %s&#34;</span> (thing-at-point <span style="color:#e6db74">&#39;word</span>))))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>(global-set-key (kbd <span style="color:#e6db74">&#34;C-c f&#34;</span>) <span style="color:#e6db74">&#39;taskusanakirja-lookup</span>)
+</span></span></code></pre></div><h3 id="shell-aliases">Shell Aliases</h3>
+<p>Common aliases for your <code>.bashrc</code> or <code>.zshrc</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>alias tsk<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;taskusanakirja&#39;</span>
+</span></span><span style="display:flex;"><span>alias tskr<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;taskusanakirja rfind&#39;</span>
+</span></span><span style="display:flex;"><span>alias tskl<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;taskusanakirja lemma&#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Quick TUI launch</span>
+</span></span><span style="display:flex;"><span>alias finnish<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;taskusanakirja&#39;</span>
+</span></span></code></pre></div><h2 id="data-sources">Data Sources</h2>
+<p>Taskusanakirja&rsquo;s lexical database is compiled from scholarly sources and continuously refined. The Pro edition includes comprehensive morphological data covering over 2 million inflected forms mapped to their lemmas.</p>
+
+        </div>
+    </div>
+</article>
+
+    </main>
+    
+    
+    <footer class="bg-ochre-100 dark:bg-ink-800 border-t-4 border-ochre-300 dark:border-ochre-700 py-12 mt-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <p class="text-ink-700 dark:text-ochre-200 font-serif italic">&copy; 2025 Taskusanakirja. All rights reserved.</p>
+                <p class="text-ink-600 dark:text-ochre-300 text-sm mt-2">A scholarly companion for Finnish language learners</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    <script>
+        
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        
+        const storedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+        
+        const theme = storedTheme || (prefersDark ? 'dark' : 'light');
+        
+        if (theme === 'dark') {
+            html.classList.add('dark');
+        }
+        
+        
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            
+            if (!localStorage.getItem('theme')) {
+                if (e.matches) {
+                    html.classList.add('dark');
+                } else {
+                    html.classList.remove('dark');
+                }
+            }
+        });
+        
+        themeToggle.addEventListener('click', function() {
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+        
+        
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+    
+    
+</body>
+</html>

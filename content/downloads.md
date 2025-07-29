@@ -1,5 +1,6 @@
 ---
 title: "Downloads"
+layout: "downloads"
 ---
 
 ### 1. Download the Application
