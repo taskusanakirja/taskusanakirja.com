@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Taskusanakirja: A Finnish Dictionary for the Command Line on Taskusanakirja</title>
-    <link>http://localhost:32927/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content in Taskusanakirja: A Finnish Dictionary for the Command Line on Taskusanakirja</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 15 Jan 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:32927/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>The Etymology of &#39;Taskusanakirja&#39;: A Pocket-Sized Journey</title>
-      <link>http://localhost:32927/blog/welcome-to-taskusanakirja/</link>
+      <link>http://localhost:1313/blog/welcome-to-taskusanakirja/</link>
       <pubDate>Mon, 15 Jan 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:32927/blog/welcome-to-taskusanakirja/</guid>
+      <guid>http://localhost:1313/blog/welcome-to-taskusanakirja/</guid>
       <description>&lt;p&gt;The word &lt;em&gt;taskusanakirja&lt;/em&gt; exemplifies the elegant compound nature of Finnish vocabulary. Breaking it down: &lt;em&gt;tasku&lt;/em&gt; (pocket) + &lt;em&gt;sanakirja&lt;/em&gt; (dictionary), it literally translates to &amp;ldquo;pocket dictionary&amp;rdquo;—a fitting name for a tool designed to be as accessible as reaching into one&amp;rsquo;s coat.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-components&#34;&gt;The Components&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;Tasku&lt;/strong&gt; derives from the Proto-Finnic *tasku, likely borrowed from an early Germanic source (compare Swedish &lt;em&gt;taska&lt;/em&gt;, &amp;ldquo;bag&amp;rdquo;). The semantic shift from &amp;ldquo;bag&amp;rdquo; to &amp;ldquo;pocket&amp;rdquo; reflects the evolution of clothing technology itself.&lt;/p&gt;</description>
     </item>
     <item>
       <title>About Taskusanakirja</title>
-      <link>http://localhost:32927/about/</link>
+      <link>http://localhost:1313/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:32927/about/</guid>
+      <guid>http://localhost:1313/about/</guid>
       <description>&lt;p&gt;My name is Andrew Quinn, and I&amp;rsquo;m a software consultant and Finnish language learner living in Tampere, Finland.&lt;/p&gt;&#xA;&lt;p&gt;I created &lt;strong&gt;Taskusanakirja&lt;/strong&gt; because I wanted a dictionary that fit my workflow as a developer. I spend all day in the terminal, and I wanted a tool that was as fast and efficient as the other command-line utilities I rely on.&lt;/p&gt;&#xA;&lt;p&gt;This project is part of my larger goal to build better software tools for Finnish language learners. You can find more of my work at &lt;a href=&#34;http://finbug.xyz/&#34;&gt;finbug.xyz&lt;/a&gt; and &lt;a href=&#34;https://siilikuin.com/&#34;&gt;siilikuin.com&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Command Reference</title>
-      <link>http://localhost:32927/details/</link>
+      <link>http://localhost:1313/details/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:32927/details/</guid>
+      <guid>http://localhost:1313/details/</guid>
       <description>&lt;p&gt;Taskusanakirja offers both an interactive Terminal User Interface (TUI) and powerful command-line tools for Finnish language exploration. Whether you prefer the immersive TUI experience or quick command-line lookups, every feature is designed with the scholarly linguist in mind.&lt;/p&gt;&#xA;&lt;h2 id=&#34;interactive-tui-mode&#34;&gt;Interactive TUI Mode&lt;/h2&gt;&#xA;&lt;p&gt;Launch Taskusanakirja without arguments to enter the beautiful, responsive Terminal User Interface:&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;$ taskusanakirja&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The TUI provides:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Real-time search&lt;/strong&gt; as you type&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Keyboard navigation&lt;/strong&gt; through results&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Detailed word information&lt;/strong&gt; with etymology when available&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cross-references&lt;/strong&gt; to related words&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;History&lt;/strong&gt; of your recent searches&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;command-line-interface&#34;&gt;Command-Line Interface&lt;/h2&gt;&#xA;&lt;p&gt;For quick lookups and scripting, use Taskusanakirja&amp;rsquo;s comprehensive CLI commands:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Downloads</title>
-      <link>http://localhost:32927/downloads/</link>
+      <link>http://localhost:1313/downloads/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:32927/downloads/</guid>
+      <guid>http://localhost:1313/downloads/</guid>
       <description>&lt;h3 id=&#34;1-download-the-application&#34;&gt;1. Download the Application&lt;/h3&gt;&#xA;&lt;p&gt;Download the latest version of Taskusanakirja for your operating system.&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/hiAndrewQuinn/taskusanakirja/releases/latest/download/taskusanakirja-darwin-arm64&#34;&gt;Download for macOS (Apple Silicon)&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/hiAndrewQuinn/taskusanakirja/releases/latest/download/taskusanakirja-darwin-amd64&#34;&gt;Download for macOS (Intel)&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/hiAndrewQuinn/taskusanakirja/releases/latest/download/taskusanakirja-linux-amd64&#34;&gt;Download for Linux&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/hiAndrewQuinn/taskusanakirja/releases/latest/download/taskusanakirja-windows-amd64.exe&#34;&gt;Download for Windows&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;After downloading, move the executable to a directory in your system&amp;rsquo;s &lt;code&gt;PATH&lt;/code&gt; (e.g., &lt;code&gt;/usr/local/bin&lt;/code&gt; or &lt;code&gt;C:\Program Files\taskusanakirja&lt;/code&gt;).&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;2-unlock-pro-features&#34;&gt;2. Unlock Pro Features&lt;/h3&gt;&#xA;&lt;p&gt;To enable the powerful inflection search (&lt;code&gt;Etsi perusmuoto&lt;/code&gt;), you need a &lt;strong&gt;Taskusanakirja Pro&lt;/strong&gt; license.&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://quinnster43.gumroad.com/l/mfaqzr&#34;&gt;➡️ Purchase Taskusanakirja Pro for €15&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
   </channel>

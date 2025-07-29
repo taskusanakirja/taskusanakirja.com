@@ -2,33 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:32927/tags/etymology/</loc>
+    <loc>http://localhost:1313/tags/etymology/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:32927/tags/finnish/</loc>
+    <loc>http://localhost:1313/tags/finnish/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:32927/tags/lexicography/</loc>
+    <loc>http://localhost:1313/tags/lexicography/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:32927/tags/</loc>
+    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:32927/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:32927/blog/welcome-to-taskusanakirja/</loc>
+    <loc>http://localhost:1313/blog/welcome-to-taskusanakirja/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:32927/blog/</loc>
+    <loc>http://localhost:1313/blog/</loc>
     <lastmod>2024-01-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:32927/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
   </url><url>
-    <loc>http://localhost:32927/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:32927/details/</loc>
+    <loc>http://localhost:1313/details/</loc>
   </url><url>
-    <loc>http://localhost:32927/downloads/</loc>
+    <loc>http://localhost:1313/downloads/</loc>
   </url>
 </urlset>

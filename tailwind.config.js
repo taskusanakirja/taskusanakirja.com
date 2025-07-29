@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'parchment': '#F4F1E8',
+        'parchment': '#000000',
         'ochre': {
           50: '#FBF8F1',
           100: '#F7F0E3',
