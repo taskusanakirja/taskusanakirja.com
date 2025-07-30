@@ -35,7 +35,27 @@
     @apply text-ochre-300;
   }
   
-  /* Prose dark mode is now handled by the prose-invert class in Tailwind config */
+  /* Explicit dark mode prose styles */
+  .dark .prose {
+    --tw-prose-body: #f7f0e3;
+    --tw-prose-headings: #f7f0e3;
+    --tw-prose-lead: #efe1c7;
+    --tw-prose-links: #e7d2ab;
+    --tw-prose-bold: #f7f0e3;
+    --tw-prose-counters: #dfc38f;
+    --tw-prose-bullets: #dfc38f;
+    --tw-prose-hr: #a07f49;
+    --tw-prose-quotes: #efe1c7;
+    --tw-prose-quote-borders: #dfc38f;
+    --tw-prose-captions: #e7d2ab;
+    --tw-prose-kbd: #f7f0e3;
+    --tw-prose-kbd-shadows: 247 240 227;
+    --tw-prose-code: #efe1c7;
+    --tw-prose-pre-code: #efe1c7;
+    --tw-prose-pre-bg: #2a241e;
+    --tw-prose-th-borders: #a07f49;
+    --tw-prose-td-borders: #7c6138;
+  }
 }
 
 @layer components {

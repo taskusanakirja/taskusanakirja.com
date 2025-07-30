@@ -5,8 +5,9 @@
   "scripts": {
     "build-css": "tailwindcss -i ./themes/taskusanakirja-theme/assets/css/main.css -o ./themes/taskusanakirja-theme/assets/css/compiled.css --minify",
     "watch-css": "tailwindcss -i ./themes/taskusanakirja-theme/assets/css/main.css -o ./themes/taskusanakirja-theme/assets/css/compiled.css --watch",
-    "build": "npm run build-css && hugo --minify",
-    "dev": "npm run watch-css & hugo server -D"
+    "build": "npm run build-css && npm run check-prose && hugo --minify",
+    "dev": "npm run watch-css & hugo server -D",
+    "check-prose": "node scripts/check-prose-invert.js"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.16",
