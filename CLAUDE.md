@@ -101,11 +101,25 @@ removed to maintain consistency with the design decision.
 
 ### Development Workflow
 
-1. Run `npm run dev` to start both Hugo server and Tailwind watcher
-2. Edit content in `/content/` or templates in theme layouts
-3. Tailwind automatically recompiles CSS on template changes
-4. Hugo automatically rebuilds on content/template changes
-5. View changes at `http://localhost:1313/`
+1. **IMPORTANT**: If CSS changes aren't showing, run `rm -rf public/ && npm run dev`
+2. Run `npm run dev` to start both Hugo server and Tailwind watcher
+3. Edit content in `/content/` or templates in theme layouts
+4. Tailwind automatically recompiles CSS on template changes
+5. Hugo automatically rebuilds on content/template changes
+6. View changes at `http://localhost:1313/`
+
+### Troubleshooting CSS Issues
+
+**First course of action for any CSS problems**: Run `rm -rf public/ && npm run dev`
+
+The `public/` directory can cache old CSS files that prevent new styles from appearing.
+
+**CRITICAL: Check for duplicate CSS files in static/ vs assets/ directories**
+- If CSS changes aren't reflecting after rebuilding, IMMEDIATELY check for duplicate `compiled.css` files
+- The correct location is `/themes/taskusanakirja-theme/assets/css/compiled.css` (where Tailwind outputs)
+- Delete any old file at `/themes/taskusanakirja-theme/static/css/compiled.css` 
+- Hugo's asset pipeline (`resources.Get`) should be used in templates, NOT direct static file references
+- This has been a recurring issue - always check this FIRST when CSS changes don't appear
 
 ### Deployment Workflow
 
