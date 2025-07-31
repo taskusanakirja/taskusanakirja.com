@@ -11,6 +11,9 @@ theme = "taskusanakirja-theme"
     endLevel = 3
     ordered = false
     startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [params]
   author = "Andrew Quinn"
@@ -31,12 +34,17 @@ theme = "taskusanakirja-theme"
     url = "/downloads/"
     weight = 20
   [[menu.main]]
+    identifier = "data-sources"
+    name = "Data Sources"
+    url = "/data-sources/"
+    weight = 30
+  [[menu.main]]
     identifier = "blog"
     name = "Blog"
     url = "/blog/"
-    weight = 30
+    weight = 40
   [[menu.main]]
     identifier = "about"
     name = "About"
     url = "/about/"
-    weight = 40
+    weight = 50
