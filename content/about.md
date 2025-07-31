@@ -6,23 +6,25 @@ description:
   Finnish-English dictionary tool."
 ---
 
-My name is [Andrew Quinn](https://andrew-quinn.me/). I'm a software consultant and passionate Finnish language learner living here in Tampere, Finland. I do software consulting under [Siilikuin](https://siilikuin.com/).
+My name is [Andrew Quinn](https://andrew-quinn.me/). I'm a software developer and Finnish language learner living in Tampere, Finland. I do software consulting under [Siilikuin](https://siilikuin.com/).
 
 ## Our Origin Story
 
-I created **Taskusanakirja** out of a personal need. As someone who spends their day in a terminal, I grew frustrated with the workflow of switching to a web browser every time I needed to look up a Finnish word. I wanted a dictionary that was as fast as my other command-line tools, but also completely portable - a single file that would work on any system.
+I created the first version of **Taskusanakirja** out of personal desire. I grew frustrated with constantly switching to a web browser every time I needed to look up a Finnish word (and I was looking up a lot of words in the first few years). I wanted a dictionary that could search as fast as I could type. I also wanted it totally portable - a single file that would work on any system I found myself dancing on.
 
-This project began as an experiment: could I build a dictionary that felt native to a developer's environment while being truly portable? Ironically, a terminal interface turned out to be the perfect solution - a single executable file that runs identically on Linux, macOS, and Windows. The result is what you see today.
+Ironically, a full-screen command prompt (terminal) interface turned out to be the perfect solution. Windows, Mac and Linux all have their own crazy ways of making desktop GUIs, but it turns out a terminal program works great on all of them! The result is what you see today.
 
 ## Our Philosophy: Fast, Specific, and Supportive
 
-At its core, Taskusanakirja embodies a simple belief: software should be **fast**, **specific**, and **supportive**.
+Taskusanakirja embodies a belief that software should be **fast**, **specific**, and **supportive**.
 
-The "fast" part might seem trivial - until you do the math. By keeping everything local and eliminating network latency, each lookup saves perhaps 3-5 seconds compared to loading Wiktionary. Look up 20 words while reading a newspaper article? That's a minute saved. Over months of language learning, I've reclaimed _dozens of hours_ that would have been lost to loading screens.
+**Taskusanakirja is _fast_.** So fast it can search as fast as you or me or anyone can type. And fast seems trivial until you do the math: Compared to looking things up online, each lookup saves a minimum of 3-5 seconds, and usually closer to 30. Look up 20 words while reading a newspaper article? That's anywhere between 1 and 10 minutes saved. Over months of language learning, I've reclaimed _dozens_ of hours that would have been lost to loading web browsers - all time that gets funneled back into actually engaging with Finnish.
 
-But here's the thing that might surprise you: this speed isn't just about efficiency when reading on-screen. The instantaneous response makes Taskusanakirja practical for looking up words while reading a **physical book or newspaper**. No more losing your place while a webpage loads. No more breaking your concentration. Just type, get your answer, and return to your reading - whether that's code, a novel, or your morning Helsingin Sanomat.
+**Taskusanakirja is _specific_.** Platforms like Duolingo try to be all things to all people. We don't. We aim squarely at _serious_ language learners who want to climb the mountain. Focusing on Finnish instead of making a dictionary that can do all languages is how we keep the focus that lets us code things like the "go deeper" search feature, which embeds related words in a way that saves you a second lookup 90% of the time.
 
-The name itself - _tasku_ (pocket) + _sanakirja_ (dictionary) - captures this portability. Your terminal becomes a pocket dictionary that's always at hand, always ready, never loading.
+**Taskusanakirja is _supportive_.** We do our job and get out of your way. Believe it or not, one major reason this tool has been sharpened to an obsidian edge is to support reading _physical_ media - it is much, much more pleasant to read a challenging book or copy of Helsingin Sanomat when you know you can find any word you need as fast as you can hammer it out on a keyboard.
+
+Speed changes how you interact with a tool. A truly instant-feeling tool enhances the state of flow. The instantaneous response makes Taskusanakirja practical for looking up words while reading not just on a screen, but even a physical book or newspaper with your laptop open on the side. No more losing your pace while a webpage loads. No more breaking your concentration. Type, learn, and return.
 
 ## Built on a Foundation of Openness
 
@@ -30,10 +32,10 @@ This tool stands on the shoulders of giants. Its linguistic data is sourced enti
 
 ## Supporting the Mission
 
-The core of Taskusanakirja is free and will remain so. The development, data processing, and hosting are supported by sales of the **Taskusanakirja Pro** license, which unlocks advanced features like the complete inflection database.
+The core pocket dictionayr of Taskusanakirja is free and will alwyas remain so. Development, data science, and hosting are supported by sales of the **Taskusanakirja Pro** license, which unlocks advanced features like the complete inflection database. (This is a big deal if you don't always know what e.g. "paisutuksinensa" comes from.)
 
 We deliberately chose a one-time payment model to fight against subscription fatigue. Taskusanakirja Pro has no monthly fees, no recurring charges, and no dark patterns. Pro licenses are designed with long stretches of offline, deep study in mind, up to 30 days at a time. Taskusanakirja performs minimal network calls necessary to prevent piracy of the paid part of the software.
 
 If you find value in this tool, please consider [purchasing a Pro license](/downloads/) to support its continued development.
 
-Kiitos, kun kokeilit Taskusanakirjaa!
+## Kiitos, kun kokeilit Taskusanakirjaa! 📚
