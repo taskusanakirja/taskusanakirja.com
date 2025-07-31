@@ -11,8 +11,7 @@ designed with the scholarly linguist in mind.
 
 ## Interactive TUI Mode
 
-Launch Taskusanakirja without arguments to enter the beautiful, responsive
-Terminal User Interface:
+By default, running Taskusanakirja without any arguments launches the beautiful, responsive Terminal User Interface:
 
 ```bash
 taskusanakirja
@@ -246,18 +245,37 @@ Taskusanakirja Pro unlocks advanced linguistic analysis:
 - `-h, --help` - Display help for any command
 - `-v, --version` - Show version information
 
-### Quick CLI Mode
+## Complete Command Reference
 
-For the fastest lookups, provide words directly as arguments:
+Here's the full output of `taskusanakirja help` showing all available commands and options:
 
-```bash
-$ taskusanakirja koira
-koira
-  dog
-  hound
-  (informal) poor fellow, wretch
+```
+taskusanakirja is an interactive and command-line Finnish dictionary.
+
+    Run without arguments to launch the interactive TUI, or provide words
+    as arguments to get their definitions directly.
+
+Usage:
+  taskusanakirja [word...] [flags]
+  taskusanakirja [command]
+
+Available Commands:
+  completion           Generate the autocompletion script for the specified shell
+  download-inflections Download the inflections database
+  find                 Look up definitions for one or more Finnish words.
+  help                 Help about any command
+  lemma                Find the base form (lemma) of an inflected Finnish word.
+  license              Manage the application license.
+  rfind                Find Finnish words by searching their English definitions.
+  serve                Run a local web server to use taskusanakirja in a browser.
+  tui                  Launch the interactive Terminal User Interface.
+
+Flags:
+      --debug     Enable debug logging to debug.log
+  -h, --help      help for taskusanakirja
+  -v, --version   version for taskusanakirja
+
+Use "taskusanakirja [command] --help" for more information about a command.
 ```
 
-This is equivalent to `taskusanakirja find koira` but saves keystrokes for
-common use cases.
 
