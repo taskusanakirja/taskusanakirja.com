@@ -4,54 +4,61 @@ description: "Information about Taskusanakirja's lexical data sources and downlo
 layout: "single"
 ---
 
-## Our Lexical Foundation
+## Data Sources
 
-Taskusanakirja's comprehensive Finnish-English dictionary is built upon data sourced from Wiktionary, the collaborative multilingual dictionary project. All linguistic data in Taskusanakirja is derived from Wiktionary's Finnish and English language entries, which are generously made available under the Creative Commons Attribution-ShareAlike (CC BY-SA) license.
+### Our Lexical Foundation: Wiktionary
 
-## Open Data Commitment
+Taskusanakirja's comprehensive Finnish-English dictionary is built upon data sourced from [Wiktionary](https://en.wiktionary.org/), the collaborative multilingual dictionary project. According to [Wiktionary's own copyright policy](https://en.wiktionary.org/wiki/Wiktionary:Copyrights), the original text of its entries is **dual-licensed** to the public under both the **[Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/)** and the **[GNU Free Documentation License (GFDL)](https://www.gnu.org/licenses/fdl-1.3.html)**, Version 1.1 or any later version.
 
-In the spirit of open collaboration and in accordance with the CC BY-SA license requirements, we make our processed data freely available to the community:
+This dual-license framework ensures that the data will remain free forever and can be used by anyone, subject to the conditions of those licenses. As a user of Taskusanakirja's derived dictionary data, you must comply with the terms of *both* licenses, which primarily require that you attribute the source and share any derivative works under the same licenses.
 
-### Inflection Database
+### Example Sentences: Tatoeba
 
-Our complete Finnish inflection database, containing over 2 million inflected forms mapped to their base lemmas, is available for download. This database powers the lemmatization features in Taskusanakirja Pro and represents extensive computational linguistic processing of Wiktionary's morphological data.
+To provide real-world context, Taskusanakirja embeds example sentences sourced from the [Tatoeba project](https://tatoeba.org/), an open, collaborative database of sentences and translations.
 
-- **Format**: SQLite database
-- **License**: CC BY-SA (same as source)
-- **Download**: [Coming soon]
+**License for Sentences**  
+The vast majority of textual sentences from Tatoeba are licensed under the **[Creative Commons Attribution 2.0 France (CC-BY 2.0 FR)](https://creativecommons.org/licenses/by/2.0/fr/deed.en)** license.
 
-### Dictionary Trie Data
+This license grants you the freedom to:
+- **Share:** Copy and redistribute the sentences.
+- **Adapt:** Remix, transform, and build upon the sentences.
+- **Use Commercially:** Use the sentences for any purpose, including commercial ones.
 
-The JSON file used to generate the efficient trie data structure embedded in Taskusanakirja's free edition is also available. This contains the core Finnish-English mappings in a format suitable for further computational processing.
+**Attribution for Sentences**  
+The core requirement of the CC-BY license is **attribution**. When you use a sentence from Tatoeba, you must give appropriate credit by citing the original author of that sentence. Taskusanakirja provides this attribution for every example sentence displayed.
 
-- **Format**: JSON
-- **License**: CC BY-SA (same as source)
-- **Download**: [Coming soon]
+**Disclaimer**  
+As stated in their [Terms of Use](https://tatoeba.org/eng/terms_of_use), Tatoeba is a community-driven project. The validity and accuracy of sentences and their translations are not guaranteed by any professional intervention. They are provided for linguistic utility and should be used with this understanding.
 
-## Attribution and License
+## Open Data Commitment & Commercial Use
 
-All dictionary content in Taskusanakirja is derived from Wiktionary and is licensed under the Creative Commons Attribution-ShareAlike license. This means:
+The licenses for both Wiktionary and Tatoeba data permit commercial use. The "free" in their licenses refers to freedom, not price.
 
-- You are free to share and adapt the data
-- You must give appropriate credit to Wiktionary
-- If you transform or build upon the data, you must distribute your contributions under the same license
+Therefore, while the data itself is licensed for free use, we may charge a fee for the service of accessing our processed, curated, and conveniently packaged datasets. This fee covers our development, hosting, and maintenance costs. Any data you purchase and download from us remains under its original open licenses, granting you all the freedoms that come with them.
 
-When using Taskusanakirja's data or any Wiktionary-derived content, please provide attribution to both Wiktionary and Taskusanakirja.
+## Available Datasets
 
-## Data Processing
+- **Inflection Database (Available with Taskusanakirja Pro):** Our complete Finnish inflection database, derived from Wiktionary.
+  - **Format:** SQLite database
+  - **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) & [GFDL](https://www.gnu.org/licenses/fdl-1.3.html)
+  - **Download:** Available with a purchase of Taskusanakirja Pro.
+- **Dictionary Trie Data (Available with Taskusanakirja Pro):** The core dictionary data file, derived from Wiktionary.
+  - **Format:** JSON
+  - **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) & [GFDL](https://www.gnu.org/licenses/fdl-1.3.html)
+  - **Download:** Available with a purchase of Taskusanakirja Pro.
+- **Tatoeba Example Sentences Database:** Our curated collection of Finnish-English example sentences from Tatoeba.
+  - **Format:** SQLite database
+  - **License:** [CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/deed.en)
+  - **Download:** Available with a purchase of Taskusanakirja Pro.
 
-While the source data comes from Wiktionary, Taskusanakirja adds value through:
+## Attribution and Your Obligations
 
-- Sophisticated parsing and structuring of dictionary entries
-- Morphological analysis and lemmatization algorithms
-- Efficient data structures optimized for terminal interfaces
-- Cross-referencing and linking of related entries
-- Filtering and curation for Finnish language learners
+When using Taskusanakirja's derived data, you must provide attribution and comply with the respective license terms for each data source (Wiktionary and/or Tatoeba).
 
 ## Contributing Back
 
-We encourage users to contribute improvements back to Wiktionary, strengthening the open linguistic data ecosystem that makes tools like Taskusanakirja possible. Every enhancement to Wiktionary's Finnish entries ultimately benefits all users of Finnish language resources.
+We strongly encourage users to contribute improvements back to the source projects. Strengthening the open linguistic data ecosystems of **[Wiktionary](https://en.wiktionary.org/)** and **[Tatoeba](https://tatoeba.org/)** is what makes tools like Taskusanakirja possible.
 
 ## Questions?
 
-If you have questions about data licensing, need the data in a different format, or want to discuss large-scale usage, please contact us at support@taskusanakirja.com.
+If you have questions about data licensing, need the data in a different format, or want to discuss large-scale usage, please contact us at [support@taskusanakirja.com](mailto:support@taskusanakirja.com).
