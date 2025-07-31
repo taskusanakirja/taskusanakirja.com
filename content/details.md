@@ -4,17 +4,22 @@ description: "A comprehensive guide to all Taskusanakirja commands and features"
 layout: "single"
 ---
 
-Taskusanakirja offers both an interactive Terminal User Interface (TUI) and powerful command-line tools for Finnish language exploration. Whether you prefer the immersive TUI experience or quick command-line lookups, every feature is designed with the scholarly linguist in mind.
+Taskusanakirja offers both an interactive Terminal User Interface (TUI) and
+powerful command-line tools for Finnish language exploration. Whether you prefer
+the immersive TUI experience or quick command-line lookups, every feature is
+designed with the scholarly linguist in mind.
 
 ## Interactive TUI Mode
 
-Launch Taskusanakirja without arguments to enter the beautiful, responsive Terminal User Interface:
+Launch Taskusanakirja without arguments to enter the beautiful, responsive
+Terminal User Interface:
 
 ```bash
-$ taskusanakirja
+taskusanakirja
 ```
 
 The TUI provides:
+
 - **Real-time search** as you type
 - **Keyboard navigation** through results
 - **Detailed word information** with etymology when available
@@ -23,7 +28,8 @@ The TUI provides:
 
 ## Command-Line Interface
 
-For quick lookups and scripting, use Taskusanakirja's comprehensive CLI commands:
+For quick lookups and scripting, use Taskusanakirja's comprehensive CLI
+commands:
 
 ### `find` - Direct Word Lookup
 
@@ -41,7 +47,7 @@ kieli
   language, tongue
   speech, idiom
   (anatomy) tongue
-  
+
 sana
   word
   term, expression
@@ -153,7 +159,8 @@ koira
   (informal) poor fellow, wretch
 ```
 
-This is equivalent to `taskusanakirja find koira` but saves keystrokes for common use cases.
+This is equivalent to `taskusanakirja find koira` but saves keystrokes for
+common use cases.
 
 ## Integration Tips
 
@@ -174,7 +181,7 @@ Add to your Emacs configuration:
 (defun taskusanakirja-lookup ()
   "Look up Finnish word at point"
   (interactive)
-  (shell-command 
+  (shell-command
     (format "taskusanakirja %s" (thing-at-point 'word))))
 
 (global-set-key (kbd "C-c f") 'taskusanakirja-lookup)
@@ -195,4 +202,6 @@ alias finnish='taskusanakirja'
 
 ## Data Sources
 
-Taskusanakirja's lexical database is compiled from scholarly sources and continuously refined. The Pro edition includes comprehensive morphological data covering over 2 million inflected forms mapped to their lemmas.
+Taskusanakirja's lexical database is compiled from scholarly sources and
+continuously refined. The Pro edition includes comprehensive morphological data
+covering over 2 million inflected forms mapped to their lemmas.
