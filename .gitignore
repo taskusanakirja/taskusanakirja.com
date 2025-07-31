@@ -40,3 +40,4 @@ build/
 
 # Worktree directories
 .worktrees/
+hugo_stats.json
