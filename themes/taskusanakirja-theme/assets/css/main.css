@@ -17,6 +17,45 @@
   .dark {
     @apply bg-ink-900 text-ochre-100;
   }
+  
+  /* Ensure all text colors work in dark mode */
+  .dark .text-ink-900 {
+    @apply text-ochre-100;
+  }
+  
+  .dark .text-ink-800 {
+    @apply text-ochre-100;
+  }
+  
+  .dark .text-ink-700 {
+    @apply text-ochre-200;
+  }
+  
+  .dark .text-ink-600 {
+    @apply text-ochre-300;
+  }
+  
+  /* Explicit dark mode prose styles */
+  .dark .prose {
+    --tw-prose-body: #f7f0e3;
+    --tw-prose-headings: #f7f0e3;
+    --tw-prose-lead: #efe1c7;
+    --tw-prose-links: #e7d2ab;
+    --tw-prose-bold: #f7f0e3;
+    --tw-prose-counters: #dfc38f;
+    --tw-prose-bullets: #dfc38f;
+    --tw-prose-hr: #a07f49;
+    --tw-prose-quotes: #efe1c7;
+    --tw-prose-quote-borders: #dfc38f;
+    --tw-prose-captions: #e7d2ab;
+    --tw-prose-kbd: #f7f0e3;
+    --tw-prose-kbd-shadows: 247 240 227;
+    --tw-prose-code: #efe1c7;
+    --tw-prose-pre-code: #efe1c7;
+    --tw-prose-pre-bg: #2a241e;
+    --tw-prose-th-borders: #a07f49;
+    --tw-prose-td-borders: #7c6138;
+  }
 }
 
 @layer components {
@@ -68,5 +107,24 @@
   .decorative-border::after {
     content: '';
     @apply absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-ochre-600 to-transparent;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
 }

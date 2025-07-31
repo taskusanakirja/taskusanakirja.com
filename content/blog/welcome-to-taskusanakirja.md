@@ -4,6 +4,8 @@ date: 2024-01-15
 author: "Andrew Quinn"
 tags: ["etymology", "Finnish", "lexicography"]
 draft: false
+layout: "single"
+description: "Exploring the linguistic roots of 'taskusanakirja' and how a pocket dictionary evolved for the digital age."
 ---
 
 The word *taskusanakirja* exemplifies the elegant compound nature of Finnish vocabulary. Breaking it down: *tasku* (pocket) + *sanakirja* (dictionary), it literally translates to "pocket dictionary"—a fitting name for a tool designed to be as accessible as reaching into one's coat.

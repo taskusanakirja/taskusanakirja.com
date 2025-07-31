@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "Taskusanakirja"
 theme = "taskusanakirja-theme"
 
+[build]
+  writeStats = true
+
 [params]
   author = "Andrew Quinn"
   description = "A powerful, terminal-based Finnish dictionary for language learners."

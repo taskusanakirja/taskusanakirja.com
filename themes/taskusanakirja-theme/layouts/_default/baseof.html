@@ -40,7 +40,7 @@
                 </div>
                 
                 <!-- Mobile menu button -->
-                <button class="md:hidden" id="mobile-menu-button">
+                <button class="md:hidden text-ink-800 dark:text-ochre-200" id="mobile-menu-button">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -48,9 +48,9 @@
             </div>
             
             <!-- Mobile menu -->
-            <div class="hidden md:hidden mt-4 pb-4 border-t border-ochre-200 pt-4" id="mobile-menu">
+            <div class="hidden md:hidden mt-4 pb-4 border-t border-ochre-200 dark:border-ochre-700 pt-4" id="mobile-menu">
                 {{ range .Site.Menus.main }}
-                <a href="{{ .URL }}" class="block py-2 text-ink-800 hover:text-burgundy transition-colors duration-200 font-medium">
+                <a href="{{ .URL }}" class="block py-2 text-ink-800 dark:text-ochre-200 hover:text-burgundy dark:hover:text-ochre-300 transition-colors duration-200 font-medium">
                     {{ .Name }}
                 </a>
                 {{ end }}

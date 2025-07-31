@@ -2,13 +2,14 @@
 module.exports = {
   darkMode: 'class',
   content: [
+    './hugo_stats.json',
     './themes/taskusanakirja-theme/layouts/**/*.html',
     './content/**/*.md',
   ],
   theme: {
     extend: {
       colors: {
-        'parchment': '#F4F1E8',
+        'parchment': '#000000',
         'ochre': {
           50: '#FBF8F1',
           100: '#F7F0E3',
@@ -49,31 +50,47 @@ module.exports = {
           '50%': { transform: 'translateY(-20px)' },
         }
       },
-      typography: {
+      typography: (theme) => ({
         DEFAULT: {
           css: {
             fontFamily: 'Crimson Text, Georgia, serif',
             fontSize: '1.125rem',
             lineHeight: '1.75',
-            color: '#1A1612',
+            color: theme('colors.ink.900'),
             h1: {
               fontFamily: 'Playfair Display, Georgia, serif',
               fontWeight: '700',
+              color: theme('colors.ink.900'),
             },
             h2: {
               fontFamily: 'Playfair Display, Georgia, serif',
               fontWeight: '600',
+              color: theme('colors.ink.900'),
             },
             h3: {
               fontFamily: 'Playfair Display, Georgia, serif',
               fontWeight: '600',
+              color: theme('colors.ink.900'),
+            },
+            h4: {
+              color: theme('colors.ink.900'),
+            },
+            h5: {
+              color: theme('colors.ink.900'),
+            },
+            h6: {
+              color: theme('colors.ink.900'),
+            },
+            strong: {
+              color: theme('colors.ink.900'),
             },
             blockquote: {
               fontStyle: 'italic',
-              borderLeftColor: '#C49D5C',
+              borderLeftColor: theme('colors.ochre.600'),
+              color: theme('colors.ink.800'),
             },
             a: {
-              color: '#7C2F3E',
+              color: theme('colors.burgundy'),
               textDecoration: 'underline',
               textDecorationThickness: '1px',
               textUnderlineOffset: '2px',
@@ -83,14 +100,101 @@ module.exports = {
             },
             code: {
               fontFamily: 'IBM Plex Mono, monospace',
-              backgroundColor: '#F7F0E3',
+              backgroundColor: theme('colors.ochre.100'),
+              color: theme('colors.ink.900'),
               padding: '0.125rem 0.25rem',
               borderRadius: '0.25rem',
               fontSize: '0.875em',
             },
+            'code::before': {
+              content: '""',
+            },
+            'code::after': {
+              content: '""',
+            },
+            pre: {
+              backgroundColor: theme('colors.ink.900'),
+              color: theme('colors.ochre.200'),
+            },
+            thead: {
+              borderBottomColor: theme('colors.ochre.300'),
+            },
+            tbody: {
+              tr: {
+                borderBottomColor: theme('colors.ochre.200'),
+              },
+            },
+            li: {
+              '&::marker': {
+                color: theme('colors.ochre.600'),
+              },
+            },
           },
         },
-      },
+        invert: {
+          css: {
+            color: theme('colors.ochre.100'),
+            '[class~="lead"]': {
+              color: theme('colors.ochre.200'),
+            },
+            a: {
+              color: theme('colors.ochre.300'),
+              '&:hover': {
+                color: theme('colors.ochre.200'),
+              },
+            },
+            strong: {
+              color: theme('colors.ochre.100'),
+            },
+            'ol > li::marker': {
+              color: theme('colors.ochre.400'),
+            },
+            'ul > li::marker': {
+              color: theme('colors.ochre.400'),
+            },
+            hr: {
+              borderColor: theme('colors.ochre.700'),
+            },
+            blockquote: {
+              color: theme('colors.ochre.200'),
+              borderLeftColor: theme('colors.ochre.400'),
+            },
+            h1: {
+              color: theme('colors.ochre.100'),
+            },
+            h2: {
+              color: theme('colors.ochre.100'),
+            },
+            h3: {
+              color: theme('colors.ochre.100'),
+            },
+            h4: {
+              color: theme('colors.ochre.100'),
+            },
+            'figure figcaption': {
+              color: theme('colors.ochre.300'),
+            },
+            code: {
+              color: theme('colors.ochre.100'),
+              backgroundColor: theme('colors.ink.800'),
+            },
+            'a code': {
+              color: theme('colors.ochre.300'),
+            },
+            pre: {
+              color: theme('colors.ochre.200'),
+              backgroundColor: theme('colors.ink.800'),
+            },
+            thead: {
+              color: theme('colors.ochre.100'),
+              borderBottomColor: theme('colors.ochre.700'),
+            },
+            'tbody tr': {
+              borderBottomColor: theme('colors.ochre.800'),
+            },
+          },
+        },
+      }),
     },
   },
   plugins: [
