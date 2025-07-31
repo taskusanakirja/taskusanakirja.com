@@ -35,12 +35,6 @@ fontFamily: {
 To add new Google Fonts, update the `<link>` tags in theme layouts at
 `/themes/taskusanakirja-theme/layouts/partials/head.html`.
 
-## Dark Mode Colors
-
-Dark mode uses Tailwind's `dark:` prefix. Add dark mode variants in your HTML:
-
-- `dark:bg-gray-800` - Dark backgrounds
-- `dark:text-gray-100` - Light text in dark mode
 
 ## Applying Changes
 

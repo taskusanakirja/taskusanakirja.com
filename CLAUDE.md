@@ -20,7 +20,7 @@ npm install
 # Start development server with Tailwind CSS watch (RECOMMENDED)
 npm run dev
 
-# Build the site for production (includes CSS build and prose-invert check)
+# Build the site for production (includes CSS build)
 npm run build
 ```
 
@@ -32,9 +32,6 @@ npm run build-css
 
 # Watch CSS changes
 npm run watch-css
-
-# Check prose-invert styles (runs automatically during build)
-npm run check-prose
 
 # Start Hugo server only
 hugo server -D
@@ -97,16 +94,10 @@ The build process involves:
 - **GitHub Action Bug**: `.github/workflows/hugo.yml` references `main` branch
   but should be `master`
 
-### Dark Mode Implementation
+### No Dark Mode
 
-The site uses Tailwind's class-based dark mode with custom prose-invert styles:
-
-- Dark mode toggle controlled by `defaultTheme` in hugo.toml (currently "auto")
-- Custom prose-invert typography defined in tailwind.config.js
-- Script `check-prose-invert.js` validates dark mode styles are compiled
-  correctly
-- Critical for dark mode: templates must use `dark:prose-invert` class on prose
-  elements
+This site does not support dark mode. Any dark mode related code should be
+removed to maintain consistency with the design decision.
 
 ### Development Workflow
 
@@ -126,7 +117,5 @@ The site uses Tailwind's class-based dark mode with custom prose-invert styles:
 
 ### Testing and Validation
 
-- `npm run check-prose` - Validates dark mode typography styles
-- The build script runs this check automatically
-- Expects 40+ prose-invert occurrences in compiled CSS
-- Critical styles must be present for dark mode to work
+- `npm run test-no-dark-mode` - Validates that no dark mode code exists
+- Run this test after making changes to ensure dark mode hasn't been reintroduced

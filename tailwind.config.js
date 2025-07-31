@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: 'class',
   content: [
     './hugo_stats.json',
     './themes/taskusanakirja-theme/layouts/**/*.html',
@@ -9,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'parchment': '#000000',
+        'parchment': '#FBF8F1',
         'ochre': {
           50: '#FBF8F1',
           100: '#F7F0E3',
@@ -128,69 +127,6 @@ module.exports = {
               '&::marker': {
                 color: theme('colors.ochre.600'),
               },
-            },
-          },
-        },
-        invert: {
-          css: {
-            color: theme('colors.ochre.100'),
-            '[class~="lead"]': {
-              color: theme('colors.ochre.200'),
-            },
-            a: {
-              color: theme('colors.ochre.300'),
-              '&:hover': {
-                color: theme('colors.ochre.200'),
-              },
-            },
-            strong: {
-              color: theme('colors.ochre.100'),
-            },
-            'ol > li::marker': {
-              color: theme('colors.ochre.400'),
-            },
-            'ul > li::marker': {
-              color: theme('colors.ochre.400'),
-            },
-            hr: {
-              borderColor: theme('colors.ochre.700'),
-            },
-            blockquote: {
-              color: theme('colors.ochre.200'),
-              borderLeftColor: theme('colors.ochre.400'),
-            },
-            h1: {
-              color: theme('colors.ochre.100'),
-            },
-            h2: {
-              color: theme('colors.ochre.100'),
-            },
-            h3: {
-              color: theme('colors.ochre.100'),
-            },
-            h4: {
-              color: theme('colors.ochre.100'),
-            },
-            'figure figcaption': {
-              color: theme('colors.ochre.300'),
-            },
-            code: {
-              color: theme('colors.ochre.100'),
-              backgroundColor: theme('colors.ink.800'),
-            },
-            'a code': {
-              color: theme('colors.ochre.300'),
-            },
-            pre: {
-              color: theme('colors.ochre.200'),
-              backgroundColor: theme('colors.ink.800'),
-            },
-            thead: {
-              color: theme('colors.ochre.100'),
-              borderBottomColor: theme('colors.ochre.700'),
-            },
-            'tbody tr': {
-              borderBottomColor: theme('colors.ochre.800'),
             },
           },
         },
