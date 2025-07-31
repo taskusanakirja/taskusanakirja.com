@@ -23,6 +23,10 @@
     @apply inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-ink-900 transition-all duration-200 bg-ochre-300 border-2 border-ochre-300 rounded hover:bg-ochre-400 hover:border-ochre-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ochre-500;
   }
   
+  .badge-pro {
+    @apply inline-flex items-center px-3 py-1 text-sm font-semibold text-parchment bg-burgundy rounded-full;
+  }
+  
   .terminal-window {
     @apply bg-white rounded shadow-lg overflow-hidden border border-ochre-300;
   }

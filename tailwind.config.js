@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         'parchment': '#FBF8F1',
+        'slate': '#2F4F4F',
         'ochre': {
           50: '#FBF8F1',
           100: '#F7F0E3',
