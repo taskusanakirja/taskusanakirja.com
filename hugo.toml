@@ -6,6 +6,12 @@ theme = "taskusanakirja-theme"
 [build]
   writeStats = true
 
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+
 [params]
   author = "Andrew Quinn"
   description = "A powerful, terminal-based Finnish dictionary for language learners."
