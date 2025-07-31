@@ -33,44 +33,143 @@ commands:
 
 ### `find` - Direct Word Lookup
 
-Look up one or more Finnish words directly:
+Look up one or more Finnish words directly with complete linguistic detail. You don't need to know the part of speech beforehand - just type the word as you encountered it, and Taskusanakirja will show all possible forms and meanings:
 
 ```bash
 $ taskusanakirja find kirja
-kirja
-  book, volume
-  writing, scripture
-  letter (correspondence)
+---
+kirja (noun)
 
-$ taskusanakirja find kieli sana
-kieli
-  language, tongue
-  speech, idiom
-  (anatomy) tongue
+- book (collection of sheets of paper bound together containing printed or written material)
+- book (long work fit for publication)
+- book (major division of a long work)
+- book (record of betting)
+- document
+- quire (twenty-five, or rarely twenty-four, sheets of paper of the same size and quality)
 
-sana
-  word
-  term, expression
-  promise, word of honor
+---
 ```
+
+Multiple words can be looked up in a single command:
+
+```bash
+$ taskusanakirja find kieli sana
+---
+kieli (noun)
+
+- language (form of communication)
+- language, tongue (manner of expression; particular words or structures used in a speech or a passage of text)
+- language, tongue (particular form of oral or spoken communication used by a community)
+- tang, tongue, projecting part
+- clapper, clanger, tongue (in a bell)
+- pointer, needle (on a balance scale)
+- reed (vibrating part in the mouthpiece of a woodwind instrument)
+- string (tightly tensioned wire that produces a tone)
+- tongue (in a shoe)
+- tongue (organ)
+
+kieli (verb)
+
+- inflection of kieliä:
+  ~> kieliä (noun)
+      - partitive plural of kieli
+         ~> kieli (noun)
+             - language (form of communication)
+             - language, tongue (manner of expression; particular words or structures used in a speech or a passage of text)
+             - language, tongue (particular form of oral or spoken communication used by a community)
+             - tang, tongue, projecting part
+             - clapper, clanger, tongue (in a bell)
+             - pointer, needle (on a balance scale)
+             - reed (vibrating part in the mouthpiece of a woodwind instrument)
+             - string (tightly tensioned wire that produces a tone)
+             - tongue (in a shoe)
+             - tongue (organ)
+         ~> kieli (verb)
+             - inflection of kieliä:
+             - present active indicative connegative
+             - second-person singular present active imperative connegative
+             - second-person singular present imperative
+             - third-person singular past indicative
+  ~> kieliä (verb)
+      - to indicate, suggest
+      - to inform, snitch, gossip about
+- present active indicative connegative
+- second-person singular present active imperative connegative
+- second-person singular present imperative
+- third-person singular past indicative
+
+---
+sana (noun)
+
+- lesson (section of the Bible or other religious text read as part of a divine service)
+- lyrics (words to a song)
+- word; say (figuratively: someone's opinion or statement, especially a decisive or emphatic one, or a promise)
+- Word, Scripture
+- word (unit of language, text or storage)
+
+---
+```
+
+#### "Go Deeper" Feature
+
+Taskusanakirja's unique "go deeper" functionality automatically expands inflected forms to show their base forms and related meanings. Notice how `kieli` as a verb is traced back through its inflections:
+
+```
+- inflection of kieliä:
+  ~> kieliä (noun)
+      - partitive plural of kieli
+         ~> kieli (noun)
+             - language (form of communication)
+             ...
+```
+
+This nested display helps language learners understand the relationships between different word forms and their root meanings.
+
+#### Designed for Language Learners
+
+Notice how `kieli` appears as both a noun and a verb in the results above. Taskusanakirja understands that Finnish learners often don't know which part of speech they're looking at - is "kieli" a noun meaning "language" or a verb form? The tool shows you all possibilities, letting you quickly recognize the correct meaning from context. This approach eliminates the guesswork and frustration common with traditional dictionaries that require you to know the grammatical category beforehand.
 
 ### `rfind` - Reverse Lookup
 
-Find Finnish words by searching their English definitions:
+Find Finnish words by searching their English definitions. Perfect for when you're thinking "What's the Finnish word for...?" or when you're trying to expand your vocabulary in a specific topic area:
 
 ```bash
-$ taskusanakirja rfind book
-Found 5 Finnish words:
-  kirja - book, volume
-  opus - book, opus, work
-  teos - work, book, opus
-  nide - volume, book
-  albumi - album, book
+$ taskusanakirja rfind 'dog paddle'
+Found 2 word(s) with definitions containing 'dog paddle':
+---
+koira
+koiranuinti
+---
 ```
 
-### `lemma` - Inflection Analysis (Pro)
+You can then look up the found words to see their full definitions:
 
-Discover the base form of inflected Finnish words:
+```bash
+$ taskusanakirja find koira koiranuinti
+---
+koira (noun)
+
+- dog (Canis lupus familiaris)
+- Ellipsis of koiranuinti ("dog paddle (swimming stroke)").
+  ~> koiranuinti (noun)
+      - dog paddle (swimming stroke)
+- military police
+
+---
+koiranuinti (noun)
+
+- dog paddle (swimming stroke)
+
+---
+```
+
+#### Why Reverse Lookup Matters
+
+Reverse lookup is invaluable for active language production. When writing or speaking Finnish, you often know the concept you want to express but can't recall the Finnish word. Rather than reaching for a translation app, `rfind` helps you discover authentic Finnish vocabulary. In the example above, searching for "dog paddle" reveals not just the compound word `koiranuinti` but also that `koira` itself can refer to this swimming stroke through ellipsis - a natural language pattern you might never discover through direct translation.
+
+### `lemma` - Inflection Analysis (Pro only)
+
+Discover the base form of inflected Finnish words. **You must have a Taskusanakirja Pro license to use the inflection database.**
 
 ```bash
 $ taskusanakirja lemma kirjoissa
@@ -86,7 +185,7 @@ Analyzing: lukemassa
 Form: Third infinitive inessive ("in the act of reading")
 ```
 
-### `serve` - Web Interface
+### `serve` - Web Interface (Beta)
 
 Launch a local web server for browser-based access:
 
@@ -162,46 +261,3 @@ koira
 This is equivalent to `taskusanakirja find koira` but saves keystrokes for
 common use cases.
 
-## Integration Tips
-
-### Vim Integration
-
-Add to your `.vimrc`:
-
-```vim
-" Look up Finnish word under cursor
-nnoremap <leader>f :!taskusanakirja <cword><CR>
-```
-
-### Emacs Integration
-
-Add to your Emacs configuration:
-
-```elisp
-(defun taskusanakirja-lookup ()
-  "Look up Finnish word at point"
-  (interactive)
-  (shell-command
-    (format "taskusanakirja %s" (thing-at-point 'word))))
-
-(global-set-key (kbd "C-c f") 'taskusanakirja-lookup)
-```
-
-### Shell Aliases
-
-Common aliases for your `.bashrc` or `.zshrc`:
-
-```bash
-alias tsk='taskusanakirja'
-alias tskr='taskusanakirja rfind'
-alias tskl='taskusanakirja lemma'
-
-# Quick TUI launch
-alias finnish='taskusanakirja'
-```
-
-## Data Sources
-
-Taskusanakirja's lexical database is compiled from scholarly sources and
-continuously refined. The Pro edition includes comprehensive morphological data
-covering over 2 million inflected forms mapped to their lemmas.
