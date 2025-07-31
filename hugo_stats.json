@@ -20,7 +20,6 @@
       "header",
       "hr",
       "html",
-      "img",
       "li",
       "link",
       "main",
@@ -36,7 +35,8 @@
       "svg",
       "time",
       "title",
-      "ul"
+      "ul",
+      "video"
     ],
     "classes": [
       "backdrop-blur-sm",
