@@ -171,18 +171,46 @@ Reverse lookup is invaluable for active language production. When writing or spe
 Discover the base form of inflected Finnish words. **You must have a Taskusanakirja Pro license to use the inflection database.**
 
 ```bash
-$ taskusanakirja lemma kirjoissa
-✓ Pro feature active
-Analyzing: kirjoissa
-→ Base form: kirja
-Case: Inessive plural ("in the books")
-
-$ taskusanakirja lemma lukemassa
-✓ Pro feature active
-Analyzing: lukemassa
-→ Base form: lukea
-Form: Third infinitive inessive ("in the act of reading")
+$ taskusanakirja lemma kirjoissa    # pro feature only
+Found possible base form(s) for 'kirjoissa':
+---
+kirjoissa ~> kirjoissa
+kirjoissa ~> kirja
+kirjoissa ~> kirjo
+kirjoissaan ~> kirja
+kirjoissaan ~> kirjo
+kirjoissani ~> kirja
+kirjoissani ~> kirjo
+kirjoissasi ~> kirja
+kirjoissasi ~> kirjo
+kirjoissamme ~> kirja
+kirjoissamme ~> kirjo
+kirjoissanne ~> kirja
+kirjoissanne ~> kirjo
+kirjoissansa ~> kirja
+kirjoissansa ~> kirjo
+---
+$ taskusanakirja lemma lukemassa    # pro feature only
+Found possible base form(s) for 'lukemassa':
+---
+lukemassa ~> lukea
+lukemassa ~> lukema
+lukemassaan ~> lukema
+lukemassani ~> lukema
+lukemassasi ~> lukema
+lukemassamme ~> lukema
+lukemassanne ~> lukema
+lukemassansa ~> lukema
+---
 ```
+
+#### Why Lemmatization Matters
+
+Finnish is one of the world's more morphologically complex languages. Tolkien wasn't obsessed with it for no reason!
+
+Not only is each noun, pronoun, and adjective ("nominals") capable of taking at least 15 cases across singular and plural forms, but there is a slew of possibly stem-affecting personal possessive suffixes and enclitics which must be considered. Verbs similarly conjugate across persons, tenses, and moods - potentially generating hundreds of distinct surface forms from a single root word. And don't even get us started on the controversial adverbial cases. This brick wall of complexity is a formidable barrier to entry - but with a capable lemmatizer by your side, you can practice and learn to intuit the rules much more sharply.
+
+When encountering "kirjoissaan" in a text, a learner must recognize it as the inessive case of "kirja" (book) with a possessive suffix, not a completely different word. Without automatic lemmatization, looking up inflected forms becomes an exercise in frustration, requiring learners to mentally reverse-engineer grammatical transformations before they can even find the dictionary entry. For foreign professionals working in Finnish environments, this tool transforms what would be dozens of failed lookups into instant comprehension, letting them focus on understanding content rather than wrestling with morphology.
 
 ### `serve` - Web Interface (Beta)
 
@@ -277,5 +305,3 @@ Flags:
 
 Use "taskusanakirja [command] --help" for more information about a command.
 ```
-
-
