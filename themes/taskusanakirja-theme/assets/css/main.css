@@ -56,6 +56,23 @@
     content: '';
     @apply absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-0.5 bg-gradient-to-r from-transparent via-ochre-600 to-transparent;
   }
+  
+  /* Scrollable table wrapper */
+  .table-wrapper {
+    @apply overflow-x-auto -mx-4 px-4 sm:mx-0 sm:px-0;
+  }
+  
+  .table-wrapper table {
+    @apply min-w-full;
+  }
+  
+  .table-wrapper th {
+    @apply whitespace-nowrap;
+  }
+  
+  .table-wrapper td {
+    @apply whitespace-nowrap;
+  }
 }
 
 @layer utilities {
