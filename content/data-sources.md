@@ -41,15 +41,15 @@ Therefore, while the data itself is licensed for free use, we may charge a fee f
 - **Inflection Database (Available with Taskusanakirja Pro):** Our complete Finnish inflection database, derived from Wiktionary.
   - **Format:** SQLite database
   - **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) & [GFDL](https://www.gnu.org/licenses/fdl-1.3.html)
-  - **Download:** Available with a purchase of Taskusanakirja Pro.
+  - **Download:** Available upon request with a purchase of Taskusanakirja Pro.
 - **Dictionary Trie Data (Available with Taskusanakirja Pro):** The core dictionary data file, derived from Wiktionary.
   - **Format:** JSON
   - **License:** [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) & [GFDL](https://www.gnu.org/licenses/fdl-1.3.html)
-  - **Download:** Available with a purchase of Taskusanakirja Pro.
+  - **Download:** Available upon request with a purchase of Taskusanakirja Pro.
 - **Tatoeba Example Sentences Database:** Our curated collection of Finnish-English example sentences from Tatoeba.
   - **Format:** SQLite database
   - **License:** [CC BY 2.0 FR](https://creativecommons.org/licenses/by/2.0/fr/deed.en)
-  - **Download:** Available with a purchase of Taskusanakirja Pro.
+  - **Download:** Available upon request with a purchase of Taskusanakirja Pro.
 
 ## Attribution and Your Obligations
 

@@ -32,7 +32,7 @@ This tool stands on the shoulders of giants. Its linguistic data is sourced enti
 
 ## Supporting the Mission
 
-The core pocket dictionayr of Taskusanakirja is free and will alwyas remain so. Development, data science, and hosting are supported by sales of the **Taskusanakirja Pro** license, which unlocks advanced features like the complete inflection database. (This is a big deal if you don't always know what e.g. "paisutuksinensa" comes from.)
+The core pocket dictionary of Taskusanakirja is free and will always remain so. Development, data science, and hosting are supported by sales of the **Taskusanakirja Pro** license, which unlocks advanced features like the complete inflection database. (This is a big deal if you don't always know what e.g. "paisutuksinensa" comes from.)
 
 We deliberately chose a one-time payment model to fight against subscription fatigue. Taskusanakirja Pro has no monthly fees, no recurring charges, and no dark patterns. Pro licenses are designed with long stretches of offline, deep study in mind, up to 30 days at a time. Taskusanakirja performs minimal network calls necessary to prevent piracy of the paid part of the software.
 
