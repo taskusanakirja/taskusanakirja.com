@@ -1,0 +1,50 @@
+baseURL = "https://taskusanakirja.com/"
+languageCode = "en-us"
+title = "Taskusanakirja"
+theme = "taskusanakirja-theme"
+
+[build]
+  writeStats = true
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[params]
+  author = "Andrew Quinn"
+  description = "A powerful, terminal-based Finnish dictionary for language learners."
+  ShowShareButtons = false
+  ShowReadingTime = false
+  ShowPostNavLinks = false
+
+[menu]
+  [[menu.main]]
+    identifier = "details"
+    name = "Details"
+    url = "/details/"
+    weight = 10
+  [[menu.main]]
+    identifier = "downloads"
+    name = "Downloads"
+    url = "/downloads/"
+    weight = 20
+  [[menu.main]]
+    identifier = "data-sources"
+    name = "Data Sources"
+    url = "/data-sources/"
+    weight = 30
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 40
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 50

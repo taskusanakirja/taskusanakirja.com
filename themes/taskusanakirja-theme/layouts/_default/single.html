@@ -1,0 +1,20 @@
+{{ define "main" }}
+<article class="container mx-auto px-6 py-12">
+    <div class="max-w-3xl mx-auto">
+        <h1 class="text-4xl font-bold mb-8 text-ink-900">{{ .Title }}</h1>
+        
+        {{ if and (gt .WordCount 400) (gt (len .TableOfContents) 200) }}
+        <div class="mb-8 p-6 bg-sand-100 rounded-lg border border-sand-200">
+            <h2 class="text-xl font-semibold mb-4 text-ink-900">Table of Contents</h2>
+            <div class="prose prose-sm text-ink-700">
+                {{ .TableOfContents }}
+            </div>
+        </div>
+        {{ end }}
+        
+        <div class="prose prose-lg max-w-none">
+            {{ .Content }}
+        </div>
+    </div>
+</article>
+{{ end }}

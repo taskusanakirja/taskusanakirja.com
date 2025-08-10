@@ -1,0 +1,160 @@
+{{ define "main" }}
+<!-- Hero Section with GIF -->
+<section class="flex flex-col" style="min-height: min(100vh, 900px);">
+    <!-- GIF takes up available space -->
+    <div class="flex-1 flex items-center justify-center p-4" style="min-height: 200px;">
+        <video class="max-w-full h-auto object-contain shadow-2xl" style="max-height: calc(100vh - 400px);" autoplay loop muted playsinline>
+          <source src="https://files.taskusanakirja.com/taskusanakirja.webm" type="video/webm">
+          <source src="https://files.taskusanakirja.com/taskusanakirja.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+    </div>
+    
+    <!-- Content at bottom -->
+    <div class="mt-4 md:mt-8 mb-8 md:mb-12">
+        <div class="container mx-auto px-6">
+            <!-- Subtle separator line -->
+            <div class="w-32 h-0.5 bg-ochre-400 mx-auto mb-4 md:mb-8"></div>
+            
+            <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-ink-900 mb-3 md:mb-6 leading-tight text-center">
+                Taskusanakirja: The Finnish-English dictionary you didn't know you needed
+            </h1>
+            
+            <p class="text-base md:text-lg text-ink-700 mb-6 md:mb-10 font-serif leading-relaxed text-center max-w-3xl mx-auto">
+                An elegant Terminal User Interface for Finnish lexicography. Navigate thousands of words with intuitive keyboard controls, or use powerful CLI commands for quick lookups. Available for Mac, Linux, and Windows (really!).
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 md:mb-12">
+                <a href="/downloads/" class="btn-primary inline-flex items-center justify-center px-8 py-3">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                    </svg>
+                    Download Taskusanakirja v0.0.6
+                </a>
+                
+                <a href="https://quinnster43.gumroad.com/l/mfaqzr" class="btn-secondary inline-flex items-center justify-center px-8 py-3">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                    </svg>
+                    Buy Taskusanakirja Pro (€15)
+                </a>
+            </div>
+            
+            <!-- Quote with more spacing -->
+            <div class="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-ochre-200">
+                <blockquote class="border-l-4 border-ochre-600 pl-6 py-2 max-w-2xl mx-auto">
+                    <p class="text-base md:text-lg font-serif italic text-ink-700">
+                        "Opi nyt, vanha ja nuori, / jolla ompi sydän tuore, [...] Lue siis, hyvä lapsi, tästä / alkuoppi ilman estettä."
+                    </p>
+                    <p class="text-xs md:text-sm text-ochre-600 font-serif mt-2">
+                        (Learn now, old and young, / who have a fresh heart, [...] Read then, good child, from this / the beginning of the Finnish language without hindrance.)
+                    </p>
+                    <cite class="text-sm md:text-base text-ochre-700 font-serif not-italic">— Mikael Agricola, Abckiria (1543)</cite>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-20 bg-ochre-50 border-t-2 border-ochre-200">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-display font-bold text-center mb-12 text-ink-900 decorative-border">The Scholar's Companion</h2>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-parchment p-8 rounded shadow-sm border border-ochre-200">
+                <div class="w-12 h-12 bg-ochre-200 rounded flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-2 text-ink-900">Swift as Thought</h3>
+                <p class="text-ink-700 font-serif">Instant lexical retrieval for thousands of Finnish lemmata. No latency between curiosity and comprehension.</p>
+            </div>
+            
+            <div class="bg-parchment p-8 rounded shadow-sm border border-ochre-200">
+                <div class="w-12 h-12 bg-ochre-200 rounded flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-2 text-ink-900">Codex Digitalis</h3>
+                <p class="text-ink-700 font-serif">A command-line interface designed for the modern philologist. Where terminal meets terminology.</p>
+            </div>
+            
+            <div class="bg-parchment p-8 rounded shadow-sm border border-ochre-200">
+                <div class="w-12 h-12 bg-ochre-200 rounded flex items-center justify-center mb-4">
+                    <svg class="w-6 h-6 text-forest" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-display font-semibold mb-2 text-ink-900">Lemmatization Engine</h3>
+                <p class="text-ink-700 font-serif">Professional edition includes morphological analysis to decode even the most complex inflected forms.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Demo Section -->
+<section class="py-20">
+    <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-display font-bold text-center mb-12 text-ink-900 decorative-border">Observe the Elegance</h2>
+        
+        <div class="max-w-3xl mx-auto">
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-dot bg-burgundy"></div>
+                    <div class="terminal-dot bg-ochre-500"></div>
+                    <div class="terminal-dot bg-forest"></div>
+                </div>
+                <div class="code-block">
+                    <div class="mb-4">
+                        <span class="text-ochre-600">$</span> taskusanakirja lemma taloissamme <span class="text-ink-600 text-sm"># pro only</span>
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-ink-700">Found possible base form(s) for 'taloissamme':</div>
+                        <div class="text-ink-700">---</div>
+                        <div class="text-ink-900">Taloissamme ~> Tala</div>
+                        <div class="text-ink-900">Taloissamme ~> Talka</div>
+                        <div class="text-ink-900">taloissamme ~> talo</div>
+                        <div class="text-ink-700">---</div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <span class="text-ochre-600">$</span> taskusanakirja find talo
+                    </div>
+                    <div class="mb-6">
+                        <div class="text-ink-700">---</div>
+                        <div class="font-semibold text-ink-900">talo <span class="font-normal text-ink-600">(noun)</span></div>
+                        <div class="mt-2 ml-4 text-ink-700">- building</div>
+                        <div class="ml-4 text-ink-700">- farm, homestead</div>
+                        <div class="ml-4 text-ink-700">- house (building meant to serve as a human abode)</div>
+                        <div class="mt-2 text-ink-700">---</div>
+                    </div>
+                    
+                    <div class="mb-4">
+                        <span class="text-ochre-600">$</span> taskusanakirja rfind "homestead"
+                    </div>
+                    <div>
+                        <div class="text-ink-700">Found 8 word(s) with definitions containing 'homestead':</div>
+                        <div class="text-ink-700">---</div>
+                        <div class="text-ink-900">asuinpaikka</div>
+                        <div class="text-ink-900">kantatalo</div>
+                        <div class="text-ink-900">kotiseutuyhdistys</div>
+                        <div class="text-ink-900">kotitila</div>
+                        <div class="text-ink-900">mäkitupa</div>
+                        <div class="text-ink-900">osatalo</div>
+                        <div class="text-ink-900">talo</div>
+                        <div class="text-ink-900">talonnimi</div>
+                        <div class="text-ink-700">---</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <p class="text-center mt-8 text-ink-700 font-serif italic">
+            Experience the intersection of computational efficiency and lexicographical tradition.
+        </p>
+    </div>
+</section>
+{{ end }}

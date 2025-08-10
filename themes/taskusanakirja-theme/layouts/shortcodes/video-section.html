@@ -1,0 +1,17 @@
+{{- $webmFile := .Get "webm" -}}
+{{- $mp4File := .Get "mp4" -}}
+{{- $r2Base := .Site.Params.r2BaseURL -}}
+<div class="my-8 p-6 bg-slate-100 rounded-lg border border-sand-200">
+  {{ if .Inner }}
+  <div class="prose prose-gray max-w-none mb-4">
+    {{ .Inner | markdownify }}
+  </div>
+  {{ end }}
+  <div class="flex justify-center">
+    <video class="max-w-full h-auto object-contain shadow-2xl rounded-lg" style="max-height: 500px;" controls muted playsinline>
+      <source src="{{ $r2Base }}/{{ $webmFile }}" type="video/webm">
+      <source src="{{ $r2Base }}/{{ $mp4File }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</div>
