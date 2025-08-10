@@ -21,6 +21,7 @@ theme = "taskusanakirja-theme"
   ShowShareButtons = false
   ShowReadingTime = false
   ShowPostNavLinks = false
+  r2BaseURL = "https://files.taskusanakirja.com"
 
 [menu]
   [[menu.main]]
