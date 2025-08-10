@@ -247,12 +247,12 @@ Compare the output with the checksums listed below for your specific version.
 
 | Platform                  | Filename                                                                                                            | Size    | MD5 Checksum                       |
 | :------------------------ | :------------------------------------------------------------------------------------------------------------------ | :------ | :--------------------------------- |
-| **macOS (Apple Silicon)** | [taskusanakirja_darwin_arm64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_darwin_arm64_v1-0-0)           | 58.4 MB | `2f4a0da254f600b188dbdf6d05cb9fb0` |
-| **macOS (Intel)**         | [taskusanakirja_darwin_amd64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_darwin_amd64_v1-0-0)           | 63.0 MB | `47fdd9c3b650a076262c1ef00d599f60` |
-| **Linux (64-bit)**        | [taskusanakirja_linux_amd64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_linux_amd64_v1-0-0)             | 61.8 MB | `36eaab40b8e1dffd133283fe979ccec3` |
-| **Linux (ARM64)**         | [taskusanakirja_linux_arm64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_linux_arm64_v1-0-0)             | 57.6 MB | `40e4fb37ebc6ef5c9a1b4a43044fbe82` |
-| **Windows (64-bit)**      | [taskusanakirja_windows_amd64_v1-0-0.exe](https://files.taskusanakirja.com/taskusanakirja_windows_amd64_v1-0-0.exe) | 63.0 MB | `9c19d67479ba6bee10be42121518c9b7` |
-| **Windows (32-bit)**      | [taskusanakirja_windows_386_v1-0-0.exe](https://files.taskusanakirja.com/taskusanakirja_windows_386_v1-0-0.exe)     | 58.9 MB | `aee343eb8b4b5dce9c6fad9de538ddc3` |
+| **macOS (Apple Silicon)** | [taskusanakirja_darwin_arm64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_darwin_arm64_v1-0-0) | 58.5 MB | `3736474b410269e0255a6050ac190807` |
+| **macOS (Intel)** | [taskusanakirja_darwin_amd64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_darwin_amd64_v1-0-0) | 63.2 MB | `ff88277bae72f3daea3148d849045d08` |
+| **Linux (64-bit)** | [taskusanakirja_linux_amd64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_linux_amd64_v1-0-0) | 62.1 MB | `b4e7d03b09ac62b43a2171fb92023172` |
+| **Linux (ARM64)** | [taskusanakirja_linux_arm64_v1-0-0](https://files.taskusanakirja.com/taskusanakirja_linux_arm64_v1-0-0) | 57.4 MB | `a0987a702f500b2a5e77be8be271c45d` |
+| **Windows (64-bit)** | [taskusanakirja_windows_amd64_v1-0-0.exe](https://files.taskusanakirja.com/taskusanakirja_windows_amd64_v1-0-0.exe) | 63.3 MB | `e05e47f3ae016b2aec820ae71a9c7bfb` |
+| **Windows (32-bit)** | [taskusanakirja_windows_386_v1-0-0.exe](https://files.taskusanakirja.com/taskusanakirja_windows_386_v1-0-0.exe) | 58.3 MB | `c1659cad81519a1f6cc9a09d9d7597d0` |
 
 </div>
 
