@@ -41,3 +41,6 @@ build/
 # Worktree directories
 .worktrees/
 hugo_stats.json
+
+# Scripts (not for public repo)
+update_downloads.py
