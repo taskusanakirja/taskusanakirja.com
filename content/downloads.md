@@ -72,12 +72,30 @@ The easiest way to activate your license is through the Taskusanakirja TUI. Simp
 
 #### Activate Your License Through the Command Line
 
-You can also activate your license via the command line. Both steps are required for Pro features to work:
+You can also activate your license via the command line. This can be a good fallback if the TUI isn't working for you for some reason (please let us know!). All steps are required for Pro features to work.
 
 1. Set your license key:
 
    ```bash
    taskusanakirja license set YOUR-LICENSE-KEY
+   ```
+
+   What you should see:
+   ```bash
+   ❯ taskusanakirja license set DEADBEEF-12341234-12341234-DEADBEEF
+   Current license status: ❓ Not Checked
+   🔍 Checking secure connection to license server... ✅ OK
+   💾 Saving license key locally...
+   🤝 Activating license with server...
+   State transition: ❓ Not Checked → Checking
+   🤝 Activating license with server (with retry)...  # This part might repeat, that's normal!
+
+   ✅ License activated successfully! Pro features are now enabled.
+   Final status: ✅ Active
+
+   💡 To enable inflection search (lemmatizer), run:
+      taskusanakirja download-inflections
+         This will download the 2.6 GB inflections database.
    ```
 
 2. Download the inflections database:
@@ -86,61 +104,78 @@ You can also activate your license via the command line. Both steps are required
    taskusanakirja download-inflections
    ```
 
-   **Note:** The `download-inflections` command will download the Pro database (inflections.db, approx. 2.6 GB). This large file contains the comprehensive lexical data that powers the instant inflection search. Both the license key and inflections database are required for Pro features to work. The command automatically places the database in the correct location.
+   **Note:** The `download-inflections` command will download the Pro database (approx. 2.6 GB). This large file contains the comprehensive lexical data that powers the instant inflection search. Both the license key and inflections database are required for Pro features to work. The command automatically places the database in the correct location.
 
 3. Verify everything is working correctly:
 
    ```bash
-   taskusanakirja license check
+   taskusanakirja license check   # run this 2-3 times, please.
    ```
 
    What this should look like:
 
-```bash
+   ```bash
+    ❯ taskusanakirja license check
+    === License Check: Local + Remote Validation ===
 
-```
+    1. Running local validation...
+       ✅ License blob found
+       Validating license blob...
+       State transition: ✅ Active → Checking (local validation)
+       Validation result: ✅ Active
+       ✅ Active
 
-❯ taskusanakirja license check
-=== License Check: Local + Remote Validation ===
+    - Signature verification: PASSED
+    - Machine hash check: PASSED
 
-1. Running local validation...
-   ✅ License blob found
-   Validating license blob...
-   State transition: ✅ Active → Checking (local validation)
-   Validation result: ✅ Active
-   ✅ Active
+    --- Inflections Database Check ---
+    Checking for inflections.db... ✅ Found
+    Testing database access... ✅ Working
 
-- Signature verification: PASSED
-- Machine hash check: PASSED
+    - Database is accessible and queryable
+    - Sample query returned 50 results
 
---- Inflections Database Check ---
-Checking for inflections.db... ✅ Found
-Testing database access... ✅ Working
+    2. Running remote verification...
 
-- Database is accessible and queryable
-- Sample query returned 50 results
+    --- Local Authentication ---
+    State transition: ✅ Active → Checking (local validation)
+    Local validation result: ✅ Active
+    ✅ Active
 
-2. Running remote verification...
+    🔍 Checking secure connection to license server... ✅ OK
+    🔍 Verifying license status...
+    State transition: ✅ Active → Checking (server verification)
 
---- Local Authentication ---
-State transition: ✅ Active → Checking (local validation)
-Local validation result: ✅ Active
-✅ Active
+    --- Remote Verification ---
+    ✅ License valid
+    Last verified: 2025-08-10T17:52:24+03:00
 
-🔍 Checking secure connection to license server... ✅ OK
-🔍 Verifying license status...
-State transition: ✅ Active → Checking (server verification)
+    === Final Status Summary ===
+    License Status: ✅ Active
+   ```
 
---- Remote Verification ---
-✅ License valid
-Last verified: 2025-08-10T17:52:24+03:00
+   If the last line says `License Status: ⚠️ Error`, run 
+   `taskusanakirja license check` one or two more times. 
+   This is a known bug.
 
-=== Final Status Summary ===
-License Status: ✅ Active
+4. Moment of truth! Test it out with a Pro-only `lemma` command:
 
-```
+   ```bash
+   taskusanakirja lemma koirassamme
+   ```
 
-```
+   What you should see:
+
+   ```bash
+   ❯ taskusanakirja lemma koirassamme
+   
+   Found possible base form(s) for 'koirassamme':
+   ---
+   koirassamme ~> koira
+   Koirassamme ~> Koira    # success!
+   ---
+   ```
+
 
 ---
 
