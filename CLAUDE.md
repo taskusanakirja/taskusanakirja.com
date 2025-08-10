@@ -22,6 +22,9 @@ npm run dev
 
 # Build the site for production (includes CSS build)
 npm run build
+
+# Test that no dark mode code exists
+npm run test-no-dark-mode
 ```
 
 ### Individual Commands
@@ -38,6 +41,9 @@ hugo server -D
 
 # Build Hugo site only
 hugo --minify
+
+# Clean the build directory if CSS changes aren't appearing
+rm -rf public/ && npm run dev
 ```
 
 ## Architecture
@@ -90,9 +96,8 @@ The build process involves:
 - Base URL: `https://taskusanakirja.com/`
 - Theme: `taskusanakirja-theme` (not PaperMod)
 - Main branch: `master` (not `main`)
-- Deployment target: `taskusanakirja/taskusanakirja.github.io` repository
-- **GitHub Action Bug**: `.github/workflows/hugo.yml` references `main` branch
-  but should be `master`
+- Deployment: GitHub Actions to GitHub Pages on push to `master`
+- Local development: `http://localhost:1313/`
 
 ### No Dark Mode
 
@@ -133,3 +138,64 @@ The `public/` directory can cache old CSS files that prevent new styles from app
 
 - `npm run test-no-dark-mode` - Validates that no dark mode code exists
 - Run this test after making changes to ensure dark mode hasn't been reintroduced
+
+## Design System
+
+### Custom Tailwind Color Palette
+
+The site uses a book-inspired color scheme defined in `tailwind.config.js`:
+- **parchment**: `#FBF8F1` - Light background color
+- **slate**: Various shades for text and accents
+- **ochre**: Warm accent colors
+- **ink**: Dark text colors
+- **burgundy**: `#7C2F3E` - Links and highlights
+- **forest**: `#2F4F4F` - Dark green accent
+- **gold-leaf**: `#B8860B` - Gold accent
+
+### Typography
+
+- **Font families**:
+  - `font-serif`: Crimson Text (body text)
+  - `font-display`: Playfair Display (headings)
+  - `font-mono`: IBM Plex Mono (code blocks)
+- **Prose styling**: Uses `@tailwindcss/typography` plugin with custom configuration
+
+## Common Development Tasks
+
+### Adding a New Page
+
+1. Create a new Markdown file in `/content/` (e.g., `pricing.md`)
+2. Add front matter with title and optional layout
+3. Add menu entry in `hugo.toml` if needed
+4. The page will use the default single template unless specified
+
+### Modifying Templates
+
+- Homepage: `/themes/taskusanakirja-theme/layouts/index.html`
+- Default page: `/themes/taskusanakirja-theme/layouts/_default/single.html`
+- Blog list: `/themes/taskusanakirja-theme/layouts/blog/list.html`
+- Base template: `/themes/taskusanakirja-theme/layouts/_default/baseof.html`
+
+### Adding Blog Posts
+
+1. Create a new Markdown file in `/content/blog/`
+2. Include front matter with title, date, and optional author
+3. The post automatically appears in the blog listing
+
+## Known Issues and Workarounds
+
+### CSS Changes Not Appearing
+
+This is the most common issue. Solutions in order:
+1. Run `rm -rf public/ && npm run dev`
+2. Check for duplicate `compiled.css` files:
+   - Correct: `/themes/taskusanakirja-theme/assets/css/compiled.css`
+   - Delete if exists: `/themes/taskusanakirja-theme/static/css/compiled.css`
+3. Ensure templates use Hugo's asset pipeline: `{{ $css := resources.Get "css/compiled.css" }}`
+
+### Port Already in Use
+
+If port 1313 is busy, use a different port:
+```bash
+hugo server -D -p 1314
+```
