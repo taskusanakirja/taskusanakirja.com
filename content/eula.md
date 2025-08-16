@@ -61,9 +61,17 @@ To prevent license misuse, this identifier is processed through a one-way crypto
 
 ### 3.1.1 License Transfer
 
-To transfer your Pro license from one device to another, you must contact us at [andrew@siilikuin.com](mailto:andrew@siilikuin.com). For verification and to authorize the transfer, **you will be required to provide your complete, original license key.** We will maintain records of your transfer request communications. For more information about data collection and retention during this process, please see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
+**License Transfers:** If you need to transfer your Pro license to a new device (due to hardware changes, OS reinstalls, or device replacement), you must contact [andrew@siilikuin.com](mailto:andrew@siilikuin.com). **You will be required to provide your complete, original license key for verification.** For this process, we collect:
 
-Upon successful verification, we will deactivate the license from the previously registered device. This will permit you to perform the activation process on a new machine using your existing key. Please note that we cannot assist with license transfers if you are unable to provide your complete, original license key.
+- Your complete, original license key for verification
+- Communication records to document the transfer request
+- The new device's hashed machine identifier when you reactivate
+
+**Important:** We do not have a process for license recovery if you lose your license key completely. If you cannot provide your complete, original license key, we cannot assist with license transfers. Please keep your license key secure and backed up.
+
+Upon successful verification of a transfer request, we will deactivate the license from the previously registered device. This will permit you to perform the activation process on a new machine using your existing key.
+
+This information is used solely to verify your identity as the legitimate license holder and to maintain the integrity of our one-device-per-license policy. We retain records of license transfers for the duration of your license validity plus one year. For more information about data collection and retention during this process, please see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
 ### 3.2 Updates
 
