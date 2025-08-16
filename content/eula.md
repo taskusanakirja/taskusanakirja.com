@@ -61,9 +61,9 @@ To prevent license misuse, this identifier is processed through a one-way crypto
 
 ### 3.1.1 License Transfer
 
-To transfer your Pro license from one device to another, you must contact support at `andrew@siilikuin.com`. For verification and to authorize the transfer, **you will be required to provide your original, complete license key.**
+To transfer your Pro license from one device to another, you must contact us at [andrew@siilikuin.com](mailto:andrew@siilikuin.com). For verification and to authorize the transfer, **you will be required to provide your complete, original license key.** We will maintain records of your transfer request communications. For more information about data collection and retention during this process, please see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
-Upon successful verification, we will deactivate the license from the previously registered device. This will permit you to perform the activation process on a new machine using your existing key. Please note that we cannot assist with license transfers if you are unable to provide your original license key.
+Upon successful verification, we will deactivate the license from the previously registered device. This will permit you to perform the activation process on a new machine using your existing key. Please note that we cannot assist with license transfers if you are unable to provide your complete, original license key.
 
 ### 3.2 Updates
 
@@ -71,7 +71,7 @@ Your Pro license is a perpetual license for the major version of the Software fo
 
 This license is provided as a one-time purchase for the current major version of the Software. It is not a subscription and will not be subject to automatic renewal or recurring charges.
 
-We reserve the right to charge for major version upgrades (e.g., an upgrade from v1.x.x to v2.x.x), which may require the purchase of a new license. We may, at our sole discretion, offer discounts to existing license holders for such major upgrades. The current major version of the software at the time of writing is v1.0.0.
+We reserve the right to charge for major version upgrades (e.g., an upgrade from v1.x.x to v2.x.x), which may require the purchase of a new license. We may, at our sole discretion, offer discounts to existing license holders for such major upgrades. **Software Version:** v1.0.0
 
 _Please note_: While your license to use the software is perpetual, features that depend on external servers, such as initial license activation and periodic validation checks, are provided on an "as-available" basis and are not guaranteed to be available indefinitely.
 
@@ -91,7 +91,7 @@ Certain features require an internet connection:
 
 Information sent to our servers are, at the time of writing, the license key and the one-way securely hashed machine identifier.
 
-For information about data retention periods, please refer to our Privacy Policy at `https://taskusanakirja.com/privacy-policy`.
+For information about data retention periods and data breach notification procedures, please refer to our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
 ## 5. Disclaimer of Warranties
 
@@ -134,7 +134,7 @@ Upon termination, the following effects will apply, including but not limited to
 - We may block or delete your license key on our validation servers to prevent future use.
 - No refunds will be provided for terminations due to license violations.
 
-For details on data retention periods following termination, see our Privacy Policy at `https://taskusanakirja.com/privacy-policy`.
+For details on data retention periods and data breach notification procedures following termination, see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
 ### 8. Updates, Upgrades, and Modifications
 
@@ -154,7 +154,7 @@ The Software incorporates dictionary content and linguistic data from various so
 - Dictionary data is from Wiktionary, licensed under CC BY-SA 4.0 & GFDL.
 - Example sentences are from Tatoeba, licensed under CC-BY 2.0 FR.
 
-For more detailed information on our data sources, visit <https://taskusanakirja.com/data-sources/> .
+For more detailed information on our data sources, visit our [data sources page](https://taskusanakirja.com/data-sources/).
 
 ## **10. Export Compliance & Geographic Restrictions**
 
@@ -168,15 +168,17 @@ The Software is intended for use worldwide, but you are responsible for ensuring
 
 ## **11. Governing Law & Dispute Resolution**
 
-### **11.1 Governing Law**
+### **11.1 Governing Law and Consumer Rights**
 
-This Agreement shall be governed by and construed in accordance with the laws of **Finland**, without regard to its conflict of law principles.
+**Consumer Rights Protection:** If you are a consumer, you have the protection of the mandatory consumer protection laws of the country in which you reside. Nothing in this Agreement limits, waives, or overrides these rights under your local law.
 
-While this Agreement is governed by the laws of Finland, you may also be entitled to the protection of certain mandatory consumer protection provisions of the country in which you reside. Nothing in this Agreement is intended to limit or waive such rights under your local law.
+**Governing Law:** To the extent not inconsistent with your mandatory local consumer protection rights, this Agreement shall be governed by and construed in accordance with the laws of **Finland**, without regard to its conflict of law principles.
 
 ### **11.2 Dispute Resolution**
 
-Any dispute, controversy, or claim arising out of or relating to this Agreement, or the breach, termination, or invalidity thereof, shall be settled by the competent courts of Finland.
+**Consumer Rights:** If you are a consumer, you may be entitled to bring disputes in the courts of your country of residence under your local consumer protection laws. Nothing in this section limits these rights.
+
+**General Jurisdiction:** Subject to any mandatory consumer protection rights in your jurisdiction, any dispute, controversy, or claim arising out of or relating to this Agreement, or the breach, termination, or invalidity thereof, shall be settled by the competent courts of Finland.
 
 ## **12. General Provisions**
 
@@ -198,17 +200,22 @@ Purchases of a Taskusanakirja Pro license are processed through our authorized t
 
 Subject to the terms outlined herein and on the Gumroad platform, you may request a refund within fourteen (14) days of your purchase date.
 
-### 13.1 Eligibility and Exclusions
+### 13.1 Eligibility
 
-To be eligible for a refund, you must not have initiated a download of the separate inflections database required for Pro features. Due to the nature of this digital content, the purchase is considered final and non-refundable once the database download has commenced.
+You may request a refund within fourteen (14) days of your purchase date. To process your refund, we will require proof of purchase and your complete license key.
 
 ### 13.2 How to Request a Refund
 
-To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at `andrew@siilikuin.com` with your full license key and proof of purchase. All refunds are processed through Gumroad and are subject to their processing times and terms.
+To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at [andrew@siilikuin.com](mailto:andrew@siilikuin.com) with your full license key and proof of purchase. All refunds are processed through Gumroad and are subject to their processing times and terms.
 
 ## **14. Contact Information**
 
-For questions about this Agreement or the Software, please visit [https://taskusanakirja.com](https://taskusanakirja.com) or email <andrew@siilikuin.com>.
+For questions about this Agreement or the Software, please contact us at:
+
+**Email:** [andrew@siilikuin.com](mailto:andrew@siilikuin.com)  
+**Company Website:** [https://siilikuin.com](https://siilikuin.com)  
+**Company Registration:** Siilikuin, Finnish Y-tunnus / business ID: 3372332-8  
+**Location:** Finland
 
 ## **15. Acknowledgment**
 

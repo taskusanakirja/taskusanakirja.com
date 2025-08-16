@@ -40,9 +40,9 @@ Taskusanakirja provides a Finnish-English dictionary application with the follow
 
 - You are responsible for maintaining the confidentiality of your license key. We are not liable for unauthorized use of your license key.
 - Your Pro license key is for your use only and is limited to one device at a time.
-  - A 'device' is defined by the unique machine identifier. Please be aware that significant hardware changes or operating system reinstalls may alter this identifier, requiring you to contact support to transfer your license to the 'new' device.
+  - A 'device' is defined by the unique machine identifier. Please be aware that significant hardware changes or operating system reinstalls may alter this identifier, requiring you to contact us to transfer your license to the 'new' device.
 - To enforce this, the license is validated against a unique, one-way cryptographic hash of a machine identifier. This secure hash is the only identifier transmitted to our servers and is not reversible.
-- Lost license keys may be recovered by contacting support with proof of purchase. To transfer a license to a new device, you must contact `andrew@siilikuin.com` and provide your complete, original license key for verification.
+- Lost license keys may be recovered by contacting us with proof of purchase. To transfer a license to a new device, you must contact [andrew@siilikuin.com](mailto:andrew@siilikuin.com) and **you will be required to provide your complete, original license key for verification.** We will maintain records of your transfer request communications. For more information about data collection and retention during this process, please see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
 ## 4. Acceptable Use
 
@@ -80,9 +80,9 @@ Any feedback, suggestions, or ideas you provide may be used by us without compen
 
 ## 7. Privacy
 
-Your use of the Service is subject to our Privacy Policy, available at `https://taskusanakirja.com/privacy-policy`.
+Your use of the Service is subject to our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
-For detailed information about how long we retain different types of data, please see our Privacy Policy at `https://taskusanakirja.com/privacy-policy`.
+For detailed information about how long we retain different types of data and our data breach notification procedures, please see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
 ### 7.1 Data Collection
 
@@ -91,139 +91,163 @@ For detailed information about how long we retain different types of data, pleas
   1. **License Validation:** Your Pro license key and the one-way hashed machine identifier are sent to our servers for initial activation and periodic validation.
   2. **Data Downloads:** Pro users must connect to our servers to download the inflections database.
 
-## 8. Payment Terms
+## 8. Communications
 
-### 8.1 Pricing and License Model
+### 8.1 Email Collection and Use
 
-- A Pro license is a one-time purchase for the current major version of the Software (e.g., v1.x.x). The current version of the software is v1.0.0.
+We only collect email addresses through our third-party payment processor, Gumroad, when you purchase a Pro license. We use these email addresses to:
+
+- Deliver your license key after purchase
+- Provide customer support related to your license
+- Send critical service updates that may affect your license functionality
+
+### 8.2 Marketing Communications
+
+We do not send promotional or marketing emails unless you explicitly opt in by contacting us directly at [andrew@siilikuin.com](mailto:andrew@siilikuin.com) and requesting to receive such communications.
+
+### 8.3 Transactional Communications
+
+Certain communications related to your use of the Service, including license delivery confirmations, support responses, and critical service announcements, are considered transactional and necessary for the operation of the Service. These communications are not promotional in nature.
+
+## 9. Payment Terms
+
+### 9.1 Pricing and License Model
+
+- A Pro license is a one-time purchase for the current major version of the Software (e.g., v1.x.x). **Software Version:** v1.0.0
 - Your license is perpetual for the major version it was purchased for and entitles you to all minor and patch updates within that version series.
 - We reserve the right to charge for major version upgrades (e.g., from v1.x.x to v2.x.x), which may require a new license purchase.
 - Prices are displayed on our website and may change, but changes will not affect existing licenses. Prices may also be reflected in the app version itself, but these are not necessarily the most up to date prices.
 
-### 8.2 Refunds
+### 9.2 Refunds
 
 Purchases of a Taskusanakirja Pro license are processed through our authorized third-party reseller, Gumroad. All refund requests are therefore also governed by Gumroad's own refund policies and terms of service.
 
 Subject to the terms outlined herein and on the Gumroad platform, you may request a refund within fourteen (14) days of your purchase date.
 
-#### 8.2.1 Eligibility and Exclusions
+#### 9.2.1 Eligibility
 
-To be eligible for a refund, you must not have initiated a download of the separate inflections database required for Pro features. Due to the nature of this digital content, the purchase is considered final and non-refundable once the database download has commenced.
+You may request a refund within fourteen (14) days of your purchase date. To process your refund, we will require proof of purchase and your complete license key.
 
-#### 8.2.2 How to Request a Refund
+#### 9.2.2 How to Request a Refund
 
-To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at `andrew@siilikuin.com` with your full license key and proof of purchase. All refunds are processed through Gumroad and are subject to their processing times and terms.
+To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at [andrew@siilikuin.com](mailto:andrew@siilikuin.com) with your full license key and proof of purchase. All refunds are processed through Gumroad and are subject to their processing times and terms.
 
-### 8.3 Taxes
+### 9.3 Taxes
 
 Our authorized reseller, Gumroad, acts as the Merchant of Record for all Pro license purchases. The price shown on the purchase page is the final price you will pay. It includes any applicable sales taxes or Value Added Tax (VAT) required by your jurisdiction. Gumroad is responsible for calculating, collecting, and remitting these taxes to the relevant tax authorities.
 
-## 9. Service Availability
+## 10. Service Availability
 
-### 9.1 Availability
+### 10.1 Availability
 
 - The core desktop application functions offline once installed and data is downloaded.
 - Server-dependent features, such as initial license activation and validation, are provided on an "as-available" basis and are not guaranteed to be available indefinitely.
   - However, a successfully activated Pro license will continue to function offline for an extended period of up to 30 days as described in our documentation.
 
-### 9.2 Modifications
+### 10.2 Modifications
 
 We may update, modify, or discontinue features of the Service with reasonable notice.
 
-## 10. Third-Party Services
+## 11. Third-Party Services
 
-### 10.1 Payment Processors
+### 11.1 Payment Processors
 
 We use Gumroad as our third-party payment processor. Your payment is subject to their terms and privacy policies.
 
-### 10.2 External Links
+### 11.2 External Links
 
 Our Service may contain links to third-party sites. We are not responsible for their content or practices.
 
-## 11. Disclaimers
+## 12. Disclaimers
 
-### 11.1 "As Is" Service
+### 12.1 "As Is" Service
 
 THE SERVICE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-### 11.2 Specific Disclaimers
+### 12.2 Specific Disclaimers
 
 - **Code Obfuscation:** The Software employs code obfuscation. We do not warrant that it will be compatible with all third-party security or antivirus software.
 - **Terminal Auto-Launch:** The feature that attempts to launch a new terminal window is provided for convenience and is not warranted to function on all system configurations.
 
-## 12. Limitation of Liability
+## 13. Limitation of Liability
 
-### 12.1 Exclusion of Damages
+### 13.1 Exclusion of Damages
 
 IN NO EVENT SHALL WE BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES ARISING FROM YOUR USE OF THE SERVICE.
 
-### 12.2 Cap on Liability
+### 13.2 Cap on Liability
 
 OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR YOUR PRO LICENSE, IF APPLICABLE.
 
-## 13. Indemnification
+## 14. Indemnification
 
 You agree to indemnify and hold us harmless from any claims arising from your violation of these Terms or your misuse of the Service.
 
-## 14. Termination
+## 15. Termination
 
-### 14.1 Termination by You
+### 15.1 Termination by You
 
 You may terminate this agreement by ceasing all use of the Service. To remove all license data from your device, you may use the `taskusanakirja license clear` command.
 
-### 14.2 Termination by Us
+### 15.2 Termination by Us
 
 We may terminate or suspend your access and license for violations of these Terms, particularly license key abuse.
 
-### 14.3 Effect of Termination
+### 15.3 Effect of Termination
 
 Upon termination, your right to use the Service and any Pro features ends immediately. We may block your license key on our servers, and no refunds will be issued for terminations due to violations.
 
-## 15. Dispute Resolution
+## 16. Dispute Resolution
 
-### 15.1 Informal Resolution
+### 16.1 Informal Resolution
 
-We encourage you to contact us at `andrew@siilikuin.com` to resolve disputes informally.
+We encourage you to contact us at [andrew@siilikuin.com](mailto:andrew@siilikuin.com) to resolve disputes informally.
 
-### 15.2 Governing Law
+### 16.2 Governing Law and Consumer Rights
 
-These Terms are governed by and construed in accordance with the laws of **Finland**, without regard to its conflict of law principles.
+**Consumer Rights Protection:** If you are a consumer, you have the protection of the mandatory consumer protection laws of the country in which you reside. Nothing in these Terms limits, waives, or overrides these rights under your local law.
 
-### 15.3 Venue
+**Governing Law:** To the extent not inconsistent with your mandatory local consumer protection rights, these Terms are governed by and construed in accordance with the laws of **Finland**, without regard to its conflict of law principles.
 
-Any legal action must be brought in the competent courts of **Finland**.
+### 16.3 Venue and Consumer Rights
 
-## 16. General Provisions
+**Consumer Rights:** If you are a consumer, you may be entitled to bring disputes in the courts of your country of residence under your local consumer protection laws. Nothing in this section limits these rights.
 
-### 16.1 Entire Agreement
+**General Jurisdiction:** Subject to any mandatory consumer protection rights in your jurisdiction, any legal action must be brought in the competent courts of **Finland**.
+
+## 17. General Provisions
+
+### 17.1 Entire Agreement
 
 These Terms, along with the EULA and Privacy Policy, constitute the entire agreement regarding the Service.
 
-### 16.2 Severability
+### 17.2 Severability
 
 If any provision is unenforceable, the remaining provisions will continue in effect.
 
-### 16.3 Waiver
+### 17.3 Waiver
 
 Our failure to enforce any right is not a waiver of that right.
 
-### 16.4 Assignment
+### 17.4 Assignment
 
 You may not assign these Terms. We may assign them without restriction.
 
-## 17. Updates to Terms
+## 18. Updates to Terms
 
 We may update these Terms with reasonable notice via our website, application notifications, or email to Pro license holders. Continued use after changes constitutes acceptance.
 
-## 18. Contact Information
+## 19. Contact Information
 
-For questions about these Terms, please contact **`andrew@siilikuin.com`**.
+For questions about these Terms, please contact us at:
 
-## 19. Special Provisions for Different Jurisdictions
+**Email:** [andrew@siilikuin.com](mailto:andrew@siilikuin.com)  
+**Company Website:** [https://siilikuin.com](https://siilikuin.com)  
+**Company Registration:** Siilikuin, Finnish Y-tunnus / business ID: 3372332-8  
+**Location:** Finland
 
-While this Agreement is governed by the laws of Finland, you may be entitled to the protection of certain mandatory consumer protection provisions of the country in which you reside. Nothing in this Agreement is intended to limit or waive such rights under your local law.
 
-## 20. Beta Features
+## 21. Beta Features
 
 Features marked as "beta" are experimental, may change or be removed, and are provided without additional warranty.
 

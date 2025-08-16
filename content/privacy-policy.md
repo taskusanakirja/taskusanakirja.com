@@ -6,7 +6,7 @@ layout: "single"
 
 # TL;DR
 
-Taskusanakirja is designed to protect your privacy. The Free Edition works completely offline and collects no data whatsoever. The Pro Edition only connects to the internet to validate your license, collecting just your license key and a hashed machine identifier for license enforcement - we never see your dictionary searches or usage patterns. We don't track you, sell your data, or share it with anyone except essential service providers like Gumroad for payment processing. All dictionary data and searches stay on your device. We don't use analytics in the app, send crash reports, or auto-update. You have full rights to access, correct, or delete any personal data we hold by contacting <andrew@siilikuin.com>. We're fully GDPR compliant with clear lawful bases for any data processing we do. For complete details, please read the full policy below.
+Taskusanakirja is designed to protect your privacy. The Free Edition works completely offline and collects no data whatsoever. The Pro Edition only connects to the internet to validate your license, collecting just your license key and a hashed machine identifier for license enforcement - we never see your dictionary searches or usage patterns. We don't track you, sell your data, or share it with anyone except essential service providers like Gumroad for payment processing. All dictionary data and searches stay on your device. We don't use analytics in the app, send crash reports, or auto-update. You have full rights to access, correct, or delete any personal data we hold by contacting [andrew@siilikuin.com](mailto:andrew@siilikuin.com). We're fully GDPR compliant with clear lawful bases for any data processing we do. For complete details, please read the full policy below.
 
 ---
 
@@ -44,7 +44,7 @@ We do not receive, process, or store your payment information, such as credit ca
 
 To deliver your license, Gumroad provides us with your email address, a transaction ID, and the purchase date.
 
-### 2.3 Our Website (taskusanakirja.com)
+### 2.3 Our Website ([https://taskusanakirja.com](https://taskusanakirja.com))
 
 When you visit our website, we may collect standard technical information to ensure its functionality and to improve our services:
 
@@ -69,9 +69,9 @@ The application will only connect to the internet when you explicitly:
 
 ### 2.5 License Transfer and Recovery
 
-License Transfers: If you need to transfer your Pro license to a new device (due to hardware changes, OS reinstalls, or device replacement), you must contact <andrew@siilikuin.com>. For this process, we collect:
+License Transfers: If you need to transfer your Pro license to a new device (due to hardware changes, OS reinstalls, or device replacement), you must contact [andrew@siilikuin.com](mailto:andrew@siilikuin.com). **You will be required to provide your complete, original license key for verification.** For this process, we collect:
 
-- Your complete original license key for verification
+- Your complete, original license key for verification
 - Communication records to document the transfer request
 - The new device's hashed machine identifier when you reactivate
 
@@ -81,6 +81,8 @@ License Recovery: If you've lost your license key, we can help recover it. For t
 - Your email correspondence regarding the recovery request
 
 This information is used solely to verify your identity as the legitimate license holder and to maintain the integrity of our one-device-per-license policy. We retain records of license transfers and recoveries for the duration of your license validity plus one year.
+
+**Refund Processing:** If you request a refund, we collect and verify your purchase information and maintain records as described in our data retention policy.
 
 ## 3. How We Use Your Information
 
@@ -104,7 +106,7 @@ We use the information we collect for the following specific purposes:
 
 - We send transactional emails only (license delivery, critical updates affecting your service)
 - We do not send promotional or marketing emails unless you explicitly opt in
-- You may unsubscribe from non-essential communications at any time by contacting <andrew@siilikuin.com>
+- You may unsubscribe from non-essential communications at any time by contacting [andrew@siilikuin.com](mailto:andrew@siilikuin.com)
 
 ## 4. Information Sharing
 
@@ -148,6 +150,21 @@ In the unlikely event of a data breach affecting your personal information, we w
 - Recommend actions you can take to protect yourself
 - Report to relevant supervisory authorities as required by law
 
+### 5.4 Refund-Related Data Retention
+
+We offer a simple 14-day refund policy. To process your refund, we will require proof of purchase and your complete license key. When you request a refund for a Pro license purchase:
+
+- **Refund Request Communications:** Retained for up to 3 years from the date of the original purchase for accounting, tax compliance, and dispute resolution purposes
+- **License Revocation Records:** When a refund is processed, we maintain records of the revoked license key indefinitely to prevent reuse and protect against fraud
+- **Purchase Verification Data:** Transaction details provided during refund requests are retained according to our standard purchase record retention policy (7 years for tax and accounting purposes)
+
+**Legal Basis (GDPR):** This processing is based on:
+
+- Legal obligation (tax and accounting record requirements)
+- Legitimate interest (fraud prevention and business record keeping)
+
+You retain the right to request deletion of refund-related communications after our legal retention obligations have been met.
+
 ## 6. Your Rights and Choices
 
 You have the following rights regarding your personal information:
@@ -173,7 +190,7 @@ We do not use automated decision-making or profiling that produces legal or simi
 
 ### 6.5 How to Exercise Your Rights
 
-To exercise any of these rights, contact us at **<andrew@siilikuin.com>**. We will respond to your request within 30 days. We may request information to verify your identity before processing your request.
+To exercise any of these rights, contact us at [andrew@siilikuin.com](mailto:andrew@siilikuin.com). We will respond to your request within 30 days. We may request information to verify your identity before processing your request.
 
 ### 6.6 Complaints
 
@@ -185,7 +202,9 @@ The Service is not directed at children under the age of 13, and we do not knowi
 
 ## 8. International Users and Governing Law
 
-This Agreement is governed by the laws of **Finland**. By using the Service, you consent to the processing of your information in jurisdictions where our servers may be located. If you are in the European Economic Area (EEA), you have additional rights under the GDPR, and we are committed to upholding them.
+**Consumer Rights Protection:** If you are a consumer, you have the protection of the mandatory consumer protection laws of the country in which you reside. Nothing in this Privacy Policy limits, waives, or overrides these rights under your local law.
+
+**Governing Law:** To the extent not inconsistent with your mandatory local consumer protection rights, this Agreement is governed by the laws of **Finland**. By using the Service, you consent to the processing of your information in jurisdictions where our servers may be located. If you are in the European Economic Area (EEA), you have additional rights under the GDPR, and we are committed to upholding them.
 
 ### 8.1 Lawful Basis for Processing
 
@@ -220,18 +239,17 @@ We may update this Privacy Policy from time to time. Changes will be posted on o
 By continuing to use our Service after changes become effective, you agree to be bound by the revised Privacy Policy.
 
 **Last Updated:** August 16, 2025  
-**Version:** 1.0
+**Software Version:** v1.0.0
 
 ## 11. Contact Us
 
-For all privacy-related inquiries, including data protection matters and exercising your rights under GDPR, please contact our Privacy Team at:
+For all privacy-related inquiries, including data protection matters and exercising your rights under GDPR, please contact us at:
 
-**Email:** <andrew@siilikuin.com>  
-**Privacy-Specific Contact:** <andrew@siilikuin.com>  
-**Company Registration:** Siilikuin, Finnish Y-tunnus / business ID: 3372332-8
+**Email:** [andrew@siilikuin.com](mailto:andrew@siilikuin.com)  
+**Company Website:** [https://siilikuin.com](https://siilikuin.com)  
+**Company Registration:** Siilikuin, Finnish Y-tunnus / business ID: 3372332-8  
 **Location:** Finland
 
-We aim to respond to all privacy requests within 30 days.
+**Privacy Response Time:** We aim to respond to all privacy requests within 30 days.
 
-**Data Protection Contact**: As a small business, we are not required to designate a formal Data Protection Officer under GDPR Article 37. However, we take data protection seriously. For all privacy and data protection matters, please contact: <andrew@siilikuin.com>
-
+**Data Protection Contact**: As a small business, we are not required to designate a formal Data Protection Officer under GDPR Article 37. However, we take data protection seriously. For all privacy and data protection matters, please contact: [andrew@siilikuin.com](mailto:andrew@siilikuin.com)
