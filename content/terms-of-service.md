@@ -36,13 +36,24 @@ Taskusanakirja provides a Finnish-English dictionary application with the follow
 - License keys are delivered electronically after payment confirmation.
 - Please see Section 8 for our Refund Policy.
 
-### 3.2 License Key Responsibility
+### 3.2 License Key Responsibility and Transfer
 
 - You are responsible for maintaining the confidentiality of your license key. We are not liable for unauthorized use of your license key.
 - Your Pro license key is for your use only and is limited to one device at a time.
   - A 'device' is defined by the unique machine identifier. Please be aware that significant hardware changes or operating system reinstalls may alter this identifier, requiring you to contact us to transfer your license to the 'new' device.
 - To enforce this, the license is validated against a unique, one-way cryptographic hash of a machine identifier. This secure hash is the only identifier transmitted to our servers and is not reversible.
-- Lost license keys may be recovered by contacting us with proof of purchase. To transfer a license to a new device, you must contact [andrew@siilikuin.com](mailto:andrew@siilikuin.com) and **you will be required to provide your complete, original license key for verification.** We will maintain records of your transfer request communications. For more information about data collection and retention during this process, please see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
+
+**License Transfers:** If you need to transfer your Pro license to a new device (due to hardware changes, OS reinstalls, or device replacement), you must contact [andrew@siilikuin.com](mailto:andrew@siilikuin.com). **You will be required to provide your complete, original license key for verification.** For this process, we collect:
+
+- Your complete, original license key for verification
+- Communication records to document the transfer request
+- The new device's hashed machine identifier when you reactivate
+
+**Important:** We do not have a process for license recovery if you lose your license key completely. If you cannot provide your complete, original license key, we cannot assist with license transfers. Please keep your license key secure and backed up.
+
+Upon successful verification of a transfer request, we will deactivate the license from the previously registered device. This will permit you to perform the activation process on a new machine using your existing key.
+
+This information is used solely to verify your identity as the legitimate license holder and to maintain the integrity of our one-device-per-license policy. We retain records of license transfers for the duration of your license validity plus one year. For more information about data collection and retention during this process, please see our [Privacy Policy](https://taskusanakirja.com/privacy-policy).
 
 ## 4. Acceptable Use
 
@@ -246,9 +257,10 @@ For questions about these Terms, please contact us at:
 **Company Registration:** Siilikuin, Finnish Y-tunnus / business ID: 3372332-8  
 **Location:** Finland
 
+## 20. Acknowledgment
+
+By using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
 
 ## 21. Beta Features
 
 Features marked as "beta" are experimental, may change or be removed, and are provided without additional warranty.
-
-By using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
