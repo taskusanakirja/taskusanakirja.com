@@ -67,7 +67,7 @@ The application will only connect to the internet when you explicitly:
 - Activate or validate your Pro license
 - Download the inflections database (Pro Edition)"
 
-### 2.5 License Transfer and Recovery
+### 2.5 License Transfer
 
 License Transfers: If you need to transfer your Pro license to a new device (due to hardware changes, OS reinstalls, or device replacement), you must contact [andrew@siilikuin.com](mailto:andrew@siilikuin.com). **You will be required to provide your complete, original license key for verification.** For this process, we collect:
 
@@ -75,12 +75,9 @@ License Transfers: If you need to transfer your Pro license to a new device (due
 - Communication records to document the transfer request
 - The new device's hashed machine identifier when you reactivate
 
-License Recovery: If you've lost your license key, we can help recover it. For this process, we collect:
+**Important:** We do not have a process for license recovery if you lose your license key completely. If you cannot provide your complete, original license key, we cannot assist with license transfers. Please keep your license key secure and backed up.
 
-- Proof of purchase information (order number, email used for purchase, purchase date)
-- Your email correspondence regarding the recovery request
-
-This information is used solely to verify your identity as the legitimate license holder and to maintain the integrity of our one-device-per-license policy. We retain records of license transfers and recoveries for the duration of your license validity plus one year.
+This information is used solely to verify your identity as the legitimate license holder and to maintain the integrity of our one-device-per-license policy. We retain records of license transfers for the duration of your license validity plus one year.
 
 **Refund Processing:** If you request a refund, we collect and verify your purchase information and maintain records as described in our data retention policy.
 
@@ -92,7 +89,7 @@ We use the information we collect for the following specific purposes:
   - Validate and activate your Pro license key.
   - Allow Pro users to download necessary databases.
   - Provide customer support and respond to your inquiries.
-  - License transfer/recovery records: Retained for the duration of your license validity plus 1 year
+  - License transfer records: Retained for the duration of your license validity plus 1 year
 
 - **For Communication:**
   - Send you your Pro license purchase confirmation via email.
@@ -152,7 +149,7 @@ In the unlikely event of a data breach affecting your personal information, we w
 
 ### 5.4 Refund-Related Data Retention
 
-We offer a simple 14-day refund policy. To process your refund, we will require proof of purchase and your complete license key. When you request a refund for a Pro license purchase:
+We offer a simple 14-day refund policy. To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at [andrew@siilikuin.com](mailto:andrew@siilikuin.com) with your full license key and proof of purchase. When you request a refund for a Pro license purchase:
 
 - **Refund Request Communications:** Retained for up to 3 years from the date of the original purchase for accounting, tax compliance, and dispute resolution purposes
 - **License Revocation Records:** When a refund is processed, we maintain records of the revoked license key indefinitely to prevent reuse and protect against fraud
@@ -202,11 +199,21 @@ The Service is not directed at children under the age of 13, and we do not knowi
 
 ## 8. International Users and Governing Law
 
+### 8.1 Governing Law and Consumer Rights
+
 **Consumer Rights Protection:** If you are a consumer, you have the protection of the mandatory consumer protection laws of the country in which you reside. Nothing in this Privacy Policy limits, waives, or overrides these rights under your local law.
 
 **Governing Law:** To the extent not inconsistent with your mandatory local consumer protection rights, this Agreement is governed by the laws of **Finland**. By using the Service, you consent to the processing of your information in jurisdictions where our servers may be located. If you are in the European Economic Area (EEA), you have additional rights under the GDPR, and we are committed to upholding them.
 
-### 8.1 Lawful Basis for Processing
+### 8.2 Dispute Resolution
+
+**Consumer Rights:** If you are a consumer, you may be entitled to bring disputes in the courts of your country of residence under your local consumer protection laws. Nothing in this section limits these rights.
+
+**General Jurisdiction:** Subject to any mandatory consumer protection rights in your jurisdiction, any legal action must be brought in the competent courts of **Finland**.
+
+For more detailed information about dispute resolution and jurisdiction, please see our [Terms of Service](https://taskusanakirja.com/terms-of-service).
+
+### 8.3 Lawful Basis for Processing
 
 For users in the European Economic Area, we process personal data under the following lawful bases:
 
@@ -215,7 +222,7 @@ For users in the European Economic Area, we process personal data under the foll
 - **Legal Obligation:** Retaining transaction records as required by tax and accounting laws
 - **Consent:** Where specifically requested for optional services or communications
 
-### 8.2 Data Storage Locations and Transfers
+### 8.4 Data Storage Locations and Transfers
 
 Our services utilize Cloudflare's global infrastructure, which may process and store data in multiple regions including the United States. For users in the European Economic Area, we ensure appropriate safeguards for international data transfers through:
 
