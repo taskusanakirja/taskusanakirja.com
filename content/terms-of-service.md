@@ -22,7 +22,6 @@ Taskusanakirja provides a Finnish-English dictionary application with the follow
   - Interactive Terminal User Interface (TUI) for dictionary browsing.
   - Command-line word lookup (`find`).
   - Reverse English-to-Finnish definition search (`rfind`).
-  - A local web server for browser-based use (`serve`).
 - **Pro Edition:** Unlocked via a purchased license key, this edition includes all Free features plus advanced linguistic capabilities.
   - Complete lemmatization to find the base form (lemma) of any inflected Finnish word (`lemma` command).
   - Access to download the separate inflections database, which is required for lemmatization.

@@ -19,7 +19,6 @@ We grant you a non-exclusive, non-transferable, revocable license to use the Fre
 - Interactive Terminal User Interface (TUI) for dictionary browsing.
 - Command-line word lookup (`find`).
 - Reverse English-to-Finnish definition search (`rfind`).
-- A local web server for browser-based use (`serve`).
 
 Examples: Use for academic research, personal study, and language learning is permitted. Use for corporate training, paid translation services, or integration into a commercial product requires a separate commercial license.
 

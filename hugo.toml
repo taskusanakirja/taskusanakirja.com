@@ -40,6 +40,11 @@ theme = "taskusanakirja-theme"
     url = "/data-sources/"
     weight = 30
   [[menu.main]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/faq/"
+    weight = 35
+  [[menu.main]]
     identifier = "blog"
     name = "Blog"
     url = "/blog/"

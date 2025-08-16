@@ -216,18 +216,6 @@ Not only is each noun, pronoun, and adjective ("nominals") capable of taking at 
 
 When encountering "kirjoissaan" in a text, a learner must recognize it as the inessive case of "kirja" (book) with a possessive suffix, not a completely different word. Without automatic lemmatization, looking up inflected forms becomes an exercise in frustration, requiring learners to mentally reverse-engineer grammatical transformations before they can even find the dictionary entry. For foreign professionals working in Finnish environments, this tool transforms what would be dozens of failed lookups into instant comprehension, letting them focus on understanding content rather than wrestling with morphology.
 
-### `serve` - Web Interface (Beta)
-
-Launch a local web server for browser-based access:
-
-```bash
-$ taskusanakirja serve
-Starting Taskusanakirja web server...
-Listening on http://localhost:8080
-
-Open your browser to use Taskusanakirja with a web interface.
-Press Ctrl+C to stop the server.
-```
 
 ### `license` - License Management
 
@@ -299,7 +287,6 @@ Available Commands:
   lemma                Find the base form (lemma) of an inflected Finnish word.
   license              Manage the application license.
   rfind                Find Finnish words by searching their English definitions.
-  serve                Run a local web server to use taskusanakirja in a browser.
   tui                  Launch the interactive Terminal User Interface.
 
 Flags:
