@@ -42,13 +42,13 @@ Taskusanakirja provides a Finnish-English dictionary application with the follow
 - Your Pro license key is for your use only and is limited to one device at a time.
   - A 'device' is defined by the unique machine identifier. Please be aware that significant hardware changes or operating system reinstalls may alter this identifier, requiring you to contact support to transfer your license to the 'new' device.
 - To enforce this, the license is validated against a unique, one-way cryptographic hash of a machine identifier. This secure hash is the only identifier transmitted to our servers and is not reversible.
-- Lost license keys may be recovered by contacting support with proof of purchase. To transfer a license to a new device, you must contact `support@taskusanakirja.com` and provide your original license key for verification.
+- Lost license keys may be recovered by contacting support with proof of purchase. To transfer a license to a new device, you must contact `andrew@siilikuin.com` and provide your complete, original license key for verification.
 
 ## 4. Acceptable Use
 
 ### 4.1 Permitted Use
 
-You may use Taskusanakirja for personal, educational, and professional purposes, subject to the license restrictions outlined in the EULA.
+You may use Taskusanakirja for personal, and educational purposes, subject to the license restrictions outlined in the EULA. Commercial purposes require a separate agreement.
 
 ### 4.2 Prohibited Use
 
@@ -82,6 +82,8 @@ Any feedback, suggestions, or ideas you provide may be used by us without compen
 
 Your use of the Service is subject to our Privacy Policy, available at `https://taskusanakirja.com/privacy-policy`.
 
+For detailed information about how long we retain different types of data, please see our Privacy Policy at `https://taskusanakirja.com/privacy-policy`.
+
 ### 7.1 Data Collection
 
 - The desktop application is designed to work offline. All dictionary lookups and searches are processed locally on your device.
@@ -100,9 +102,17 @@ Your use of the Service is subject to our Privacy Policy, available at `https://
 
 ### 8.2 Refunds
 
-- You may request a refund within fourteen (14) days of your purchase date, subject to the policies of our reseller, Gumroad.
-- **Eligibility Exclusion:** To be eligible for a refund, you must not have initiated a download of the separate inflections database. Due to its digital nature, the purchase is considered final and non-refundable once the database download has commenced.
-- To request a refund, please contact `support@taskusanakirja.com` with your full license key and proof of purchase.
+Purchases of a Taskusanakirja Pro license are processed through our authorized third-party reseller, Gumroad. All refund requests are therefore also governed by Gumroad's own refund policies and terms of service.
+
+Subject to the terms outlined herein and on the Gumroad platform, you may request a refund within fourteen (14) days of your purchase date.
+
+#### 8.2.1 Eligibility and Exclusions
+
+To be eligible for a refund, you must not have initiated a download of the separate inflections database required for Pro features. Due to the nature of this digital content, the purchase is considered final and non-refundable once the database download has commenced.
+
+#### 8.2.2 How to Request a Refund
+
+To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at `andrew@siilikuin.com` with your full license key and proof of purchase. All refunds are processed through Gumroad and are subject to their processing times and terms.
 
 ### 8.3 Taxes
 
@@ -173,7 +183,7 @@ Upon termination, your right to use the Service and any Pro features ends immedi
 
 ### 15.1 Informal Resolution
 
-We encourage you to contact us at `support@taskusanakirja.com` to resolve disputes informally.
+We encourage you to contact us at `andrew@siilikuin.com` to resolve disputes informally.
 
 ### 15.2 Governing Law
 
@@ -207,7 +217,7 @@ We may update these Terms with reasonable notice via our website, application no
 
 ## 18. Contact Information
 
-For questions about these Terms, please contact **`support@taskusanakirja.com`**.
+For questions about these Terms, please contact **`andrew@siilikuin.com`**.
 
 ## 19. Special Provisions for Different Jurisdictions
 
@@ -218,4 +228,3 @@ While this Agreement is governed by the laws of Finland, you may be entitled to 
 Features marked as "beta" are experimental, may change or be removed, and are provided without additional warranty.
 
 By using the Service, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.
-

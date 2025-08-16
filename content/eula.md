@@ -61,7 +61,7 @@ To prevent license misuse, this identifier is processed through a one-way crypto
 
 ### 3.1.1 License Transfer
 
-To transfer your Pro license from one device to another, you must contact support at `support@taskusanakirja.com`. For verification and to authorize the transfer, **you will be required to provide your original, complete license key.**
+To transfer your Pro license from one device to another, you must contact support at `andrew@siilikuin.com`. For verification and to authorize the transfer, **you will be required to provide your original, complete license key.**
 
 Upon successful verification, we will deactivate the license from the previously registered device. This will permit you to perform the activation process on a new machine using your existing key. Please note that we cannot assist with license transfers if you are unable to provide your original license key.
 
@@ -90,6 +90,8 @@ Certain features require an internet connection:
 - **Inflections Database:** Pro users must download the inflections database from our servers to enable the lemmatization feature.
 
 Information sent to our servers are, at the time of writing, the license key and the one-way securely hashed machine identifier.
+
+For information about data retention periods, please refer to our Privacy Policy at `https://taskusanakirja.com/privacy-policy`.
 
 ## 5. Disclaimer of Warranties
 
@@ -131,6 +133,8 @@ Upon termination, the following effects will apply, including but not limited to
 - Pro features will be disabled.
 - We may block or delete your license key on our validation servers to prevent future use.
 - No refunds will be provided for terminations due to license violations.
+
+For details on data retention periods following termination, see our Privacy Policy at `https://taskusanakirja.com/privacy-policy`.
 
 ### 8. Updates, Upgrades, and Modifications
 
@@ -200,11 +204,11 @@ To be eligible for a refund, you must not have initiated a download of the separ
 
 ### 13.2 How to Request a Refund
 
-To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at `support@taskusanakirja.com` with your full license key and proof of purchase. All refunds are processed through Gumroad and are subject to their processing times and terms.
+To initiate a refund request, please reply to your original purchase receipt email from Gumroad or contact us directly at `andrew@siilikuin.com` with your full license key and proof of purchase. All refunds are processed through Gumroad and are subject to their processing times and terms.
 
 ## **14. Contact Information**
 
-For questions about this Agreement or the Software, please visit [https://taskusanakirja.com](https://taskusanakirja.com) or email <support@taskusanakirja.com>.
+For questions about this Agreement or the Software, please visit [https://taskusanakirja.com](https://taskusanakirja.com) or email <andrew@siilikuin.com>.
 
 ## **15. Acknowledgment**
 

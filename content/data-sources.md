@@ -61,4 +61,4 @@ We strongly encourage users to contribute improvements back to the source projec
 
 ## Questions?
 
-If you have questions about data licensing, need the data in a different format, or want to discuss large-scale usage, please contact us at [support@taskusanakirja.com](mailto:support@taskusanakirja.com).
+If you have questions about data licensing, need the data in a different format, or want to discuss large-scale usage, please contact us at [andrew@siilikuin.com](mailto:andrew@siilikuin.com).

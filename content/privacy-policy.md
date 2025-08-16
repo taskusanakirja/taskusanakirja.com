@@ -6,7 +6,7 @@ layout: "single"
 
 # TL;DR
 
-Taskusanakirja is designed to protect your privacy. The Free Edition works completely offline and collects no data whatsoever. The Pro Edition only connects to the internet to validate your license, collecting just your license key and a hashed machine identifier for license enforcement - we never see your dictionary searches or usage patterns. We don't track you, sell your data, or share it with anyone except essential service providers like Gumroad for payment processing. All dictionary data and searches stay on your device. We don't use analytics in the app, send crash reports, or auto-update. You have full rights to access, correct, or delete any personal data we hold by contacting <privacy@taskusanakirja.com>. We're fully GDPR compliant with clear lawful bases for any data processing we do. For complete details, please read the full policy below.
+Taskusanakirja is designed to protect your privacy. The Free Edition works completely offline and collects no data whatsoever. The Pro Edition only connects to the internet to validate your license, collecting just your license key and a hashed machine identifier for license enforcement - we never see your dictionary searches or usage patterns. We don't track you, sell your data, or share it with anyone except essential service providers like Gumroad for payment processing. All dictionary data and searches stay on your device. We don't use analytics in the app, send crash reports, or auto-update. You have full rights to access, correct, or delete any personal data we hold by contacting <andrew@siilikuin.com>. We're fully GDPR compliant with clear lawful bases for any data processing we do. For complete details, please read the full policy below.
 
 ---
 
@@ -69,7 +69,7 @@ The application will only connect to the internet when you explicitly:
 
 ### 2.5 License Transfer and Recovery
 
-License Transfers: If you need to transfer your Pro license to a new device (due to hardware changes, OS reinstalls, or device replacement), you must contact <support@taskusanakirja.com>. For this process, we collect:
+License Transfers: If you need to transfer your Pro license to a new device (due to hardware changes, OS reinstalls, or device replacement), you must contact <andrew@siilikuin.com>. For this process, we collect:
 
 - Your complete original license key for verification
 - Communication records to document the transfer request
@@ -104,7 +104,7 @@ We use the information we collect for the following specific purposes:
 
 - We send transactional emails only (license delivery, critical updates affecting your service)
 - We do not send promotional or marketing emails unless you explicitly opt in
-- You may unsubscribe from non-essential communications at any time by contacting <support@taskusanakirja.com>
+- You may unsubscribe from non-essential communications at any time by contacting <andrew@siilikuin.com>
 
 ## 4. Information Sharing
 
@@ -173,7 +173,7 @@ We do not use automated decision-making or profiling that produces legal or simi
 
 ### 6.5 How to Exercise Your Rights
 
-To exercise any of these rights, contact us at **<support@taskusanakirja.com>**. We will respond to your request within 30 days. We may request information to verify your identity before processing your request.
+To exercise any of these rights, contact us at **<andrew@siilikuin.com>**. We will respond to your request within 30 days. We may request information to verify your identity before processing your request.
 
 ### 6.6 Complaints
 
@@ -226,12 +226,12 @@ By continuing to use our Service after changes become effective, you agree to be
 
 For all privacy-related inquiries, including data protection matters and exercising your rights under GDPR, please contact our Privacy Team at:
 
-**Email:** <support@taskusanakirja.com>  
-**Privacy-Specific Contact:** <privacy@taskusanakirja.com>  
+**Email:** <andrew@siilikuin.com>  
+**Privacy-Specific Contact:** <andrew@siilikuin.com>  
 **Company Registration:** Siilikuin, Finnish Y-tunnus / business ID: 3372332-8
 **Location:** Finland
 
 We aim to respond to all privacy requests within 30 days.
 
-**Data Protection Contact**: As a small business, we are not required to designate a formal Data Protection Officer under GDPR Article 37. However, we take data protection seriously. For all privacy and data protection matters, please contact: <privacy@taskusanakirja.com>
+**Data Protection Contact**: As a small business, we are not required to designate a formal Data Protection Officer under GDPR Article 37. However, we take data protection seriously. For all privacy and data protection matters, please contact: <andrew@siilikuin.com>
 
