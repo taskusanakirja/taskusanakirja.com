@@ -79,7 +79,7 @@ License Transfers: If you need to transfer your Pro license to a new device (due
 
 This information is used solely to verify your identity as the legitimate license holder and to maintain the integrity of our one-device-per-license policy. We retain records of license transfers for the duration of your license validity plus one year.
 
-**Refund Processing:** If you request a refund, we collect and verify your purchase information and maintain records as described in our data retention policy.
+**Refund Processing:** If you request a refund, we collect and verify your purchase information and maintain records as described in our data retention policy (see Section 5.4 below).
 
 ## 3. How We Use Your Information
 
