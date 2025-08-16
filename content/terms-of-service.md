@@ -12,7 +12,7 @@ These Terms of Service ("Terms") govern your use of the Taskusanakirja software,
 
 ## 1. Acceptance of Terms
 
-By downloading, installing, or using Taskusanakirja, you agree to be bound by these Terms and the End User License Agreement (EULA). If you do not agree, do not use the Service.
+By downloading, installing, or using Taskusanakirja, you agree to be bound by these Terms and the [End User License Agreement (EULA)](https://taskusanakirja.com/eula). If you do not agree, do not use the Service.
 
 ## 2. Description of Service
 
@@ -59,7 +59,7 @@ This information is used solely to verify your identity as the legitimate licens
 
 ### 4.1 Permitted Use
 
-You may use Taskusanakirja for personal, and educational purposes, subject to the license restrictions outlined in the EULA. Commercial purposes require a separate agreement.
+You may use Taskusanakirja for personal, and educational purposes, subject to the license restrictions outlined in the [EULA](https://taskusanakirja.com/eula). Commercial purposes require a separate agreement.
 
 ### 4.2 Prohibited Use
 
@@ -75,15 +75,16 @@ You may not:
 
 ### 5.1 Dictionary Content
 
-- Dictionary data is aggregated from third-party sources, primarily Wiktionary and Tatoeba, and is provided for linguistic reference purposes.
+- Dictionary data is sourced from Wiktionary (licensed under CC BY-SA 4.0 & GFDL) and example sentences from Tatoeba (licensed under CC-BY 2.0 FR), and is provided for linguistic reference purposes.
 - We strive for accuracy but do not guarantee that the content is complete, accurate, or suitable for any specific purpose.
 - We do not warrant that the Pro Edition's inflection search will find the base form for every possible inflected Finnish word.
+- For detailed information about data sources and licensing, see our [Data Sources page](https://taskusanakirja.com/data-sources/).
 
 ## 6. Intellectual Property
 
 ### 6.1 Our Property
 
-The Service, including its software, source code, databases, user interface designs, and documentation, is our intellectual property or that of our licensors and is protected by copyright law.
+The Service software, source code, user interface designs, and documentation are our intellectual property and are protected by copyright law. Dictionary content and linguistic data are licensed from third-party sources under Creative Commons and other open licenses (see our [Data Sources page](https://taskusanakirja.com/data-sources/) for details).
 
 ### 6.2 Feedback
 
@@ -151,7 +152,7 @@ Our authorized reseller, Gumroad, acts as the Merchant of Record for all Pro lic
 
 ### 10.1 Availability
 
-- The core desktop application functions offline once installed and data is downloaded.
+- The Free Edition of the desktop application functions fully offline once installed. Pro features require a valid license and periodic internet connectivity for license validation.
 - Server-dependent features, such as initial license activation and validation, are provided on an "as-available" basis and are not guaranteed to be available indefinitely.
   - However, a successfully activated Pro license will continue to function offline for up to 30 days before requiring revalidation. This offline grace period is subject to change with suitable notice.
 
@@ -230,7 +231,7 @@ We encourage you to contact us at [andrew@siilikuin.com](mailto:andrew@siilikuin
 
 ### 17.1 Entire Agreement
 
-These Terms, along with the EULA and Privacy Policy, constitute the entire agreement regarding the Service.
+These Terms, along with the [EULA](https://taskusanakirja.com/eula) and [Privacy Policy](https://taskusanakirja.com/privacy-policy), constitute the entire agreement regarding the Service.
 
 ### 17.2 Severability
 
