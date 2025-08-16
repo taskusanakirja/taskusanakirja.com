@@ -60,6 +60,12 @@
             <div class="text-center">
                 <p class="text-ink-700 font-serif italic">&copy; {{ now.Year }} Taskusanakirja. All rights reserved.</p>
                 <p class="text-ink-600 text-sm mt-2">A scholarly companion for Finnish language learners</p>
+                <div class="mt-4 text-sm text-ink-600 font-sans">
+                    {{ range $i, $item := .Site.Menus.footer }}
+                        {{- if $i }} • {{ end -}}
+                        <a href="{{ .URL }}" class="hover:text-burgundy transition-colors duration-200">{{ .Name }}</a>
+                    {{ end }}
+                </div>
             </div>
         </div>
     </footer>

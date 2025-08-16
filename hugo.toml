@@ -49,3 +49,18 @@ theme = "taskusanakirja-theme"
     name = "About"
     url = "/about/"
     weight = 50
+  [[menu.footer]]
+    identifier = "eula"
+    name = "EULA"
+    url = "/eula/"
+    weight = 10
+  [[menu.footer]]
+    identifier = "terms"
+    name = "Terms of Service"
+    url = "/terms-of-service/"
+    weight = 20
+  [[menu.footer]]
+    identifier = "privacy"
+    name = "Privacy Policy"
+    url = "/privacy-policy/"
+    weight = 30
