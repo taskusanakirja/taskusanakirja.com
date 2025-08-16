@@ -30,6 +30,8 @@ Upon valid purchase of a Taskusanakirja Pro license, we grant you a non-exclusiv
 - Complete lemmatization of Finnish word forms, allowing you to find the base form (lemma) of an inflected word (`lemma` command).
 - Access to downloading the inflections database, which is required for lemmatization and must be downloaded separately by the user.
 
+Examples: Use for academic research, personal study, and language learning is permitted. Use for corporate training, paid translation services, or integration into a commercial product requires a separate commercial license.
+
 ### 1.3 License Restrictions
 
 You may not:
@@ -44,7 +46,18 @@ You may not:
 
 ## 2. Intellectual Property
 
-The Software and all associated content, including but not limited to the source code, dictionary database, user interface, and documentation, are protected by copyright and other intellectual property laws. All rights not expressly granted are reserved.
+### 2.1 Our Intellectual Property
+
+The Software source code, user interface, and documentation are protected by copyright and other intellectual property laws and are our intellectual property. All rights not expressly granted are reserved.
+
+### 2.2 Dictionary Content and Linguistic Data
+
+The dictionary content and linguistic data incorporated into the Software are licensed from third-party sources under Creative Commons and other open licenses. These materials remain the property of their original creators and are governed by their respective licenses. Specifically:
+
+- Dictionary data is from Wiktionary, licensed under CC BY-SA 4.0 & GFDL.
+- Example sentences are from Tatoeba, licensed under CC-BY 2.0 FR.
+
+For detailed information about data sources and licensing, see our [Data Sources page](https://taskusanakirja.com/data-sources/).
 
 ## 3. Pro License Terms
 
@@ -105,7 +118,7 @@ For information about data retention periods and data breach notification proced
 
 THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTY OF ANY KIND. WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
 
-The dictionary content is provided for linguistic reference purposes. This data is aggregated from third-party sources (see Section 9), and we do not guarantee its accuracy, completeness, or suitability for any specific purpose.
+The dictionary content is provided for linguistic reference purposes. This data is sourced from third-party sources under Creative Commons and other open licenses (see Section 2.2 and our [Data Sources page](https://taskusanakirja.com/data-sources/)), and we do not guarantee its accuracy, completeness, or suitability for any specific purpose.
 
 We do not warrant that the Pro Edition's inflection search will find the base form for every possible inflected Finnish word, or that its results will always be linguistically perfect.
 
@@ -157,12 +170,7 @@ Continued use of the Software after any modifications constitutes your acceptanc
 
 ## 9. Third-Party Content
 
-The Software incorporates dictionary content and linguistic data from various sources. These materials are used under their respective licenses and remain the property of their original creators. Specifically:
-
-- Dictionary data is from Wiktionary, licensed under CC BY-SA 4.0 & GFDL.
-- Example sentences are from Tatoeba, licensed under CC-BY 2.0 FR.
-
-For more detailed information on our data sources, visit our [data sources page](https://taskusanakirja.com/data-sources/).
+For information about the dictionary content and linguistic data sources incorporated into the Software, including their respective Creative Commons and open licenses, see Section 2.2 and our [Data Sources page](https://taskusanakirja.com/data-sources/).
 
 ## **10. Export Compliance & Geographic Restrictions**
 
