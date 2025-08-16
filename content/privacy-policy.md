@@ -30,7 +30,7 @@ We collect the minimum information necessary to provide and improve our Service.
 
 - **Free Edition:** The Free Edition does not collect or transmit any personal information or usage data. All operations are performed locally on your device.
 
-- **Pro Edition License Validation:** An internet connection is required for Pro license activation and periodic validation. During this process, we collect the following:
+- **Pro Edition License Validation:** An internet connection is required for Pro license activation and periodic validation. However, a successfully activated Pro license will continue to function offline for up to 30 days before requiring revalidation. This offline grace period is subject to change with suitable notice. During validation processes, we collect the following:
   - **Your Pro license key:** To verify that the license is valid.
   - **A one-way, cryptographically secure hash of a machine identifier:** This is used solely to enforce our one-device-per-license policy and is not reversible or tied to your personal identity. No other identifying information about your device is collected.
 

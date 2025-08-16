@@ -93,7 +93,7 @@ Taskusanakirja is designed to work offline. The core dictionary data is embedded
 
 Certain features require an internet connection:
 
-- **License Activation and Validation:** Activating a Pro license requires an internet connection to contact our license server. To ensure the license remains valid, the Software must periodically connect to the server to refresh its activation status.
+- **License Activation and Validation:** Activating a Pro license requires an internet connection to contact our license server. To ensure the license remains valid, the Software must periodically connect to the server to refresh its activation status. However, a successfully activated Pro license will continue to function offline for up to 30 days before requiring revalidation. This offline grace period is subject to change with suitable notice.
 
 - **Inflections Database:** Pro users must download the inflections database from our servers to enable the lemmatization feature.
 

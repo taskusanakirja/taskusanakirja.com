@@ -153,7 +153,7 @@ Our authorized reseller, Gumroad, acts as the Merchant of Record for all Pro lic
 
 - The core desktop application functions offline once installed and data is downloaded.
 - Server-dependent features, such as initial license activation and validation, are provided on an "as-available" basis and are not guaranteed to be available indefinitely.
-  - However, a successfully activated Pro license will continue to function offline for an extended period of up to 30 days as described in our documentation.
+  - However, a successfully activated Pro license will continue to function offline for up to 30 days before requiring revalidation. This offline grace period is subject to change with suitable notice.
 
 ### 10.2 Modifications
 
