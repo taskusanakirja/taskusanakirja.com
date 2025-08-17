@@ -60,6 +60,21 @@
             <div class="text-center">
                 <p class="text-ink-700 font-serif italic">&copy; {{ now.Year }} Taskusanakirja. All rights reserved.</p>
                 <p class="text-ink-600 text-sm mt-2">A scholarly companion for Finnish language learners</p>
+                
+                <!-- Contact Information -->
+                <div class="mt-6 text-sm text-ink-600 font-sans">
+                    <div class="mb-3">
+                        <strong class="text-ink-700">Contact:</strong>
+                        <a href="mailto:andrew@siilikuin.com" class="text-burgundy hover:text-burgundy/80 transition-colors duration-200">andrew@siilikuin.com</a>
+                    </div>
+                    <div class="mb-3">
+                        <strong class="text-ink-700">Business:</strong>
+                        <span>Siilikuin, Finnish Y-tunnus / business ID: 3372332-8</span><br>
+                        <span>Location: Finland</span><br>
+                        <span>Website: </span><a href="https://siilikuin.com" class="text-burgundy hover:text-burgundy/80 transition-colors duration-200">siilikuin.com</a>
+                    </div>
+                </div>
+                
                 <div class="mt-4 text-sm text-ink-600 font-sans">
                     {{ range $i, $item := .Site.Menus.footer }}
                         {{- if $i }} • {{ end -}}
