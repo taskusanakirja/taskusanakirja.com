@@ -1,0 +1,96 @@
+{{ define "main" }}
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+  <nav class="mb-8 text-sm">
+    <a href="/book/" class="text-burgundy hover:text-ochre-dark">← Back to Table of Contents</a>
+  </nav>
+  
+  <article class="prose prose-slate prose-lg mx-auto">
+    <div class="mb-8">
+      <p class="text-ochre-dark font-mono text-sm uppercase tracking-wide mb-2">
+        Chapter {{ .Params.chapter }}
+      </p>
+      <h1 class="font-display text-4xl mb-4">{{ .Title }}</h1>
+      {{ if .Description }}
+      <p class="text-xl text-slate-600 italic">{{ .Description }}</p>
+      {{ end }}
+    </div>
+    
+    {{ .Content }}
+    
+    <div class="mt-12 pt-8 border-t-2 border-ochre-light">
+      <nav class="flex justify-between items-center">
+        {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="flex items-center text-burgundy hover:text-ochre-dark transition-colors">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          <div class="text-left">
+            <div class="text-sm text-slate-500">Previous</div>
+            <div class="font-semibold">Chapter {{ .Params.chapter }}: {{ .Title }}</div>
+          </div>
+        </a>
+        {{ else }}
+        <div></div>
+        {{ end }}
+        
+        {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="flex items-center text-burgundy hover:text-ochre-dark transition-colors">
+          <div class="text-right">
+            <div class="text-sm text-slate-500">Next</div>
+            <div class="font-semibold">Chapter {{ .Params.chapter }}: {{ .Title }}</div>
+          </div>
+          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+        {{ else }}
+        <div></div>
+        {{ end }}
+      </nav>
+    </div>
+    
+    <div class="mt-8 p-6 bg-parchment rounded-lg border border-ochre-light">
+      <h3 class="text-lg font-display mb-2">📖 Continue Reading</h3>
+      <p class="text-sm text-slate-600 mb-3">
+        Enjoying this chapter? The complete ebook will be available for free download soon.
+      </p>
+      <div class="flex gap-3">
+        <a href="/book/" class="text-burgundy hover:text-ochre-dark text-sm font-semibold">
+          View All Chapters →
+        </a>
+        <a href="#" class="text-forest hover:text-ochre-dark text-sm font-semibold">
+          Download PDF (Coming Soon) →
+        </a>
+      </div>
+    </div>
+  </article>
+  
+  <style>
+  .prose a[href^="#fn"] {
+    @apply text-burgundy no-underline font-semibold;
+    vertical-align: super;
+    font-size: 0.875rem;
+  }
+  
+  .prose .footnotes {
+    @apply mt-12 pt-8 border-t-2 border-ochre-light;
+  }
+  
+  .prose .footnotes hr {
+    display: none;
+  }
+  
+  .prose .footnotes ol {
+    @apply text-sm;
+  }
+  
+  .prose .footnotes li {
+    @apply mb-2;
+  }
+  
+  .prose .footnotes a[href^="#fnref"] {
+    @apply text-burgundy hover:text-ochre-dark ml-1;
+  }
+  </style>
+</div>
+{{ end }}

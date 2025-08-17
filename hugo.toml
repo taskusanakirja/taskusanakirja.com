@@ -45,6 +45,11 @@ theme = "taskusanakirja-theme"
     url = "/faq/"
     weight = 35
   [[menu.main]]
+    identifier = "book"
+    name = "Free Ebook"
+    url = "/book/"
+    weight = 38
+  [[menu.main]]
     identifier = "blog"
     name = "Blog"
     url = "/blog/"

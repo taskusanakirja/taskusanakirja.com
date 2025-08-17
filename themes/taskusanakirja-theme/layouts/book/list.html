@@ -1,0 +1,287 @@
+{{ define "main" }}
+<!-- Hero Section with 3D Book -->
+<section class="flex items-center justify-center" style="min-height: min(100vh, 900px);">
+    <div class="container mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12">
+            <!-- 3D Book Container (Left) -->
+            <div class="relative w-80 h-80">
+                <div id="book-canvas" class="w-full h-full cursor-move"></div>
+                <!-- Interactive hint -->
+                <div id="drag-hint" class="absolute bottom-0 left-0 right-0 text-center text-sm text-slate-600 italic">
+                    Drag to rotate • Scroll to zoom
+                </div>
+            </div>
+            
+            <!-- Text Content (Right) -->
+            <div class="max-w-lg text-center md:text-left">
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-ink-900 mb-4 leading-tight">
+                    The Architecture of Taskusanakirja
+                </h1>
+                <p class="text-lg text-ink-700 font-serif mb-8">
+                    A free technical ebook exploring the design and implementation of a terminal-based Finnish-English dictionary
+                </p>
+                
+                <!-- Download Buttons -->
+                <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                    <a href="#chapters" class="btn-primary inline-flex items-center justify-center px-6 py-3">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                        Read Online
+                    </a>
+                    
+                    <button disabled class="btn-secondary inline-flex items-center justify-center px-6 py-3 opacity-50 cursor-not-allowed">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                        PDF (Coming Soon)
+                    </button>
+                    
+                    <button disabled class="btn-secondary inline-flex items-center justify-center px-6 py-3 opacity-50 cursor-not-allowed">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                        </svg>
+                        EPUB (Coming Soon)
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Chapters Section (Below the Fold) -->
+<section id="chapters" class="py-20 bg-ochre-50 border-t-2 border-ochre-200">
+    <div class="container mx-auto px-6 max-w-4xl">
+        <article class="prose prose-slate prose-lg mx-auto">
+            <h2 class="font-display text-3xl mb-8">Table of Contents</h2>
+            
+            {{ .Content }}
+            
+            <div class="mt-12">
+                <h3 class="font-display text-2xl mb-6">Chapters</h3>
+                <div class="space-y-4">
+                    {{ range .Pages.ByWeight }}
+                    <div class="border-l-4 border-ochre pl-4 py-2 hover:bg-parchment transition-colors">
+                        <a href="{{ .Permalink }}" class="no-underline">
+                            <h4 class="text-xl font-display mb-1 text-burgundy hover:text-ochre-dark">
+                                Chapter {{ .Params.chapter }}: {{ .Title }}
+                            </h4>
+                            {{ if .Description }}
+                            <p class="text-slate-600 text-base">{{ .Description }}</p>
+                            {{ end }}
+                        </a>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- Three.js Script -->
+<script async src="https://unpkg.com/es-module-shims@1.6.3/dist/es-module-shims.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.155.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+// Initialize Three.js scene for the book
+function init() {
+    const container = document.getElementById('book-canvas');
+    if (!container) return;
+    
+    const width = container.clientWidth;
+    const height = container.clientHeight;
+
+    // Scene setup
+    const scene = new THREE.Scene();
+    scene.background = null; // Transparent background
+
+    // Camera setup
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
+    camera.position.set(0, 0, 5);
+
+    // Renderer setup
+    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(window.devicePixelRatio);
+    container.appendChild(renderer.domElement);
+
+    // Add OrbitControls for mouse interaction
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.05;
+    controls.rotateSpeed = 0.8;
+    controls.enableZoom = true;
+    controls.minDistance = 3;
+    controls.maxDistance = 10;
+    controls.enablePan = false; // Disable panning to keep book centered
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    directionalLight.position.set(5, 5, 5);
+    scene.add(directionalLight);
+
+    // Create book geometry
+    const bookGroup = new THREE.Group();
+
+// Book cover - slate green
+const coverGeometry = new THREE.BoxGeometry(2, 2.8, 0.3);
+const coverMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0x2F4F4F, // slate green
+    shininess: 30
+});
+const cover = new THREE.Mesh(coverGeometry, coverMaterial);
+
+// Book pages - yellowed paper
+const pagesGeometry = new THREE.BoxGeometry(1.9, 2.6, 0.25);
+const pagesMaterial = new THREE.MeshLambertMaterial({ 
+    color: 0xF7F0E3 // yellowed paper
+});
+const pages = new THREE.Mesh(pagesGeometry, pagesMaterial);
+pages.position.x = -0.02;
+
+// Book spine detail
+const spineGeometry = new THREE.BoxGeometry(0.05, 2.8, 0.3);
+const spineMaterial = new THREE.MeshPhongMaterial({ 
+    color: 0x1a2f2f,
+    shininess: 50
+});
+const spine = new THREE.Mesh(spineGeometry, spineMaterial);
+spine.position.x = -1;
+
+// Add text texture for the cover
+const canvas = document.createElement('canvas');
+canvas.width = 512;
+canvas.height = 512;
+const context = canvas.getContext('2d');
+
+// Fill with slate green
+context.fillStyle = '#2F4F4F';
+context.fillRect(0, 0, 512, 512);
+
+// Add title text
+context.fillStyle = '#B8860B'; // gold-leaf color
+context.font = 'bold 36px Playfair Display, serif';
+context.textAlign = 'center';
+context.textBaseline = 'middle';
+
+// Wrap text
+const title = 'The Architecture of Taskusanakirja';
+const words = title.split(' ');
+const lines = [];
+let currentLine = '';
+
+words.forEach(word => {
+    const testLine = currentLine + word + ' ';
+    const metrics = context.measureText(testLine);
+    if (metrics.width > 400 && currentLine !== '') {
+        lines.push(currentLine.trim());
+        currentLine = word + ' ';
+    } else {
+        currentLine = testLine;
+    }
+});
+lines.push(currentLine.trim());
+
+// Draw wrapped text
+const lineHeight = 50;
+const startY = 256 - (lines.length - 1) * lineHeight / 2;
+lines.forEach((line, index) => {
+    context.fillText(line, 256, startY + index * lineHeight);
+});
+
+// Create texture from canvas
+const texture = new THREE.CanvasTexture(canvas);
+const coverWithTextMaterial = new THREE.MeshPhongMaterial({ 
+    map: texture,
+    shininess: 30
+});
+
+// Apply texture to front face only
+const materials = [
+    coverMaterial, // right
+    coverMaterial, // left
+    coverMaterial, // top
+    coverMaterial, // bottom
+    coverWithTextMaterial, // front
+    coverMaterial  // back
+];
+
+const coverWithText = new THREE.Mesh(coverGeometry, materials);
+
+// Assemble book
+bookGroup.add(coverWithText);
+bookGroup.add(pages);
+bookGroup.add(spine);
+
+// Add some page edges on the right side
+for (let i = 0; i < 5; i++) {
+    const edgeGeometry = new THREE.PlaneGeometry(0.01, 2.6);
+    const edgeMaterial = new THREE.MeshBasicMaterial({ 
+        color: 0xE8D4B0,
+        side: THREE.DoubleSide
+    });
+    const edge = new THREE.Mesh(edgeGeometry, edgeMaterial);
+    edge.position.x = 0.95 + i * 0.02;
+    edge.position.z = 0.01 * i;
+    edge.rotation.y = Math.PI / 2;
+    bookGroup.add(edge);
+}
+
+scene.add(bookGroup);
+
+// Position and rotate book initially
+bookGroup.rotation.y = -0.3;
+bookGroup.rotation.x = 0.1;
+
+    // Animation
+    function animate() {
+        requestAnimationFrame(animate);
+        
+        // Update controls
+        controls.update();
+        
+        // Gentle floating animation (only when not being dragged)
+        if (!controls.enabled || !controls.isMouseDown) {
+            bookGroup.position.y = Math.sin(Date.now() * 0.001) * 0.05;
+        }
+        
+        renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Handle resize
+    window.addEventListener('resize', () => {
+        const newWidth = container.clientWidth;
+        const newHeight = container.clientHeight;
+        
+        camera.aspect = newWidth / newHeight;
+        camera.updateProjectionMatrix();
+        
+        renderer.setSize(newWidth, newHeight);
+    });
+
+    console.log('3D book successfully initialized');
+}
+
+// Wait for DOM to be ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
+</script>
+
+{{ end }}
