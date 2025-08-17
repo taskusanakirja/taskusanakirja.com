@@ -8,7 +8,7 @@
                 <div id="book-canvas" class="w-full h-full cursor-move"></div>
                 <!-- Interactive hint -->
                 <div id="drag-hint" class="absolute bottom-0 left-0 right-0 text-center text-sm text-slate-600 italic">
-                    Drag to rotate • Scroll to zoom
+                    Drag to rotate • Scroll to zoom • Click to open
                 </div>
             </div>
             
@@ -91,14 +91,29 @@
 <script type="module">
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+import { RGBELoader } from 'three/addons/loaders/RGBELoader.js';
+
+console.log('Three.js module loaded:', typeof THREE !== 'undefined');
 
 // Initialize Three.js scene for the book
 function init() {
+    try {
     const container = document.getElementById('book-canvas');
-    if (!container) return;
+    if (!container) {
+        console.error('book-canvas container not found!');
+        return;
+    }
     
-    const width = container.clientWidth;
-    const height = container.clientHeight;
+    console.log('Initializing 3D book...');
+    const width = container.clientWidth || 320;
+    const height = container.clientHeight || 320;
+    console.log('Container dimensions:', width, 'x', height);
+    
+    if (width === 0 || height === 0) {
+        console.error('Container has zero dimensions, using default 320x320');
+        container.style.width = '320px';
+        container.style.height = '320px';
+    }
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -106,12 +121,21 @@ function init() {
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
-    camera.position.set(0, 0, 5);
+    camera.position.set(2, 1, 4);
+    camera.lookAt(0, 0, 0);
 
-    // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+    // Renderer setup with shadows
+    const renderer = new THREE.WebGLRenderer({ 
+        alpha: true, 
+        antialias: true,
+        powerPreference: "high-performance"
+    });
     renderer.setSize(width, height);
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.2;
     container.appendChild(renderer.domElement);
 
     // Add OrbitControls for mouse interaction
@@ -120,130 +144,551 @@ function init() {
     controls.dampingFactor = 0.05;
     controls.rotateSpeed = 0.8;
     controls.enableZoom = true;
-    controls.minDistance = 3;
-    controls.maxDistance = 10;
-    controls.enablePan = false; // Disable panning to keep book centered
+    controls.minDistance = 2.5;
+    controls.maxDistance = 8;
+    controls.enablePan = false;
+    controls.target.set(0, 0, 0);
 
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    // Enhanced lighting setup
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight.position.set(5, 5, 5);
-    scene.add(directionalLight);
+    // Key light with shadows
+    const keyLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    keyLight.position.set(5, 8, 5);
+    keyLight.castShadow = true;
+    keyLight.shadow.mapSize.width = 2048;
+    keyLight.shadow.mapSize.height = 2048;
+    keyLight.shadow.camera.near = 1;
+    keyLight.shadow.camera.far = 20;
+    keyLight.shadow.camera.left = -5;
+    keyLight.shadow.camera.right = 5;
+    keyLight.shadow.camera.top = 5;
+    keyLight.shadow.camera.bottom = -5;
+    scene.add(keyLight);
 
-    // Create book geometry
+    // Fill light
+    const fillLight = new THREE.DirectionalLight(0xffd4a3, 0.3);
+    fillLight.position.set(-3, 3, -3);
+    scene.add(fillLight);
+
+    // Rim light for edge definition
+    const rimLight = new THREE.DirectionalLight(0xffffff, 0.2);
+    rimLight.position.set(0, 3, -5);
+    scene.add(rimLight);
+
+    // Create main book group
     const bookGroup = new THREE.Group();
+    
+    // Book state
+    let bookOpen = false;
+    let openProgress = 0;
+    const openSpeed = 0.02;
 
-// Book cover - slate green
-const coverGeometry = new THREE.BoxGeometry(2, 2.8, 0.3);
-const coverMaterial = new THREE.MeshPhongMaterial({ 
-    color: 0x2F4F4F, // slate green
-    shininess: 30
-});
-const cover = new THREE.Mesh(coverGeometry, coverMaterial);
+    // Create cover texture with embossed effect
+    function createCoverTexture() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1024;
+        canvas.height = 1024;
+        const ctx = canvas.getContext('2d');
 
-// Book pages - yellowed paper
-const pagesGeometry = new THREE.BoxGeometry(1.9, 2.6, 0.25);
-const pagesMaterial = new THREE.MeshLambertMaterial({ 
-    color: 0xF7F0E3 // yellowed paper
-});
-const pages = new THREE.Mesh(pagesGeometry, pagesMaterial);
-pages.position.x = -0.02;
+        // Background with subtle texture
+        const gradient = ctx.createLinearGradient(0, 0, 1024, 1024);
+        gradient.addColorStop(0, '#345454');
+        gradient.addColorStop(0.5, '#2F4F4F');
+        gradient.addColorStop(1, '#264040');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 1024, 1024);
 
-// Book spine detail
-const spineGeometry = new THREE.BoxGeometry(0.05, 2.8, 0.3);
-const spineMaterial = new THREE.MeshPhongMaterial({ 
-    color: 0x1a2f2f,
-    shininess: 50
-});
-const spine = new THREE.Mesh(spineGeometry, spineMaterial);
-spine.position.x = -1;
+        // Add noise texture for realism
+        const imageData = ctx.getImageData(0, 0, 1024, 1024);
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+            const noise = (Math.random() - 0.5) * 15;
+            data[i] += noise;     // R
+            data[i + 1] += noise; // G
+            data[i + 2] += noise; // B
+        }
+        ctx.putImageData(imageData, 0, 0);
 
-// Add text texture for the cover
-const canvas = document.createElement('canvas');
-canvas.width = 512;
-canvas.height = 512;
-const context = canvas.getContext('2d');
+        // Gold border decoration
+        ctx.strokeStyle = '#B8860B';
+        ctx.lineWidth = 4;
+        ctx.strokeRect(40, 40, 944, 944);
+        
+        // Inner border
+        ctx.strokeStyle = '#997014';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(60, 60, 904, 904);
 
-// Fill with slate green
-context.fillStyle = '#2F4F4F';
-context.fillRect(0, 0, 512, 512);
+        // Title with shadow for embossed effect
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+        ctx.shadowBlur = 4;
+        ctx.shadowOffsetX = 2;
+        ctx.shadowOffsetY = 2;
+        
+        ctx.fillStyle = '#D4AF37'; // Brighter gold
+        ctx.font = 'bold 72px Georgia, serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        
+        // Title text with proper wrapping
+        const lines = [
+            'The Architecture',
+            'of',
+            'Taskusanakirja'
+        ];
+        
+        lines.forEach((line, index) => {
+            const y = 400 + (index - 1) * 100;
+            ctx.fillText(line, 512, y);
+            
+            // Highlight effect
+            ctx.shadowColor = 'rgba(255, 215, 0, 0.3)';
+            ctx.shadowBlur = 10;
+            ctx.strokeStyle = '#FFD700';
+            ctx.lineWidth = 1;
+            ctx.strokeText(line, 512, y);
+        });
 
-// Add title text
-context.fillStyle = '#B8860B'; // gold-leaf color
-context.font = 'bold 36px Playfair Display, serif';
-context.textAlign = 'center';
-context.textBaseline = 'middle';
+        // Decorative elements
+        ctx.shadowColor = 'transparent';
+        ctx.fillStyle = '#B8860B';
+        ctx.font = '36px Georgia, serif';
+        ctx.fillText('❦', 512, 650);
+        
+        // Author/subtitle area
+        ctx.font = 'italic 32px Georgia, serif';
+        ctx.fillStyle = '#997014';
+        ctx.fillText('Technical Architecture Guide', 512, 750);
 
-// Wrap text
-const title = 'The Architecture of Taskusanakirja';
-const words = title.split(' ');
-const lines = [];
-let currentLine = '';
-
-words.forEach(word => {
-    const testLine = currentLine + word + ' ';
-    const metrics = context.measureText(testLine);
-    if (metrics.width > 400 && currentLine !== '') {
-        lines.push(currentLine.trim());
-        currentLine = word + ' ';
-    } else {
-        currentLine = testLine;
+        return new THREE.CanvasTexture(canvas);
     }
-});
-lines.push(currentLine.trim());
 
-// Draw wrapped text
-const lineHeight = 50;
-const startY = 256 - (lines.length - 1) * lineHeight / 2;
-lines.forEach((line, index) => {
-    context.fillText(line, 256, startY + index * lineHeight);
-});
+    // Create normal map for embossing effect
+    function createNormalMap() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 1024;
+        canvas.height = 1024;
+        const ctx = canvas.getContext('2d');
+        
+        // Base normal color (pointing straight out)
+        ctx.fillStyle = '#8080ff';
+        ctx.fillRect(0, 0, 1024, 1024);
+        
+        // Add embossed text effect areas
+        ctx.strokeStyle = '#a0a0ff';
+        ctx.lineWidth = 8;
+        ctx.strokeRect(40, 40, 944, 944);
+        
+        return new THREE.CanvasTexture(canvas);
+    }
 
-// Create texture from canvas
-const texture = new THREE.CanvasTexture(canvas);
-const coverWithTextMaterial = new THREE.MeshPhongMaterial({ 
-    map: texture,
-    shininess: 30
-});
+    // Create roughness map
+    function createRoughnessMap() {
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 512;
+        const ctx = canvas.getContext('2d');
+        
+        // Base roughness
+        ctx.fillStyle = '#808080';
+        ctx.fillRect(0, 0, 512, 512);
+        
+        // Less rough (more shiny) where gold text is
+        ctx.fillStyle = '#202020';
+        ctx.font = 'bold 36px Georgia, serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('The Architecture', 256, 200);
+        ctx.fillText('of', 256, 250);
+        ctx.fillText('Taskusanakirja', 256, 300);
+        
+        return new THREE.CanvasTexture(canvas);
+    }
 
-// Apply texture to front face only
-const materials = [
-    coverMaterial, // right
-    coverMaterial, // left
-    coverMaterial, // top
-    coverMaterial, // bottom
-    coverWithTextMaterial, // front
-    coverMaterial  // back
-];
+    // Create page texture - special content for pages 10 and 80
+    function createPageTexture(pageNumber) {
+        const canvas = document.createElement('canvas');
+        canvas.width = 512;
+        canvas.height = 768;
+        const ctx = canvas.getContext('2d');
+        
+        // Page background - aged paper
+        const gradient = ctx.createRadialGradient(256, 384, 0, 256, 384, 400);
+        gradient.addColorStop(0, '#FFF8F0');
+        gradient.addColorStop(0.7, '#F7F0E3');
+        gradient.addColorStop(1, '#EDE7D9');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, 512, 768);
+        
+        if (pageNumber === 80) {
+            // Special content for page 80
+            // Add decorative border
+            ctx.strokeStyle = '#D4C4B0';
+            ctx.lineWidth = 2;
+            ctx.strokeRect(20, 20, 472, 728);
+            
+            // Add main text
+            ctx.fillStyle = '#000000';
+            ctx.font = 'bold 48px Georgia, serif';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // "Product of" text
+            ctx.fillText('Product of', 256, 350);
+            
+            // URL in larger font
+            ctx.font = 'bold 56px Georgia, serif';
+            ctx.fillStyle = '#7C2F3E'; // burgundy color
+            ctx.fillText('siilikuin.com', 256, 420);
+            
+            // Add decorative element
+            ctx.font = '64px Georgia, serif';
+            ctx.fillStyle = '#B8860B'; // gold color
+            ctx.fillText('❦', 256, 500);
+            
+            // Add click instruction
+            ctx.font = 'bold 32px Georgia, serif';
+            ctx.fillStyle = '#000000';
+            ctx.fillText('Click to visit', 256, 580);
+        } else if (pageNumber === 10) {
+            // Page 10 - siili.png logo with white transparency
+            const texture = new THREE.CanvasTexture(canvas);
+            
+            // Load and draw siili.png
+            const img = new Image();
+            img.onload = function() {
+                console.log('Siili image loaded for page 10');
+                
+                // Clear and redraw background
+                ctx.clearRect(0, 0, 512, 768);
+                ctx.fillStyle = gradient;
+                ctx.fillRect(0, 0, 512, 768);
+                
+                // Calculate image size maintaining aspect ratio
+                const maxSize = 300; // Good size for logo
+                const aspectRatio = img.width / img.height;
+                let imgWidth, imgHeight;
+                
+                if (aspectRatio > 1) {
+                    imgWidth = maxSize;
+                    imgHeight = maxSize / aspectRatio;
+                } else {
+                    imgHeight = maxSize;
+                    imgWidth = maxSize * aspectRatio;
+                }
+                
+                // Center the image on the page
+                // Shift left since part of page stays embedded in book
+                const x = (512 - imgWidth) / 2 - 30; // Move left by 30 pixels
+                const y = (768 - imgHeight) / 2;
+                
+                // Create a temporary canvas to process the image
+                const tempCanvas = document.createElement('canvas');
+                tempCanvas.width = imgWidth;
+                tempCanvas.height = imgHeight;
+                const tempCtx = tempCanvas.getContext('2d');
+                
+                // Draw the image to temp canvas
+                tempCtx.drawImage(img, 0, 0, imgWidth, imgHeight);
+                
+                // Get image data and make white pixels transparent
+                const imageData = tempCtx.getImageData(0, 0, imgWidth, imgHeight);
+                const data = imageData.data;
+                
+                for (let i = 0; i < data.length; i += 4) {
+                    const r = data[i];
+                    const g = data[i + 1];
+                    const b = data[i + 2];
+                    
+                    // Check if pixel is white or near-white
+                    if (r > 240 && g > 240 && b > 240) {
+                        // Make it transparent
+                        data[i + 3] = 0; // Set alpha to 0
+                    }
+                }
+                
+                // Put the modified image data back
+                tempCtx.putImageData(imageData, 0, 0);
+                
+                // Draw the processed image to the main canvas
+                ctx.drawImage(tempCanvas, x, y);
+                
+                // Update the texture
+                texture.needsUpdate = true;
+            };
+            
+            img.onerror = function() {
+                console.error('Failed to load siili.png for page 10');
+                // Fallback - just show text
+                ctx.fillStyle = '#2F4F4F';
+                ctx.font = 'bold 48px Georgia, serif';
+                ctx.textAlign = 'center';
+                ctx.fillText('Siilikuin', 256, 384);
+                texture.needsUpdate = true;
+            };
+            
+            img.src = '/siili.png';
+            return texture;
+        }
+        // else - normal pages remain blank (no page numbers)
+        
+        const texture = new THREE.CanvasTexture(canvas);
+        texture.needsUpdate = true;
+        
+        return texture;
+    }
+    
+    let innerPageTexture = null;
 
-const coverWithText = new THREE.Mesh(coverGeometry, materials);
+    // Book dimensions
+    const bookWidth = 2;
+    const bookHeight = 2.8;
+    const bookThickness = 0.35;
+    const coverThickness = 0.03;
+    const spineWidth = bookThickness + 0.05;
 
-// Assemble book
-bookGroup.add(coverWithText);
-bookGroup.add(pages);
-bookGroup.add(spine);
+    // Create book cover parts
+    const coverTexture = createCoverTexture();
+    const normalMap = createNormalMap();
+    const roughnessMap = createRoughnessMap();
 
-// Add some page edges on the right side
-for (let i = 0; i < 5; i++) {
-    const edgeGeometry = new THREE.PlaneGeometry(0.01, 2.6);
-    const edgeMaterial = new THREE.MeshBasicMaterial({ 
-        color: 0xE8D4B0,
+    // Front cover with pivot group
+    const frontCoverGeometry = new THREE.BoxGeometry(bookWidth, bookHeight, coverThickness);
+    const frontCoverMaterial = new THREE.MeshStandardMaterial({
+        map: coverTexture,
+        normalMap: normalMap,
+        normalScale: new THREE.Vector2(0.5, 0.5),
+        roughnessMap: roughnessMap,
+        roughness: 0.7,
+        metalness: 0.1,
+        bumpMap: normalMap,
+        bumpScale: 0.02
+    });
+    const frontCoverMesh = new THREE.Mesh(frontCoverGeometry, frontCoverMaterial);
+    frontCoverMesh.position.x = bookWidth / 2; // Position cover relative to pivot
+    frontCoverMesh.castShadow = true;
+    frontCoverMesh.receiveShadow = true;
+    
+    // Create pivot group for front cover at the spine
+    const frontCoverPivot = new THREE.Group();
+    frontCoverPivot.position.x = -bookWidth / 2;
+    frontCoverPivot.position.z = bookThickness / 2;
+    frontCoverPivot.add(frontCoverMesh);
+
+    // Back cover (plain)
+    const backCoverMaterial = new THREE.MeshStandardMaterial({
+        color: 0x2F4F4F,
+        roughness: 0.8,
+        metalness: 0.05
+    });
+    const backCover = new THREE.Mesh(frontCoverGeometry, backCoverMaterial);
+    backCover.position.z = -bookThickness / 2;
+    backCover.castShadow = true;
+    backCover.receiveShadow = true;
+
+    // Spine with texture
+    const spineGeometry = new THREE.BoxGeometry(spineWidth, bookHeight, bookThickness);
+    const spineMaterial = new THREE.MeshStandardMaterial({
+        color: 0x1a2f2f,
+        roughness: 0.6,
+        metalness: 0.1
+    });
+    const spine = new THREE.Mesh(spineGeometry, spineMaterial);
+    spine.position.x = -bookWidth / 2 - spineWidth / 2 + 0.025;
+    spine.castShadow = true;
+    spine.receiveShadow = true;
+
+    // Create pages with realistic layering
+    const pagesGroup = new THREE.Group();
+    const pageCount = 80; // Number of visible page layers
+    
+    for (let i = 0; i < pageCount; i++) {
+        const pageWidth = bookWidth - 0.15;
+        const pageHeight = bookHeight - 0.2;
+        const pageThickness = (bookThickness - coverThickness * 2) / pageCount;
+        
+        // Create numbered texture for ALL pages
+        const pageTexture = createPageTexture(i + 1);
+        
+        const pageMaterial = new THREE.MeshStandardMaterial({
+            map: pageTexture,
+            roughness: 0.9,
+            metalness: 0,
+            side: THREE.DoubleSide
+        });
+        
+        const pageGeometry = new THREE.BoxGeometry(
+            pageWidth - i * 0.001, // Slightly smaller for inner pages
+            pageHeight - i * 0.0005,
+            pageThickness
+        );
+        
+        const page = new THREE.Mesh(pageGeometry, pageMaterial);
+        
+        // Position page relative to its pivot point (left edge)
+        page.position.x = (pageWidth - i * 0.001) / 2; // Half width to the right
+        
+        // Create pivot at the left edge of the page (binding)
+        const pagePivot = new THREE.Group();
+        pagePivot.position.x = -bookWidth / 2 + 0.075; // At the binding
+        // Position pages slightly behind the front cover to prevent clipping
+        pagePivot.position.z = -bookThickness / 2 + coverThickness * 1.5 + (i + 0.5) * pageThickness;
+        pagePivot.add(page);
+        
+        page.castShadow = true;
+        page.receiveShadow = true;
+        
+        // Name each page for identification
+        page.name = 'page' + (i + 1);
+        page.userData.pageNumber = i + 1;
+        console.log('Created page', i + 1, 'at z position:', pagePivot.position.z);
+        
+        pagesGroup.add(pagePivot);
+    }
+
+    // Page edges (fore-edge)
+    const edgeCanvas = document.createElement('canvas');
+    edgeCanvas.width = 128;
+    edgeCanvas.height = 512;
+    const edgeCtx = edgeCanvas.getContext('2d');
+    
+    // Create gradient for page edges
+    const edgeGradient = edgeCtx.createLinearGradient(0, 0, 128, 0);
+    edgeGradient.addColorStop(0, '#F5F1E8');
+    edgeGradient.addColorStop(0.5, '#EDE7D9');
+    edgeGradient.addColorStop(1, '#E0D5C3');
+    edgeCtx.fillStyle = edgeGradient;
+    edgeCtx.fillRect(0, 0, 128, 512);
+    
+    // Add page lines
+    edgeCtx.strokeStyle = '#D4C4B0';
+    edgeCtx.lineWidth = 0.5;
+    for (let i = 0; i < 512; i += 2) {
+        edgeCtx.beginPath();
+        edgeCtx.moveTo(0, i);
+        edgeCtx.lineTo(128, i);
+        edgeCtx.stroke();
+    }
+    
+    const edgeTexture = new THREE.CanvasTexture(edgeCanvas);
+    const pageHeight = bookHeight - 0.2; // Actual page height
+    const pageWidth = bookWidth - 0.15; // Actual page width
+    const pageThickness = bookThickness - coverThickness * 2;
+    
+    // Fore-edge (right side of pages)
+    const foreEdgeGeometry = new THREE.PlaneGeometry(pageThickness, pageHeight);
+    const foreEdgeMaterial = new THREE.MeshStandardMaterial({
+        map: edgeTexture,
+        roughness: 0.95,
+        metalness: 0,
         side: THREE.DoubleSide
     });
-    const edge = new THREE.Mesh(edgeGeometry, edgeMaterial);
-    edge.position.x = 0.95 + i * 0.02;
-    edge.position.z = 0.01 * i;
-    edge.rotation.y = Math.PI / 2;
-    bookGroup.add(edge);
-}
+    const foreEdge = new THREE.Mesh(foreEdgeGeometry, foreEdgeMaterial);
+    foreEdge.rotation.y = Math.PI / 2;
+    foreEdge.position.x = bookWidth / 2 - 0.075;
+    foreEdge.position.z = 0;
+    
+    // Top and bottom page edges - must match actual page dimensions
+    const topBottomEdgeGeometry = new THREE.PlaneGeometry(pageWidth, pageThickness);
+    
+    const topEdge = new THREE.Mesh(topBottomEdgeGeometry, foreEdgeMaterial);
+    topEdge.rotation.x = Math.PI / 2;
+    topEdge.position.set(-0.05, pageHeight / 2, 0);
+    
+    const bottomEdge = new THREE.Mesh(topBottomEdgeGeometry, foreEdgeMaterial);
+    bottomEdge.rotation.x = -Math.PI / 2;
+    bottomEdge.position.set(-0.05, -pageHeight / 2, 0);
 
-scene.add(bookGroup);
+    // Assemble the book (order matters for rendering)
+    bookGroup.add(backCover);
+    bookGroup.add(spine);
+    bookGroup.add(foreEdge);
+    bookGroup.add(topEdge);
+    bookGroup.add(bottomEdge);
+    bookGroup.add(pagesGroup);
+    bookGroup.add(frontCoverPivot); // Front cover added last so it's on top when closed
+    
+    console.log('Book assembled with', bookGroup.children.length, 'children');
 
-// Position and rotate book initially
-bookGroup.rotation.y = -0.3;
-bookGroup.rotation.x = 0.1;
+
+    // Position and rotate book
+    bookGroup.rotation.y = -0.4;
+    bookGroup.rotation.x = 0.05;
+    
+    // Add ground shadow plane
+    const shadowGeometry = new THREE.PlaneGeometry(10, 10);
+    const shadowMaterial = new THREE.ShadowMaterial({
+        opacity: 0.3
+    });
+    const shadowPlane = new THREE.Mesh(shadowGeometry, shadowMaterial);
+    shadowPlane.rotation.x = -Math.PI / 2;
+    shadowPlane.position.y = -2;
+    shadowPlane.receiveShadow = true;
+    scene.add(shadowPlane);
+
+    scene.add(bookGroup);
+
+    // Mouse interaction for book opening
+    let mouseX = 0;
+    let mouseY = 0;
+    const raycaster = new THREE.Raycaster();
+    const mouse = new THREE.Vector2();
+
+    container.addEventListener('mousemove', (event) => {
+        const rect = container.getBoundingClientRect();
+        mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        
+        mouseX = mouse.x;
+        mouseY = mouse.y;
+        
+        // Update cursor based on hover target
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObject(bookGroup, true);
+        
+        if (intersects.length > 0) {
+            const firstIntersect = intersects[0];
+            
+            if (firstIntersect.object.name && firstIntersect.object.name.startsWith('page')) {
+                container.style.cursor = 'pointer';
+            } else {
+                container.style.cursor = 'move';
+            }
+        } else {
+            container.style.cursor = 'move';
+        }
+    });
+
+    container.addEventListener('click', (event) => {
+        raycaster.setFromCamera(mouse, camera);
+        const intersects = raycaster.intersectObject(bookGroup, true);
+        
+        if (intersects.length > 0) {
+            const firstIntersect = intersects[0];
+            
+            // Check if clicking on a page
+            if (firstIntersect.object.name && firstIntersect.object.name.startsWith('page')) {
+                const pageNum = firstIntersect.object.userData.pageNumber;
+                
+                // Special handling for clickable pages
+                if ((pageNum === 80 || pageNum === 10) && bookOpen) {
+                    console.log('Opening siilikuin.com from page', pageNum);
+                    window.open('https://siilikuin.com/', '_blank');
+                    return;
+                }
+                
+                // For debugging other pages
+                console.log('CLICKED ON PAGE:', pageNum);
+                console.log('Book is currently:', bookOpen ? 'OPEN' : 'CLOSED');
+                return;
+            }
+            
+            // Otherwise toggle book open/close
+            bookOpen = !bookOpen;
+            console.log('Book toggled, now:', bookOpen ? 'OPEN' : 'CLOSED');
+        }
+    });
 
     // Animation
     function animate() {
@@ -252,9 +697,34 @@ bookGroup.rotation.x = 0.1;
         // Update controls
         controls.update();
         
-        // Gentle floating animation (only when not being dragged)
-        if (!controls.enabled || !controls.isMouseDown) {
-            bookGroup.position.y = Math.sin(Date.now() * 0.001) * 0.05;
+        // Book opening animation
+        if (bookOpen && openProgress < 1) {
+            openProgress = Math.min(1, openProgress + openSpeed);
+            if (openProgress === 1) {
+                console.log('Book fully open, inner pages should be visible');
+            }
+        } else if (!bookOpen && openProgress > 0) {
+            openProgress = Math.max(0, openProgress - openSpeed);
+        }
+        
+        // Animate front cover opening
+        frontCoverPivot.rotation.y = -openProgress * Math.PI * 0.7;
+        
+        // Animate some pages flipping - less rotation than cover to prevent clipping
+        pagesGroup.children.forEach((pagePivot, i) => {
+            if (i < 10) {
+                const pageOpenDelay = i * 0.05;
+                const pageOpenProgress = Math.max(0, Math.min(1, (openProgress - pageOpenDelay) * 1.2));
+                // Pages rotate less than cover (0.6 vs 0.7) and with a max limit
+                const maxPageRotation = Math.PI * 0.6;
+                pagePivot.rotation.y = -Math.min(pageOpenProgress * maxPageRotation, maxPageRotation * 0.95);
+            }
+        });
+        
+        // Gentle floating animation
+        if (!controls.isUserInteracting) {
+            bookGroup.position.y = Math.sin(Date.now() * 0.001) * 0.03;
+            bookGroup.rotation.y = -0.4 + Math.sin(Date.now() * 0.0008) * 0.05;
         }
         
         renderer.render(scene, camera);
@@ -273,13 +743,35 @@ bookGroup.rotation.x = 0.1;
         renderer.setSize(newWidth, newHeight);
     });
 
-    console.log('3D book successfully initialized');
+    // Hide hint after first interaction
+    let hintHidden = false;
+    container.addEventListener('mousedown', () => {
+        if (!hintHidden) {
+            const hint = document.getElementById('drag-hint');
+            if (hint) {
+                hint.style.transition = 'opacity 0.5s';
+                hint.style.opacity = '0';
+                setTimeout(() => hint.style.display = 'none', 500);
+                hintHidden = true;
+            }
+        }
+    });
+
+    console.log('Enhanced 3D book successfully initialized');
+    } catch (error) {
+        console.error('Error initializing 3D book:', error);
+        console.error('Stack trace:', error.stack);
+    }
 }
 
 // Wait for DOM to be ready
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('DOM loaded, initializing 3D book...');
+        init();
+    });
 } else {
+    console.log('DOM already loaded, initializing 3D book...');
     init();
 }
 </script>
