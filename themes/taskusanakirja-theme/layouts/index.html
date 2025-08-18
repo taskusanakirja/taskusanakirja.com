@@ -10,8 +10,29 @@
         </video>
     </div>
     
-    <!-- Content at bottom -->
-    <div class="mt-4 md:mt-8 mb-8 md:mb-12">
+    <!-- Prominent download buttons immediately after video -->
+    <div class="mt-6 md:mt-8">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center">
+                <a href="/downloads/" id="platform-download-btn" class="btn-primary inline-flex items-center justify-center px-10 py-5 text-lg font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
+                    </svg>
+                    <span id="download-text">Download Taskusanakirja</span>
+                </a>
+                
+                <a href="https://quinnster43.gumroad.com/l/mfaqzr" class="btn-secondary inline-flex items-center justify-center px-10 py-5 text-lg font-bold shadow-lg hover:shadow-xl transform hover:scale-105 transition-all">
+                    <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
+                    </svg>
+                    Buy Pro License (€15)
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Content below buttons -->
+    <div class="mt-8 md:mt-12 mb-8 md:mb-12">
         <div class="container mx-auto px-6">
             <!-- Subtle separator line -->
             <div class="w-32 h-0.5 bg-ochre-400 mx-auto mb-4 md:mb-8"></div>
@@ -23,22 +44,6 @@
             <p class="text-base md:text-lg text-ink-700 mb-6 md:mb-10 font-serif leading-relaxed text-center max-w-3xl mx-auto">
                 An elegant Terminal User Interface for Finnish lexicography. Navigate thousands of words with intuitive keyboard controls, or use powerful CLI commands for quick lookups. Available for Mac, Linux, and Windows (really!).
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-8 md:mb-12">
-                <a href="/downloads/" class="btn-primary inline-flex items-center justify-center px-8 py-3">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"></path>
-                    </svg>
-                    Download the latest Taskusanakirja
-                </a>
-                
-                <a href="https://quinnster43.gumroad.com/l/mfaqzr" class="btn-secondary inline-flex items-center justify-center px-8 py-3">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"></path>
-                    </svg>
-                    Buy Taskusanakirja Pro License on Gumroad (€15)
-                </a>
-            </div>
             
             <!-- Quote with more spacing -->
             <div class="mt-8 md:mt-12 pt-6 md:pt-8 border-t border-ochre-200">
@@ -396,4 +401,57 @@
         </p>
     </div>
 </section>
+
+<script>
+// Platform detection and direct download
+document.addEventListener('DOMContentLoaded', function() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const platform = navigator.platform.toLowerCase();
+  const downloadBtn = document.getElementById('platform-download-btn');
+  const downloadText = document.getElementById('download-text');
+  
+  let platformName = '';
+  let downloadUrl = '';
+  
+  if (platform.includes('win') || userAgent.includes('win')) {
+    // Windows - default to 64-bit as it's most common
+    if (userAgent.includes('wow64') || userAgent.includes('win64') || userAgent.includes('x64') || platform.includes('win64')) {
+      platformName = 'Windows';
+      downloadUrl = 'https://files.taskusanakirja.com/taskusanakirja_windows_amd64_v1-0-0.exe';
+    } else {
+      platformName = 'Windows (32-bit)';
+      downloadUrl = 'https://files.taskusanakirja.com/taskusanakirja_windows_386_v1-0-0.exe';
+    }
+  } else if (platform.includes('mac') || userAgent.includes('mac')) {
+    // macOS - Apple Silicon (ARM) is default for newer Macs
+    // Check for ARM/Apple Silicon indicators
+    if (userAgent.includes('arm') || (navigator.userAgentData && navigator.userAgentData.architecture === 'arm')) {
+      platformName = 'macOS';
+      downloadUrl = 'https://files.taskusanakirja.com/taskusanakirja_darwin_arm64_v1-0-0';
+    } else {
+      platformName = 'macOS (Intel)';
+      downloadUrl = 'https://files.taskusanakirja.com/taskusanakirja_darwin_amd64_v1-0-0';
+    }
+  } else if (platform.includes('linux') || userAgent.includes('linux')) {
+    // Linux - default to 64-bit
+    if (userAgent.includes('aarch64') || userAgent.includes('arm')) {
+      platformName = 'Linux (ARM)';
+      downloadUrl = 'https://files.taskusanakirja.com/taskusanakirja_linux_arm64_v1-0-0';
+    } else {
+      platformName = 'Linux';
+      downloadUrl = 'https://files.taskusanakirja.com/taskusanakirja_linux_amd64_v1-0-0';
+    }
+  }
+  
+  // Update button text and href if platform detected
+  if (platformName && downloadUrl) {
+    downloadText.textContent = 'Download for ' + platformName;
+    downloadBtn.href = downloadUrl;
+    
+    // Add download attribute to trigger direct download
+    const filename = downloadUrl.split('/').pop();
+    downloadBtn.setAttribute('download', filename);
+  }
+});
+</script>
 {{ end }}
