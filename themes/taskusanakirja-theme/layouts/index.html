@@ -1,3 +1,38 @@
+{{ define "header" }}
+<header class="fixed top-0 left-0 right-0 z-50 bg-parchment/95 backdrop-blur-sm border-b border-ochre-300 shadow-sm">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="{{ .Site.BaseURL }}" class="text-2xl font-display font-bold text-forest hover:text-burgundy transition-colors duration-200">
+                Taskusanakirja
+            </a>
+            
+            <!-- Hamburger menu button for all screen sizes on landing page -->
+            <button class="text-ink-800 hover:text-burgundy transition-colors duration-200" id="menu-toggle-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon-open">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" id="menu-icon-close">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Full-width overlay menu (hidden by default) -->
+        <div class="hidden fixed left-0 right-0 top-full w-full bg-parchment/95 backdrop-blur-sm border-b border-ochre-300 shadow-xl transition-all duration-300" id="dropdown-menu">
+            <div class="container mx-auto px-6 py-8">
+                <div class="flex flex-col items-center space-y-4">
+                    {{ range .Site.Menus.main }}
+                    <a href="{{ .URL }}" class="text-lg font-medium text-ink-800 hover:text-burgundy transition-colors duration-200 py-2">
+                        {{ .Name }}
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+{{ end }}
+
 {{ define "main" }}
 <!-- Hero Section with GIF -->
 <section class="flex flex-col" style="min-height: min(100vh, 900px);">
@@ -452,6 +487,62 @@ document.addEventListener('DOMContentLoaded', function() {
     const filename = downloadUrl.split('/').pop();
     downloadBtn.setAttribute('download', filename);
   }
+  
+  // Hamburger menu functionality with smooth animation
+  const menuToggle = document.getElementById('menu-toggle-button');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+  const menuIconOpen = document.getElementById('menu-icon-open');
+  const menuIconClose = document.getElementById('menu-icon-close');
+  
+  // Add slide animation styles
+  dropdownMenu.style.maxHeight = '0';
+  dropdownMenu.style.overflow = 'hidden';
+  dropdownMenu.style.transition = 'max-height 0.3s ease-out, opacity 0.3s ease-out';
+  dropdownMenu.style.opacity = '0';
+  
+  function openMenu() {
+    dropdownMenu.classList.remove('hidden');
+    // Force reflow
+    dropdownMenu.offsetHeight;
+    dropdownMenu.style.maxHeight = '400px';
+    dropdownMenu.style.opacity = '1';
+    menuIconOpen.classList.add('hidden');
+    menuIconClose.classList.remove('hidden');
+  }
+  
+  function closeMenu() {
+    dropdownMenu.style.maxHeight = '0';
+    dropdownMenu.style.opacity = '0';
+    menuIconOpen.classList.remove('hidden');
+    menuIconClose.classList.add('hidden');
+    setTimeout(() => {
+      dropdownMenu.classList.add('hidden');
+    }, 300);
+  }
+  
+  menuToggle.addEventListener('click', function(e) {
+    e.stopPropagation();
+    if (dropdownMenu.classList.contains('hidden') || dropdownMenu.style.maxHeight === '0px') {
+      openMenu();
+    } else {
+      closeMenu();
+    }
+  });
+  
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!menuToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+      closeMenu();
+    }
+  });
+  
+  // Close menu when clicking a link
+  const menuLinks = dropdownMenu.querySelectorAll('a');
+  menuLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      closeMenu();
+    });
+  });
 });
 </script>
 {{ end }}
