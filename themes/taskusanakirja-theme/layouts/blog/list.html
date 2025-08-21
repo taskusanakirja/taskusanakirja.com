@@ -9,6 +9,13 @@
             {{ end }}
         </header>
         
+        <!-- Page Content (from _index.md) -->
+        {{ with .Content }}
+        <div class="prose prose-lg max-w-none mb-12">
+            {{ . }}
+        </div>
+        {{ end }}
+        
         <!-- Blog Posts -->
         <div class="space-y-12">
             {{ range .Paginator.Pages }}

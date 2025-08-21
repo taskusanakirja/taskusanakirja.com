@@ -1,5 +1,5 @@
 ---
-title: "Taskusanakirja: A Finnish Dictionary for the Command Line"
+title: "Taskusanakirja: A local, blazing fast Finnish-English dictionary"
 ---
 
 **Taskusanakirja** is a fast, powerful, and terminal-based Finnish-English
